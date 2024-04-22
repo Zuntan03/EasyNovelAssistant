@@ -77,7 +77,7 @@ Could not load text model: \EasyNovelAssistant\KoboldCpp\LightChatAssistant-Type
 - **VRAM 12GB は `LightChatAssistant-TypeB-2x7B-IQ4_XS` の `L25` を選びます。**
 	- 手元の Geforce 3600 12GB 環境では、後述の bat で `L27` にしています。
 - **VRAM 16GB 以上は `LightChatAssistant-TypeB-2x7B-IQ4_XS` の `L33` や、より大きな `LightChatAssistant-4x7B-IQ4_XS` で可能な範囲のレイヤー数を指定します。**
-	- 量子化レベルは今は `IQ4_XS` が安牌っぽいです（が、またすぐにきっと古い情報になります）。
+	- 量子化レベルは `IQ4_XS` が今の安牌っぽいです。
 	- より規模の大きいモデルを選ぶよりも、すべての GPU レイヤーを VRAM に載せたほうが満足度が高くなりがちです。
 
 GPU レイヤーを `L0` で利用すると、[EasySdxlWebUi](https://github.com/Zuntan03/EasySdxlWebUi) の forge による画像生成と同時に利用できます。  
