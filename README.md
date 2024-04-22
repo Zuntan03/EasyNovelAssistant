@@ -8,8 +8,8 @@
 ### 2024/04/22
 
 - EasyNovelAssistant を公開しました。
-	- **が公開直後にHuggingFaceが不調になる不運に見舞われました。**  
-	**[HuggingFace の Status](https://status.huggingface.co/) が online なことを確認してからインストールを開始してください。**
+	- **が、公開直後に HuggingFace が不調になる不運に見舞われました。**  
+	**[HuggingFace の Status](https://status.huggingface.co/) が online であることを確認してからインストールを開始してください。**
 
 ## 動作環境
 
@@ -24,8 +24,8 @@ Geforce RTX 3060 12GB なら `13.5T/s` です。
 
 ## インストールと更新
 
-**現在 HuggingFace が不調です。落ちたり復旧したりまた落ちたりしています。**  
-**[HuggingFace の Status](https://status.huggingface.co/) が online なことを確認してからインストールを開始してください。**
+**現在 HuggingFace が落ちたり復旧したりまた落ちたりしています。**  
+**[HuggingFace の Status](https://status.huggingface.co/) が online であることを確認してからインストールを開始してください。**
 
 問題が発生したら [インストールのトラブルシューティング](#インストールのトラブルシューティング) を確認してください。  
 未成年の方は利用しないでください。
