@@ -104,9 +104,12 @@ RAM 64GB だと超カツカツですが、[CommandR+ の `IQ4_XS` が `L4` で�
 
 ## TIPS
 
+- 速度優先のモデルでGenerate Foreverをして、SSR が来たら採用する考え方の UI です。
+	- アホな文章が生成されはじめたら、`F5` ですぐに次の生成に移れます。
+	- 生成結果には番号を振ってありますので、「～なものの番号を5つ挙げて、理由も添えて」とより賢い LLM に頼むこともできます（出力のログは `log/` にあります）。
 - EasyNovelAssistant は `KoboldCpp/` にモデルを `L0` で立ち上げる bat ファイルを生成します。
 	- この bat ファイルでモデルサーバーを起動すると、`LightChatAssistant` の起動時に自動的に接続し、終了時にモデルサーバーを終了しません。
-	- bat ファイルをコピーして、`set GPU_LAYERS=0` などをお好みに変更してご利用ください。
+	- bat ファイルをコピーして、`set GPU_LAYERS=0` あたりをお好みに変更してご利用ください。
 - モデルを追加するには `EasyNovelAssistant/setup/res/default_llm.json` を参考にしつつ、`llm.json` にモデルを追加します。
 - 指示タグを追加するには `EasyNovelAssistant/setup/res/default_llm_sequence.json` を参考にしつつ、`llm_sequence.json` にモデルを追加します。
 	- 辞書のキーがモデルファイル名に含まれていると、その指示タグが使用されます。
