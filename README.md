@@ -5,7 +5,7 @@
 
 ## 主な更新履歴
 
-### 2024/04/20
+### 2024/04/22
 
 - EasyNovelAssistant を公開しました。
 
@@ -14,6 +14,11 @@
 - 最近の NVIDIA ビデオカードを積んだ Windows PC で動作します。
 - 動作確認環境: Windows 11, RAM 64GB, Geforce 3060 12GB
 	- RAM 16GB, VRAM 4GB 程度でも、`7B-Q3` などの小さなモデルなら動作します。
+
+RAM 16GB, Geforce GTX 1660 Ti (VRAM 3.3GB / 6.0GB), Ryzen 5 3600X で `3.5T/s` です。  
+Geforce RTX 3060 12GB なら `13.5T/s` です。
+
+![](./img/Gtx1660Ti.png)
 
 ## インストールと更新
 
