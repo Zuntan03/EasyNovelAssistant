@@ -17,8 +17,8 @@
 - 動作確認環境: Windows 11, RAM 64GB, Geforce 3060 12GB
 	- RAM 16GB, VRAM 4GB 程度でも、`7B-Q3` などの小さなモデルなら動作します。
 
-RAM 16GB, Geforce GTX 1660 Ti (VRAM 3.3GB / 6.0GB), Ryzen 5 3600X で `3.5T/s` です。  
-Geforce RTX 3060 12GB なら `13.5T/s` です。
+RAM 16GB, Geforce GTX 1660 Ti (VRAM 3.3GB / 6.0GB), Ryzen 5 3600X で `3.5 tokens/sec (T/s)` です。  
+Geforce RTX 3060 12GB なら `13.5 T/s` です。
 
 ![](./img/Gtx1660Ti.png)
 
@@ -78,15 +78,21 @@ Could not load text model: \EasyNovelAssistant\KoboldCpp\LightChatAssistant-Type
 ```
 **また、動作はするが明らかに遅い（1~2秒に 1文字しか出力されない、など）場合も、GPU レイヤー数を減らしてみてください。**  
 
+> **速度の参考値**  
+> RAM 16GB, Geforce GTX 1660 Ti (VRAM 3.3GB / 6.0GB), Ryzen 5 3600X で `3.5 tokens/sec (T/s)` です。  
+> Geforce RTX 3060 12GB なら `13.5 T/s` です。
+
 - **VRAM 4GB は初期設定の `LightChatAssistant-TypeB-2x7B-IQ4_XS` の `L1` で、もし動作しなければ `L0` を選びます。**
-- **VRAM 8GB は `LightChatAssistant-TypeB-2x7B-IQ4_XS` の `L12` か `L14` を選びます。**
-- **VRAM 12GB は `LightChatAssistant-TypeB-2x7B-IQ4_XS` の `L25` を選びます。**
-	- 手元の Geforce 3600 12GB 環境では、後述の bat で `L27` にしています。
+- **VRAM 8GB は `LightChatAssistant-TypeB-2x7B-IQ4_XS` の `L10` ~ `L14` を選びます。**
+- **VRAM 12GB は `LightChatAssistant-TypeB-2x7B-IQ4_XS` の `L20` ~ `L25` を選びます。**
+	- 設定を詰めた手元の Geforce 3600 12GB 環境では、後述の bat で `L27` にしています。
+		- 画面表示や[アプリ描画](https://www.gigafree.net/Windows/set-gpu-per-app/)を、オンボード GPU に任せて VRAM を空けます。
+		- `Win + Ctrl + Shift + B` でグラフィックスドライバをリセットできます（おまじない）。
 - **VRAM 16GB 以上は `LightChatAssistant-TypeB-2x7B-IQ4_XS` の `L33` や、より大きな `LightChatAssistant-4x7B-IQ4_XS` で可能な範囲のレイヤー数を指定します。**
 	- 量子化レベルは `IQ4_XS` が今の安牌っぽいです。
 	- より規模の大きいモデルを選ぶよりも、すべての GPU レイヤーを VRAM に載せたほうが満足度が高くなりがちです。
 
-GPU レイヤーを `L0` で利用すると、[EasySdxlWebUi](https://github.com/Zuntan03/EasySdxlWebUi) の forge による画像生成と同時に利用できます。  
+GPU レイヤーを `L0` などで利用すると、[EasySdxlWebUi](https://github.com/Zuntan03/EasySdxlWebUi) の forge による画像生成と同時に利用できます。  
 文章と画像の生成待ち時間を、交互に生成物を確認することで解消できます。  
 生成文章の状況に合わせた画像生成用のプロンプト生成も、探りがいのある分野です。
 
