@@ -1,0 +1,81 @@
+﻿{
+	"LightChatAssistant-TypeB-2x7B-IQ4_XS": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF/resolve/main/LightChatAssistant-TypeB-2x7B_iq4xs_imatrix.gguf"
+		]
+	},
+	"LightChatAssistant-TypeB-2x7B-IQ3_XXS": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF/resolve/main/LightChatAssistant-TypeB-2x7B_iq3xxs_imatrix.gguf"
+		]
+	},
+	"LightChatAssistant-2x7B-IQ3_XXS": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Sdff-Ltba/LightChatAssistant-2x7B-GGUF/resolve/main/LightChatAssistant-2x7B_iq3xxs_imatrix.gguf"
+		]
+	},
+	"LightChatAssistant-2x7B-IQ4_XS": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Sdff-Ltba/LightChatAssistant-2x7B-GGUF/resolve/main/LightChatAssistant-2x7B_iq4xs_imatrix.gguf"
+		]
+	},
+	"LightChatAssistant-4x7B-IQ3_S": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Aratako/LightChatAssistant-4x7B-GGUF/resolve/main/LightChatAssistant-4x7B_IQ3_S.gguf"
+		]
+	},
+	"LightChatAssistant-4x7B-IQ4_XS": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Aratako/LightChatAssistant-4x7B-GGUF/resolve/main/LightChatAssistant-4x7B_IQ4_XS.gguf"
+		]
+	},
+	"JapaneseStarlingChatV-7B-Q4_K_M": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/TFMC/Japanese-Starling-ChatV-7B-GGUF/resolve/main/japanese-starling-chatv-7b.Q4_K_M.gguf"
+		]
+	},
+	"CommandRv1-Q4_K_M": {
+		"max_gpu_layer": 41,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/andrewcanis/c4ai-command-r-v01-GGUF/resolve/main/c4ai-command-r-v01-Q4_K_M.gguf"
+		]
+	},
+	"CommandRPlus-IQ3_S": {
+		"max_gpu_layer": 65,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/dranger003/c4ai-command-r-plus-iMat.GGUF/resolve/main/ggml-c4ai-command-r-plus-104b-iq3_s.gguf"
+		]
+	},
+	"CommandRPlus-IQ4_XS": {
+		"max_gpu_layer": 65,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/dranger003/c4ai-command-r-plus-iMat.GGUF/resolve/main/ggml-c4ai-command-r-plus-104b-iq4_xs-00001-of-00002.gguf",
+			"https://huggingface.co/dranger003/c4ai-command-r-plus-iMat.GGUF/resolve/main/ggml-c4ai-command-r-plus-104b-iq4_xs-00002-of-00002.gguf"
+		]
+	},
+	"CommandRPlus-Q3_K_M": {
+		"max_gpu_layer": 65,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/pmysl/c4ai-command-r-plus-GGUF/resolve/main/command-r-plus-Q3_K_M-00001-of-00002.gguf",
+			"https://huggingface.co/pmysl/c4ai-command-r-plus-GGUF/resolve/main/command-r-plus-Q3_K_M-00002-of-00002.gguf"
+		]
+	}
+}
