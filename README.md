@@ -30,7 +30,7 @@ Geforce RTX 3060 12GB なら `13.5T/s` です。
 問題が発生したら [インストールのトラブルシューティング](#インストールのトラブルシューティング) を確認してください。  
 未成年の方は利用しないでください。
 
-1. [`Install-EasyNovelAssistant.bat`](https://github.com/Zuntan03/EasyNovelAssistant/raw/main/EasyNovelAssistant/setup/Install-EasyNovelAssistant.bat?v=0) を右クリックからダウンロードして、インストール先のフォルダでダブルクリックして実行します。
+1. [`Install-EasyNovelAssistant.bat`](https://github.com/Zuntan03/EasyNovelAssistant/raw/main/EasyNovelAssistant/setup/Install-EasyNovelAssistant.bat?v=1) を右クリックからダウンロードして、インストール先のフォルダでダブルクリックして実行します。
 	- **`WindowsによってPCが保護されました` と表示されたら、`詳細表示` から `実行` します。**
 		- 注意書きに問題がなければ `y` を入力します。
 	- `Windows セキュリティ` のネットワークへのアクセス許可は `キャンセル` でも動作します。

@@ -1,7 +1,7 @@
 @echo off
 chcp 65001 > NUL
 set PS_CMD=PowerShell -Version 5.1 -ExecutionPolicy Bypass
-set CURL_CMD=C:\Windows\System32\curl.exe --ssl-no-revoke
+set CURL_CMD=C:\Windows\System32\curl.exe
 
 if not exist %CURL_CMD% (
 	echo [ERROR] %CURL_CMD% が見つかりません。
@@ -53,8 +53,8 @@ if !errorlevel! neq 0 (
 	if not exist %PORTABLE_GIT_DIR% (
 		if not exist %APP_LIB_DIR%\ ( mkdir %APP_LIB_DIR% )
 
-		echo %CURL_CMD% -Lo %APP_LIB_DIR%\PortableGit.7z.exe https://github.com/git-for-windows/git/releases/download/v%PORTABLE_GIT_VER%.windows.1/PortableGit-%PORTABLE_GIT_VER%-64-bit.7z.exe
-		%CURL_CMD% -Lo %APP_LIB_DIR%\PortableGit.7z.exe https://github.com/git-for-windows/git/releases/download/v%PORTABLE_GIT_VER%.windows.1/PortableGit-%PORTABLE_GIT_VER%-64-bit.7z.exe
+		echo %CURL_CMD% --ssl-no-revoke -Lo %APP_LIB_DIR%\PortableGit.7z.exe https://github.com/git-for-windows/git/releases/download/v%PORTABLE_GIT_VER%.windows.1/PortableGit-%PORTABLE_GIT_VER%-64-bit.7z.exe
+		%CURL_CMD% --ssl-no-revoke -Lo %APP_LIB_DIR%\PortableGit.7z.exe https://github.com/git-for-windows/git/releases/download/v%PORTABLE_GIT_VER%.windows.1/PortableGit-%PORTABLE_GIT_VER%-64-bit.7z.exe
 		if !errorlevel! neq 0 ( pause & popd & exit /b 1 )
 
 		start "" %PS_CMD% -Command "Start-Sleep -Seconds 2; $title='Portable Git for Windows 64-bit'; $window=Get-Process | Where-Object { $_.MainWindowTitle -eq $title } | Select-Object -First 1; if ($window -ne $null) { [void][System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic'); [Microsoft.VisualBasic.Interaction]::AppActivate($window.Id); Start-Sleep -Seconds 1; Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('{ENTER}') }"
