@@ -87,8 +87,7 @@ GPU レイヤーを `L0` で利用すると、[EasySdxlWebUi](https://github.com
 RAM 64GB, VRAM 12GB 以上の環境で巨大な CommandR 系のモデルを `L4` など立ち上げ、寝る前や外出前に仕込んでおくのもアリです。  
 が、放置する価値のあるプロンプトかを確認しておかないと、起きたときや帰ったときにがっかりすることになります。  
 
-RAM 64GB だと超カツカツですが、[CommandR+ の `IQ4_XS` が `L4` で動いた実績](https://twitter.com/Zuntan03/status/1778441181741158764) があります。
-
+RAM 64GB だと超カツカツですが、[CommandR+ の `IQ4_XS` が `L4` で動いた実績](https://twitter.com/Zuntan03/status/1778441181741158764) があります（が、64GB ではカツカツすぎて色々工夫が必要です）。
 
 ## サンプルについて
 
