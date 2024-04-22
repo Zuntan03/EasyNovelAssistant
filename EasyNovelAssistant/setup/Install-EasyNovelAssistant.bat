@@ -1,7 +1,7 @@
 @echo off
 chcp 65001 > NUL
 set PS_CMD=PowerShell -Version 5.1 -ExecutionPolicy Bypass
-set CURL_CMD=C:\Windows\System32\curl.exe
+set CURL_CMD=C:\Windows\System32\curl.exe --ssl-no-revoke
 
 if not exist %CURL_CMD% (
 	echo [ERROR] %CURL_CMD% が見つかりません。

@@ -86,7 +86,7 @@ popd
     def download_model(self, llm_name):
         llm = self.ctx.llm[llm_name]
         for url in llm["urls"]:
-            curl_cmd = f"curl -LO {url} --ssl-no-revoke"
+            curl_cmd = f"curl --ssl-no-revoke -LO {url}"
             if subprocess.run(curl_cmd, shell=True, cwd=Path.kobold_cpp).returncode != 0:
                 print(f"{llm_name} のダウンロードに失敗しました。\n{curl_cmd}")
                 return False

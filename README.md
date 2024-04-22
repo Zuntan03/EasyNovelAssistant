@@ -76,6 +76,7 @@ Geforce RTX 3060 12GB なら `13.5T/s` です。
 Could not load text model: \EasyNovelAssistant\KoboldCpp\LightChatAssistant-TypeB-2x7B_iq4xs_imatrix.gguf
 続行するには何かキーを押してください . . .
 ```
+また、動作はするが 1~2秒に 1文字しか出力されない場合も、GPU レイヤー数を減らしてみてください。
 
 - **VRAM 4GB は初期設定の `LightChatAssistant-TypeB-2x7B-IQ4_XS` の `L1` で、もし動作しなければ `L0` を選びます。**
 - **VRAM 8GB は `LightChatAssistant-TypeB-2x7B-IQ4_XS` の `L12` か `L14` を選びます。**
