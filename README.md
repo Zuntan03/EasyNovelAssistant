@@ -43,8 +43,8 @@ Geforce RTX 3060 12GB なら `13.5 T/s` です。
 
 更新は `Update-EasyNovelAssistant.bat` を実行します。
 
-[moc67331 さんによる Linux 対応](https://github.com/Zuntan03/EasyNovelAssistant/issues/1) を適用した [`Install-EasyNovelAssistant.sh`](https://github.com/Zuntan03/EasyNovelAssistant/raw/main/EasyNovelAssistant/setup/Install-EasyNovelAssistant.sh?v=0) もあります。  
-動作確認環境を持っておりませんので、動かなかったらパッチをください。
+[Linux 版（moc67331 さん作）](https://github.com/Zuntan03/EasyNovelAssistant/issues/1) の [`Install-EasyNovelAssistant.sh`](https://github.com/Zuntan03/EasyNovelAssistant/raw/main/EasyNovelAssistant/setup/Install-EasyNovelAssistant.sh?v=0) も同様に、インストール先フォルダで実行してインストールします。  
+動作確認をしてませんので、動かなかったらパッチをください。
 
 ### はじめての生成
 
