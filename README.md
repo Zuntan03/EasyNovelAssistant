@@ -5,6 +5,12 @@
 
 ## 主な更新履歴
 
+
+### 2024/04/23
+
+- [moc67331 さんによる Linux 対応](https://github.com/Zuntan03/EasyNovelAssistant/issues/1) を適用しました。
+	- [`Install-EasyNovelAssistant.sh`](https://github.com/Zuntan03/EasyNovelAssistant/raw/main/EasyNovelAssistant/setup/Install-EasyNovelAssistant.sh?v=0) をインストール先フォルダで実行してください。
+
 ### 2024/04/22
 
 - EasyNovelAssistant を公開しました。
@@ -14,6 +20,7 @@
 ## 動作環境
 
 - 最近の NVIDIA ビデオカードを積んだ Windows PC で動作します。
+	- 動作確認はできていませんが、Linux 版もあります。
 - 動作確認環境: Windows 11, RAM 64GB, Geforce 3060 12GB
 	- RAM 16GB, VRAM 4GB 程度でも、`7B-Q3` などの小さなモデルなら動作します。
 
@@ -23,9 +30,6 @@ Geforce RTX 3060 12GB なら `13.5 T/s` です。
 ![](./img/Gtx1660Ti.png)
 
 ## インストールと更新
-
-**現在 HuggingFace が落ちたり復旧したりまた落ちたりしています。**  
-**[HuggingFace の Status](https://status.huggingface.co/) が online であることを確認してからインストールを開始してください。**
 
 問題が発生したら [インストールのトラブルシューティング](#インストールのトラブルシューティング) を確認してください。  
 未成年の方は利用しないでください。
@@ -38,6 +42,9 @@ Geforce RTX 3060 12GB なら `13.5 T/s` です。
 	- 次回以降は `Run-EasyNovelAssistant.bat` で起動します。
 
 更新は `Update-EasyNovelAssistant.bat` を実行します。
+
+[moc67331 さんによる Linux 対応](https://github.com/Zuntan03/EasyNovelAssistant/issues/1) を適用した [`Install-EasyNovelAssistant.sh`](https://github.com/Zuntan03/EasyNovelAssistant/raw/main/EasyNovelAssistant/setup/Install-EasyNovelAssistant.sh?v=0) もあります。  
+動作確認環境を持っておりませんので、動かなかったらパッチをください。
 
 ### はじめての生成
 

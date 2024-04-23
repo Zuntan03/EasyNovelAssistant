@@ -16,7 +16,8 @@ class Path:
     default_llm_sequence = os.path.join(res, "default_llm_sequence.json")
 
     kobold_cpp = os.path.join(cwd, "KoboldCpp")
-    kobold_cpp_exe = os.path.join(kobold_cpp, "koboldcpp.exe")
+    kobold_cpp_win = os.path.join(kobold_cpp, "koboldcpp.exe")
+    kobold_cpp_linux = os.path.join(kobold_cpp, "koboldcpp-linux-x64")
 
     sample = os.path.join(cwd, "sample")
 

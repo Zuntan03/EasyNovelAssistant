@@ -1,6 +1,7 @@
 ﻿import json
 import os
 import subprocess
+from sys import platform
 
 import requests
 from path import Path
@@ -111,11 +112,16 @@ popd
             print(f"{llm_path} がありません。")
             return
 
-        command = ["start", f"{llm_name} L{gpu_layer}", "cmd", "/c"]
-        command.append(
-            f'{Path.kobold_cpp_exe} {self.ctx["koboldcpp_arg"]} --gpulayers {gpu_layer} --contextsize {llm["context_size"]} {llm_path} || pause'
+        command_args = (
+            f'{self.ctx["koboldcpp_arg"]} --gpulayers {gpu_layer} --contextsize {llm["context_size"]} {llm_path}'
         )
-        subprocess.run(command, shell=True)
+        if platform == "win32":
+            command = ["start", f"{llm_name} L{gpu_layer}", "cmd", "/c"]
+            command.append(f"{Path.kobold_cpp_win} {command_args} || pause")
+            subprocess.run(command, shell=True)
+        else:
+            command = f"{Path.kobold_cpp_linux} {command_args}"
+            subprocess.Popen(command, shell=True)
 
     def generate(self, text):
         ctx = self.ctx
