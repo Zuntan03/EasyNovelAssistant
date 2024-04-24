@@ -2,6 +2,7 @@
 import os
 import tkinter as tk
 import urllib.request
+import webbrowser
 from urllib.parse import quote
 
 from path import Path
@@ -76,7 +77,7 @@ class SampleMenu:
                 with urllib.request.urlopen(url) as res:
                     value = res.read().decode("utf-8-sig")
             except Exception as e:
-                os.system(f"start {url}")
+                webbrowser.open(url)
                 print(f"{e}. {url}")
                 return
         func(value)

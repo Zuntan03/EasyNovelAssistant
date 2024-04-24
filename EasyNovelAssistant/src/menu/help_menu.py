@@ -1,7 +1,6 @@
 ﻿import os
 import tkinter as tk
-
-from path import Path
+import webbrowser
 
 
 class HelpMenu:
@@ -54,4 +53,4 @@ class HelpMenu:
         menu.add_command(label=hf_name, command=cmd)
 
     def _show_url(self, url):
-        os.system(f"start {url}")
+        webbrowser.open(url)
