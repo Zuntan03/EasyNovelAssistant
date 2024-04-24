@@ -6,6 +6,20 @@
 			"[/INST]"
 		]
 	},
+	"SniffyOtter": {
+		"instruct": "[INST] {0} [/INST]",
+		"stop": [
+			"[INST]",
+			"[/INST]"
+		]
+	},
+	"Antler-7B-Novel-Writing": {
+		"instruct": "[INST] {0} [/INST]",
+		"stop": [
+			"[INST]",
+			"[/INST]"
+		]
+	},
 	"japanese-starling": {
 		"instruct": "[INST] <<SYS>>\n<</SYS>>\n\n{0} [/INST]",
 		"stop": [

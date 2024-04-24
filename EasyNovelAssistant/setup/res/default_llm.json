@@ -41,6 +41,20 @@
 			"https://huggingface.co/Aratako/LightChatAssistant-4x7B-GGUF/resolve/main/LightChatAssistant-4x7B_IQ4_XS.gguf"
 		]
 	},
+	"SniffyOtter-7B-Q4_0": {
+		"max_gpu_layer": 33,
+		"context_size": 8192,
+		"urls": [
+			"https://huggingface.co/Elizezen/SniffyOtter-7B-GGUF/resolve/main/SniffyOtter-7B-q4_0.gguf"
+		]
+	},
+	"Antler-7B-Novel-Writing-IQ4_XS": {
+		"max_gpu_layer": 33,
+		"context_size": 4096,
+		"urls": [
+			"https://huggingface.co/Aratako/Antler-7B-Novel-Writing-GGUF/resolve/main/Antler-7B-Novel-Writing_IQ4_XS.gguf"
+		]
+	},
 	"JapaneseStarlingChatV-7B-Q4_K_M": {
 		"max_gpu_layer": 33,
 		"context_size": 32768,
