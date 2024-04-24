@@ -131,6 +131,8 @@ RAM 64GB だと超カツカツですが、[CommandR+ の `IQ4_XS` が `L4` で�
 - EasyNovelAssistant は `KoboldCpp/` にモデルを `L0` で立ち上げる bat ファイルを生成します。
 	- この bat ファイルでモデルサーバーを起動すると、`LightChatAssistant` の起動時に自動的に接続し、終了時にモデルサーバーを終了しません。
 	- bat ファイルをコピーして、`set GPU_LAYERS=0` あたりをお好みに変更してご利用ください。
+	- モデルサーバー起動メッセージ末尾の [`http://localhost:5001`](http://localhost:5001) を Ctrl+クリックで開くと、[EasyLightChatAssistant](https://github.com/Zuntan03/EasyLightChatAssistant) のように KoboldCpp の Web UI を利用できます。  
+	`Please connect to custom endpoint at http://localhost:5001`
 - モデルを追加するには `EasyNovelAssistant/setup/res/default_llm.json` を参考にしつつ、`llm.json` にモデルを追加します。
 - 指示タグを追加するには `EasyNovelAssistant/setup/res/default_llm_sequence.json` を参考にしつつ、`llm_sequence.json` にモデルを追加します。
 	- 辞書のキーがモデルファイル名に含まれていると、その指示タグが使用されます。
