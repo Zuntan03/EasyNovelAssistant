@@ -44,12 +44,15 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+cd $APP_NAME
+
+chmod +x $APP_NAME/setup/Setup-$APP_NAME.sh
 $APP_NAME/setup/Setup-$APP_NAME.sh
 
-push $APP_NAME
+chmod +x 
 ./Run-$APP_NAME.sh
 
-popd
+cd -
 
 if [ -f "$(pwd)/Install-$APP_NAME.sh" ]; then
     rm "$(pwd)/Install-$APP_NAME.sh"

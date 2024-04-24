@@ -120,8 +120,7 @@ popd
             command.append(f"{Path.kobold_cpp_win} {command_args} || pause")
             subprocess.run(command, shell=True)
         else:
-            command = f"{Path.kobold_cpp_linux} {command_args}"
-            subprocess.Popen(command, shell=True)
+            subprocess.Popen(f"{Path.kobold_cpp_linux} {command_args}", shell=True)
 
     def generate(self, text):
         ctx = self.ctx
