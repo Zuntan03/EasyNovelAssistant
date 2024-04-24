@@ -39,6 +39,8 @@ class HelpMenu:
         self._show_hf_url(reference_menu, "Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF")
         self._show_hf_url(reference_menu, "Sdff-Ltba/LightChatAssistant-2x7B-GGUF")
         self._show_hf_url(reference_menu, "Aratako/LightChatAssistant-4x7B-GGUF")
+        self._show_hf_url(reference_menu, "Elizezen/SniffyOtter-7B-GGUF")
+        self._show_hf_url(reference_menu, "Aratako/Antler-7B-Novel-Writing-GGUF")
         self._show_hf_url(reference_menu, "TFMC/Japanese-Starling-ChatV-7B-GGUF")
         self._show_hf_url(reference_menu, "andrewcanis/c4ai-command-r-v01-GGUF")
         self._show_hf_url(reference_menu, "dranger003/c4ai-command-r-plus-iMat.GGUF")

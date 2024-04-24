@@ -37,6 +37,9 @@ if exist %APP_VENV_DIR%\ (
 	echo https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF
 	echo https://huggingface.co/Sdff-Ltba/LightChatAssistant-2x7B-GGUF
 	echo https://huggingface.co/Aratako/LightChatAssistant-4x7B-GGUF
+	echo https://huggingface.co/Elizezen/SniffyOtter-7B-GGUF
+	echo https://huggingface.co/Aratako/Antler-7B-Novel-Writing-GGUF
+	echo https://huggingface.co/TFMC/Japanese-Starling-ChatV-7B-GGUF
 	echo https://huggingface.co/andrewcanis/c4ai-command-r-v01-GGUF
 	echo https://huggingface.co/dranger003/c4ai-command-r-plus-iMat.GGUF
 	echo https://huggingface.co/pmysl/c4ai-command-r-plus-GGUF
