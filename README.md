@@ -5,6 +5,11 @@
 
 ## 主な更新履歴
 
+### 2024/04/26
+
+- モデルに超軽量日本語 NSFW 小説モデルの [SniffyOtter-7B-Novel-Writing-NSFW-IQ4_XS](https://huggingface.co/Aratako/SniffyOtter-7B-Novel-Writing-NSFW-GGUF) を追加しました。
+	- 合わせて追加したメニューの [`テンプレート`] - [`SniffyOtter-7B-Novel-Writing-NSFW`] で [プロンプトフォーマット](https://huggingface.co/Aratako/SniffyOtter-7B-Novel-Writing-NSFW#%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88) に沿ってご利用ください。
+
 ### 2024/04/24
 
 - モデルに [SniffyOtter-7B-Q4_0](https://huggingface.co/Elizezen/SniffyOtter-7B) を追加しました。
@@ -95,6 +100,8 @@ Could not load text model: \EasyNovelAssistant\KoboldCpp\LightChatAssistant-Type
 > Geforce RTX 3060 12GB なら `13.5 T/s` です。
 
 - **VRAM 4GB は初期設定の `LightChatAssistant-TypeB-2x7B-IQ4_XS` の `L1` で、もし動作しなければ `L0` を選びます。**
+	- 動作が重い場合はより小さな `SniffyOtter-7B-Novel-Writing-NSFW-IQ4_XS` も選択肢です。  
+	メニューの [`テンプレート`] - [`SniffyOtter-7B-Novel-Writing-NSFW`] で [プロンプトフォーマット](https://huggingface.co/Aratako/SniffyOtter-7B-Novel-Writing-NSFW#%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88) に沿ってご利用ください。
 - **VRAM 8GB は `LightChatAssistant-TypeB-2x7B-IQ4_XS` の `L10` ~ `L14` を選びます。**
 - **VRAM 12GB は `LightChatAssistant-TypeB-2x7B-IQ4_XS` の `L20` ~ `L25` を選びます。**
 	- 設定を詰めた手元の Geforce 3600 12GB 環境では、後述の bat で `L27` にしています。

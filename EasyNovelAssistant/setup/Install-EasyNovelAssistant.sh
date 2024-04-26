@@ -26,6 +26,7 @@ if [ -d "$APP_VENV_DIR" ]; then
     echo "https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF"
     echo "https://huggingface.co/Sdff-Ltba/LightChatAssistant-2x7B-GGUF"
     echo "https://huggingface.co/Aratako/LightChatAssistant-4x7B-GGUF"
+    echo "https://huggingface.co/Aratako/SniffyOtter-7B-Novel-Writing-NSFW-GGUF"
     echo "https://huggingface.co/Elizezen/SniffyOtter-7B-GGUF"
     echo "https://huggingface.co/Aratako/Antler-7B-Novel-Writing-GGUF"
     echo "https://huggingface.co/TFMC/Japanese-Starling-ChatV-7B-GGUF"

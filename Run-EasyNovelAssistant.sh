@@ -2,7 +2,7 @@
 
 mkdir -p sample
 cd sample
-curl  -LO https://yyy.wpx.jp/EasyNovelAssistant/sample/tutorial.json
+curl  -LO https://yyy.wpx.jp/EasyNovelAssistant/sample/template.json
 
 if [ $? -ne 0 ]; then
     exit 1

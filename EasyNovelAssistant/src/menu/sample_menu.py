@@ -16,7 +16,7 @@ class SampleMenu:
         self.ctx = ctx
 
         descs = [  # TODO: set or insert
-            # {"label": "チュートリアル", "path": "tutorial.json"},
+            {"label": "テンプレート", "path": "template.json"},
             {"label": "サンプル", "path": "sample.json"},
             {"label": "NSFW サンプル", "path": "nsfw.json"},  # 特殊
             # テンプレ
@@ -31,7 +31,9 @@ class SampleMenu:
     def on_menu_open(self, menu, desc):
         menu.delete(0, tk.END)
 
-        func = self.ctx.input_area.set_text  # TODO: ラベルでappend差し替え
+        func = self.ctx.input_area.set_text
+        if desc["label"] == "テンプレート":
+            func = self.ctx.input_area.append_text
 
         categories = {}
 

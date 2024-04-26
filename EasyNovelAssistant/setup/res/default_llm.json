@@ -6,6 +6,20 @@
 			"https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF/resolve/main/LightChatAssistant-TypeB-2x7B_iq4xs_imatrix.gguf"
 		]
 	},
+	"SniffyOtter-7B-Novel-Writing-NSFW-IQ4_XS": {
+		"max_gpu_layer": 33,
+		"context_size": 8192,
+		"urls": [
+			"https://huggingface.co/Aratako/SniffyOtter-7B-Novel-Writing-NSFW-GGUF/resolve/main/SniffyOtter-7B-Novel-Writing-NSFW_IQ4_XS.gguf"
+		]
+	},
+	"LightChatAssistant-4x7B-IQ4_XS": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Aratako/LightChatAssistant-4x7B-GGUF/resolve/main/LightChatAssistant-4x7B_IQ4_XS.gguf"
+		]
+	},
 	"LightChatAssistant-TypeB-2x7B-IQ3_XXS": {
 		"max_gpu_layer": 33,
 		"context_size": 32768,
@@ -32,13 +46,6 @@
 		"context_size": 32768,
 		"urls": [
 			"https://huggingface.co/Aratako/LightChatAssistant-4x7B-GGUF/resolve/main/LightChatAssistant-4x7B_IQ3_S.gguf"
-		]
-	},
-	"LightChatAssistant-4x7B-IQ4_XS": {
-		"max_gpu_layer": 33,
-		"context_size": 32768,
-		"urls": [
-			"https://huggingface.co/Aratako/LightChatAssistant-4x7B-GGUF/resolve/main/LightChatAssistant-4x7B_IQ4_XS.gguf"
 		]
 	},
 	"SniffyOtter-7B-Q4_0": {

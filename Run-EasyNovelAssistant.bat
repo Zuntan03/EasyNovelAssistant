@@ -5,8 +5,8 @@ set CURL_CMD=C:\Windows\System32\curl.exe --ssl-no-revoke
 if not exist %~dp0sample\ ( mkdir %~dp0sample )
 pushd %~dp0sample
 
-echo %CURL_CMD% -sLO https://yyy.wpx.jp/EasyNovelAssistant/sample/tutorial.json
-%CURL_CMD% -sLO https://yyy.wpx.jp/EasyNovelAssistant/sample/tutorial.json
+echo %CURL_CMD% -sLO https://yyy.wpx.jp/EasyNovelAssistant/sample/template.json
+%CURL_CMD% -sLO https://yyy.wpx.jp/EasyNovelAssistant/sample/template.json
 if %errorlevel% neq 0 ( pause & popd & exit /b 1 )
 
 echo %CURL_CMD% -sLO https://yyy.wpx.jp/EasyNovelAssistant/sample/sample.json

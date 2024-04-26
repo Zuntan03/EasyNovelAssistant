@@ -20,6 +20,9 @@ class InputArea:
 
     def set_text(self, text):
         self.text_area.delete("1.0", tk.END)
+        self.append_text(text)
+
+    def append_text(self, text):
         self.text_area.insert(tk.END, text)
         if self.ctx["auto_scroll"]:
             self.text_area.see(tk.END)
