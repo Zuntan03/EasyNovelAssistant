@@ -71,17 +71,6 @@ if !errorlevel! neq 0 (
 		del %APP_LIB_DIR%\PortableGit.7z.exe
 		if !errorlevel! neq 0 ( pause & popd & exit /b 1 )
 	)
-
-	echo set "PATH=%PORTABLE_GIT_DIR%;%PATH%"
-	set "PATH=%PORTABLE_GIT_DIR%;%PATH%"
-
-	where /Q git
-	if !errorlevel! neq 0 (
-		echo [Error] git を自動インストールできませんでした。Git for Windows を手動でインストールしてください。
-		start https://gitforwindows.org/
-		pause & popd & exit /b 1
-	)
-	cd > NUL
 )
 
 if exist %PORTABLE_GIT_DIR% (
