@@ -16,9 +16,9 @@ class SampleMenu:
         self.ctx = ctx
 
         descs = [  # TODO: set or insert
-            {"label": "テンプレート", "path": "template.json"},
-            {"label": "サンプル", "path": "sample.json"},
-            {"label": "NSFW サンプル", "path": "nsfw.json"},  # 特殊
+            {"label": "(New) テンプレート", "path": "template.json"},
+            {"label": "(New) サンプル", "path": "sample.json"},
+            {"label": "(New) NSFW サンプル", "path": "nsfw.json"},  # 特殊
             # テンプレ
         ]
 
