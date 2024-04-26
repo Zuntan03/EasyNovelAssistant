@@ -8,7 +8,11 @@
 ### 2024/04/26
 
 - モデルに超軽量日本語 NSFW 小説モデルの [SniffyOtter-7B-Novel-Writing-NSFW-IQ4_XS](https://huggingface.co/Aratako/SniffyOtter-7B-Novel-Writing-NSFW-GGUF) を追加しました。
-	- 合わせて追加したメニューの [`テンプレート`] - [`SniffyOtter-7B-Novel-Writing-NSFW`] で [プロンプトフォーマット](https://huggingface.co/Aratako/SniffyOtter-7B-Novel-Writing-NSFW#%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88) に沿ってご利用ください。
+	- 合わせて追加したメニューの [`テンプレート`] - [`SniffyOtter-7B-Novel-Writing-NSFW`] で [プロンプトフォーマット](https://huggingface.co/Aratako/SniffyOtter-7B-Novel-Writing-NSFW#%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88) に沿ってご利用ください。  
+	キーワードはジャンルに合わせて設定する必要があります。
+		- `男性向け`: [ノクターンノベルズ 人気キーワード一覧](https://noc.syosetu.com/search/classified/)
+		- `女性向け`, `BL`: [ムーンライトノベルズ 人気キーワード一覧](https://mnlt.syosetu.com/search/classified/)
+		- `大人向け`: [ミッドナイトノベルズ 人気キーワード一覧](https://mid.syosetu.com/search/classified/)
 
 ### 2024/04/24
 
