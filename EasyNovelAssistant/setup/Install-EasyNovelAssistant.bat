@@ -27,7 +27,7 @@ if "!CURRENT_PATH: =!" neq "%CURRENT_PATH%" (
 	pause & popd & exit /b 1
 )
 
-if exist %APP_VENV_DIR%\ (
+if not exist %APP_VENV_DIR%\ (
 	echo https://www.python.org
 	echo https://github.com/pypa/get-pip
 	echo https://github.com/git-for-windows
