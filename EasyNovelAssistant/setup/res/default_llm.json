@@ -48,6 +48,13 @@
 			"https://huggingface.co/Aratako/LightChatAssistant-4x7B-GGUF/resolve/main/LightChatAssistant-4x7B_IQ3_S.gguf"
 		]
 	},
+	"SniffyOtter-7B-Novel-Writing-NSFW-Q8_0": {
+		"max_gpu_layer": 33,
+		"context_size": 8192,
+		"urls": [
+			"https://huggingface.co/Aratako/SniffyOtter-7B-Novel-Writing-NSFW-GGUF/resolve/main/SniffyOtter-7B-Novel-Writing-NSFW_Q8_0.gguf"
+		]
+	},
 	"SniffyOtter-7B-Q4_0": {
 		"max_gpu_layer": 33,
 		"context_size": 8192,
