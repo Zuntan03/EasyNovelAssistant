@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/bash
 
 mkdir -p sample
 cd sample

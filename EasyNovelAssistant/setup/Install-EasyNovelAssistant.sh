@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/bash
 
 requirements_command=("curl" "git" "tar" "python")
 
