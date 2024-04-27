@@ -65,6 +65,7 @@ class Generator:
                 self.check_job = None
         else:
             if self.generate_job is not None:
+                self.ctx.kobold_cpp.abort()
                 self.gen_queue.cancel(self.generate_job)
                 self.generate_job = None
 

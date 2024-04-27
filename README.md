@@ -5,6 +5,14 @@
 
 ## 主な更新履歴
 
+### 2024/04/27
+
+- 細かな実装改善
+	- サンプル系メニューにスプリッタ追加。
+	- ログを日付ディレクトリに格納。
+	- コンソールへの生成ログ表示。
+	- モデルサーバーがビジーだった場合に自動で中断送信。
+
 ### 2024/04/26
 
 - モデルに超軽量日本語 NSFW 小説モデルの [SniffyOtter-7B-Novel-Writing-NSFW-IQ4_XS](https://huggingface.co/Aratako/SniffyOtter-7B-Novel-Writing-NSFW-GGUF) を追加しました。
