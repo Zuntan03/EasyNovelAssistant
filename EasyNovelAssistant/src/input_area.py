@@ -31,7 +31,7 @@ class InputArea:
     def insert_text(self, text):
         self.text_area.insert(tk.INSERT, text)
         if self.ctx["auto_scroll"]:
-            self.text_area.see(tk.END)
+            self.text_area.see(tk.INSERT)
 
     def get_text(self):
         return self.text_area.get("1.0", "end-1c")

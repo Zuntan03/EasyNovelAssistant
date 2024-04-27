@@ -3,6 +3,16 @@
 軽量で規制も検閲もない日本語ローカル LLM『[LightChatAssistant-TypeB](https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF)』による、簡単なノベル生成アシスタントです。  
 ローカル特権の永続生成 Generate forever で、当たりガチャを積み上げます。
 
+## 利用者コメント
+
+[@ai_1610](https://twitter.com/ai_1610/status/1784075370330992763),
+[@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1783113042576003282),
+[@kohya_tech](https://twitter.com/kohya_tech/status/1782920101328732513),
+[@kohya_tech](https://twitter.com/kohya_tech/status/1782563778993000538),
+[@G13_Yuyang](https://twitter.com/G13_Yuyang/status/1782653077683855810),
+[0611](https://mercury.bbspink.com/test/read.cgi/onatech/1694810015/611),
+[0549](https://mercury.bbspink.com/test/read.cgi/onatech/1694810015/549)
+
 ## 主な更新履歴
 
 ### 2024/04/27
