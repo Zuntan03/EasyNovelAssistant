@@ -18,12 +18,14 @@ class SampleMenu:
         descs = [
             {
                 "label": "(New) テンプレート",
+                "mode": "insert",
                 "path": "template.json",
                 "splitter_names": ["SniffyOtter-7B-Novel-Writing-NSFW"],
             },
-            {"label": "(New) サンプル", "path": "sample.json", "splitter_names": []},
+            {"label": "(New) サンプル", "mode": "set", "path": "sample.json", "splitter_names": []},
             {
                 "label": "(New) NSFW サンプル",
+                "mode": "set",
                 "path": "nsfw.json",
                 "splitter_names": ["異種族奴隷商", "妄想ジェネレーター"],
             },
@@ -39,8 +41,8 @@ class SampleMenu:
         menu.delete(0, tk.END)
 
         func = self.ctx.input_area.set_text
-        if desc["label"] == "テンプレート":
-            func = self.ctx.input_area.append_text
+        if desc["mode"] == "insert":
+            func = self.ctx.input_area.insert_text
 
         categories = {}
 
