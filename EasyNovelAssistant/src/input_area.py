@@ -13,7 +13,7 @@ class InputArea:
         parent.add(self.text_area, width=ctx["input_area_width"], minsize=Const.AREA_MIN_SIZE, stretch="always")
 
         self.ctx_menu = tk.Menu(self.text_area, tearoff=False)
-        self.text_area.bind("<Button-3>", self.show_ctx_menu)
+        self.text_area.bind("<Button-3>", self._on_ctx_menu)
 
         # 中クリックのペーストを無効化
         self.text_area.bind("<Button-2>", lambda e: "break")
@@ -46,7 +46,7 @@ class InputArea:
         else:
             self.text_area.insert(tk.INSERT, sequence.format(""))
 
-    def show_ctx_menu(self, event):
+    def _on_ctx_menu(self, event):
         self.ctx_menu.delete(0, tk.END)
 
         sequence = self.ctx.kobold_cpp.get_instruct_sequence()

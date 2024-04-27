@@ -14,9 +14,9 @@ class OutputArea:
         parent.add(self.text_area, minsize=Const.AREA_MIN_SIZE, stretch="always")
 
         self.ctx_menu = tk.Menu(self.text_area, tearoff=False)
-        self.text_area.bind("<Button-3>", self.show_ctx_menu)
+        self.text_area.bind("<Button-3>", self._on_ctx_menu)
 
-        self.text_area.bind("<Button-2>", self._send_to_input)
+        self.text_area.bind("<Button-2>", self._on_middle_click)
 
         self.counter = 0
 
@@ -39,7 +39,7 @@ class OutputArea:
         self.text_area.delete("1.0", tk.END)
         self.counter = 0
 
-    def _send_to_input(self, e):
+    def _on_middle_click(self, e):
         selected_text = None
         if self.text_area.tag_ranges(tk.SEL):
             selected_text = self.text_area.get(tk.SEL_FIRST, tk.SEL_LAST)
@@ -48,11 +48,13 @@ class OutputArea:
         self.ctx.input_area.insert_text(selected_text)
         return "break"
 
-    def show_ctx_menu(self, event):
+    def _on_ctx_menu(self, event):
         self.ctx_menu.delete(0, tk.END)
-        self.ctx_menu.add_command(label="入力に送る", command=lambda: self._send_to_input(None))
+        self.ctx_menu.add_command(label="入力欄に送る", command=lambda: self._on_middle_click(None))
+
         self.ctx_menu.add_separator()
 
         self.ctx_menu.add_command(label="クリア", command=self.clear)
+
         self.text_area.mark_set(tk.INSERT, f"@{event.x},{event.y}")
         self.ctx_menu.post(event.x_root, event.y_root)
