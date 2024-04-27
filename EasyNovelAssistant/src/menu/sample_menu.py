@@ -15,11 +15,18 @@ class SampleMenu:
         self.form = form
         self.ctx = ctx
 
-        descs = [  # TODO: set or insert
-            {"label": "(New) テンプレート", "path": "template.json"},
-            {"label": "(New) サンプル", "path": "sample.json"},
-            {"label": "(New) NSFW サンプル", "path": "nsfw.json"},  # 特殊
-            # テンプレ
+        descs = [
+            {
+                "label": "(New) テンプレート",
+                "path": "template.json",
+                "splitter_names": ["SniffyOtter-7B-Novel-Writing-NSFW"],
+            },
+            {"label": "(New) サンプル", "path": "sample.json", "splitter_names": []},
+            {
+                "label": "(New) NSFW サンプル",
+                "path": "nsfw.json",
+                "splitter_names": ["異種族奴隷商", "妄想ジェネレーター"],
+            },
         ]
 
         for desc in descs:
@@ -59,6 +66,9 @@ class SampleMenu:
                 )
             else:
                 menu.add_command(label=name, command=lambda v=dic[key], f=func: self.on_menu_select(v, f))
+
+            if name in desc["splitter_names"]:
+                menu.add_separator()
 
     def _download(self, path):
         url = self.URL_TEMPLATE.format(path)
