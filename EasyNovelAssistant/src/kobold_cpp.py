@@ -145,20 +145,21 @@ popd
             "min_p": ctx["min_p"],
             "sampler_order": ctx["sampler_order"],
         }
-
+        print(f"KoboldCpp.generate({args})")
         try:
             response = requests.post(self.generate_url, json=args)
             if response.status_code == 200:
                 if self.model_name is not None:
                     args["model_name"] = self.model_name
                 args["result"] = response.json()["results"][0]["text"]
+                print(f'KoboldCpp.generate(): {args["result"]}')
                 with open(Path.generate_log, "a", encoding="utf-8-sig") as f:
                     json.dump(args, f, indent=4, ensure_ascii=False)
                     f.write("\n")
                 return args["result"]
-            print(response.text)
+            print(f"[失敗] KoboldCpp.generate(): {response.text}")
         except Exception as e:
-            print(e)
+            print(f"[例外] KoboldCpp.generate(): {e}")
         return None
 
     def check(self):
@@ -166,9 +167,9 @@ popd
             response = requests.get(self.check_url)
             if response.status_code == 200:
                 return response.json()["results"][0]["text"]
-            print(response.text)
+            print(f"[失敗] KoboldCpp.check(): {response.text}")
         except Exception as e:
-            print(e)
+            pass  # print(f"[例外] KoboldCpp.check(): {e}") # 害が無さそう＆利用者が混乱しそう
         return None
 
     def abort(self):
@@ -176,7 +177,7 @@ popd
             response = requests.post(self.abort_url, timeout=self.ctx["koboldcpp_command_timeout"])
             if response.status_code == 200:
                 return response.json()["success"]
-            print(response.text)
+            print(f"[失敗] KoboldCpp.abort(): {response.text}")
         except Exception as e:
-            print(e)
+            print(f"[例外] KoboldCpp.abort(): {e}")
         return None

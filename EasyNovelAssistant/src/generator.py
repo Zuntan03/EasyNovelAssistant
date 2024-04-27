@@ -37,7 +37,12 @@ class Generator:
                     self.generate_job = self.gen_queue.push(self._generate, input_text=input_text)
             elif self.generate_job.successful():
                 result = self.generate_job.result
-                self.ctx.output_area.append_output(result)
+                if result is None:
+                    if self.ctx.kobold_cpp.abort() is None:
+                        self.enabled = False
+                        self.ctx.form.update_title()
+                else:
+                    self.ctx.output_area.append_output(result)
                 self.generate_job = None
             elif self.generate_job.canceled():
                 self.generate_job = None
