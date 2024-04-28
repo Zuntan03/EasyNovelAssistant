@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 requirements_command=("curl" "git" "tar" "python")
 
@@ -15,12 +15,18 @@ if [ "$flag_not_found" = true ]; then
     exit 1
 fi
 
+if ! python -c "import tkinter" &> /dev/null; then
+    echo "[ERROR] tkintr が見つかりません。お使いのパッケージマネージャで「python3-tk」をインストールしてください。"
+    exit 1
+fi
+
+GITHUB="Zuntan03"
 APP_NAME="EasyNovelAssistant"
 APP_VENV_DIR="venv"
-CLONE_URL="https://github.com/Zuntan03/EasyNovelAssistant"
+CLONE_URL="https://github.com/"$GITHUB"/EasyNovelAssistant"
 
-if [ -d "$APP_VENV_DIR" ]; then
-    echo "https://github.com/Zuntan03/EasyNovelAssistant"
+if [ ! -d "$APP_VENV_DIR" ]; then
+    echo "https://github.com/"$GITHUB"/EasyNovelAssistant"
     echo "https://github.com/LostRuins/koboldcpp"
     echo
     echo "https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF"
@@ -53,7 +59,7 @@ cd $APP_NAME
 chmod +x $APP_NAME/setup/Setup-$APP_NAME.sh
 $APP_NAME/setup/Setup-$APP_NAME.sh
 
-chmod +x 
+chmod +x ./Run-$APP_NAME.sh
 ./Run-$APP_NAME.sh
 
 cd -

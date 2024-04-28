@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # create and activate venv
 if [ ! -d "venv" ]; then
