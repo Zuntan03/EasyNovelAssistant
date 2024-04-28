@@ -8,6 +8,7 @@ from menu.gen_menu import GenMenu
 from menu.help_menu import HelpMenu
 from menu.model_menu import ModelMenu
 from menu.sample_menu import SampleMenu
+from menu.setting_menu import SettingMenu
 from output_area import OutputArea
 from tkinterdnd2 import DND_FILES, TkinterDnD
 
@@ -36,6 +37,7 @@ class Form:
         self.file_menu = FileMenu(self, ctx)
         self.model_menu = ModelMenu(self, ctx)
         self.gen_menu = GenMenu(self, ctx)
+        self.setting_menu = SettingMenu(self, ctx)
         self.sample_menu = SampleMenu(self, ctx)
         self.help_menu = HelpMenu(self, ctx)
 

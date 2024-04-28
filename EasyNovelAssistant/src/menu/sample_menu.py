@@ -17,17 +17,17 @@ class SampleMenu:
 
         descs = [
             {
-                "label": "(New) テンプレート",
+                "label": "テンプレート",
                 "mode": "insert",
                 "path": "template.json",
-                "splitter_names": ["SniffyOtter-7B-Novel-Writing-NSFW"],
+                "splitter_names": ["画像生成用プロンプト（実験的）"],
             },
-            {"label": "(New) サンプル", "mode": "set", "path": "sample.json", "splitter_names": []},
+            {"label": "サンプル", "mode": "set", "path": "sample.json", "splitter_names": []},
             {
-                "label": "(New) NSFW サンプル",
+                "label": "NSFW サンプル",
                 "mode": "set",
                 "path": "nsfw.json",
-                "splitter_names": ["異種族奴隷商", "妄想ジェネレーター"],
+                "splitter_names": ["ボーイズラブ、ファンタジー、悪魔、美形", "妄想ジェネレーター"],
             },
         ]
 
@@ -94,4 +94,6 @@ class SampleMenu:
                 webbrowser.open(url)
                 print(f"{e}. {url}")
                 return
+        if ("{char_name}" in value) or ("{user_name}" in value):
+            value = value.format(char_name=self.ctx["char_name"], user_name=self.ctx["user_name"])
         func(value)

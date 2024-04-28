@@ -1,4 +1,6 @@
 ﻿{
+	"char_name": "さくら",
+	"user_name": "俺くん",
 	"input_text": "吾輩は猫である。名前はまだない。",
 	"output_format": "\n### {0}\n{1}\n",
 	"llm_name": "LightChatAssistant-TypeB-2x7B-IQ4_XS",
