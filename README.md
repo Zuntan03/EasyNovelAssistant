@@ -26,6 +26,8 @@
 
 - [`設定`] メニューでサンプル用のキャラクター名とユーザー名を指定できるようにしました。
 	- サンプルを毎度書き換えなくとも、お好みの名前を自動的に設定します。
+	- **旧バージョンではサンプルに `{char_name}` や `{user_name}` が表示されます。**  
+	**`Update-EasyNovelAssistant.bat` で更新してください。**
 
 ![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/name_setting.png)
 
