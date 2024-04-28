@@ -5,7 +5,10 @@
 
 ## 利用者コメント
 
-[@2ewsHQJgnvkGNPr](https://twitter.com/2ewsHQJgnvkGNPr/status/1784123670451130527), <!--  -->
+[@2ewsHQJgnvkGNPr](https://twitter.com/2ewsHQJgnvkGNPr/status/1784123670451130527),
+[@ainiji981](https://twitter.com/ainiji981/status/1784140730094805215)
+[@Neve_AI](https://twitter.com/Neve_AI/status/1784207868549542307)
+[@WreckerAi](https://twitter.com/WreckerAi/status/1784245468798836773?t=QCDXAGUjhkRdDlX7Kat77A) <!--  -->
 [@ai_1610](https://twitter.com/ai_1610/status/1784075370330992763),
 [@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1783113042576003282),
 [@kohya_tech](https://twitter.com/kohya_tech/status/1782920101328732513),
