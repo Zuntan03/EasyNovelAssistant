@@ -20,7 +20,7 @@ if ! python -c "import tkinter" &> /dev/null; then
     exit 1
 fi
 
-GITHUB="sotokisehiro"
+GITHUB="Zuntan03"
 APP_NAME="EasyNovelAssistant"
 APP_VENV_DIR="venv"
 CLONE_URL="https://github.com/"$GITHUB"/EasyNovelAssistant"
