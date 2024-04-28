@@ -18,7 +18,7 @@
 [0611](https://mercury.bbspink.com/test/read.cgi/onatech/1694810015/611),
 [0549](https://mercury.bbspink.com/test/read.cgi/onatech/1694810015/549)
 
-## 主な更新履歴
+## 最近の更新情報
 
 **サンプルに `{char_name}` や `{user_name}` が表示される場合は、`Update-EasyNovelAssistant.bat` で更新してください。**
 
@@ -50,22 +50,7 @@
 		- `女性向け`, `BL`: [ムーンライトノベルズ 人気キーワード一覧](https://mnlt.syosetu.com/search/classified/)
 		- `大人向け`: [ミッドナイトノベルズ 人気キーワード一覧](https://mid.syosetu.com/search/classified/)
 
-### 2024/04/24
-
-- モデルに [SniffyOtter-7B-Q4_0](https://huggingface.co/Elizezen/SniffyOtter-7B) を追加しました。
-- モデルに [Antler-7B-Novel-Writing-IQ4_XS](https://huggingface.co/Aratako/Antler-7B-Novel-Writing) を追加しました。
-	- [プロンプトフォーマット](https://huggingface.co/Aratako/Antler-7B-Novel-Writing#%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88) と [その属性](https://huggingface.co/Aratako/Antler-7B-Novel-Writing#%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E5%86%85%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E5%B1%9E%E6%80%A7%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6) を確認してからご利用ください。
-
-### 2024/04/23
-
-- [moc67331 さんによる Linux 対応](https://github.com/Zuntan03/EasyNovelAssistant/issues/1) を適用しました。
-	- [`Install-EasyNovelAssistant.sh`](https://github.com/Zuntan03/EasyNovelAssistant/raw/main/EasyNovelAssistant/setup/Install-EasyNovelAssistant.sh?v=0) をインストール先フォルダで実行してください。
-
-### 2024/04/22
-
-- EasyNovelAssistant を公開しました。
-	- **が、公開直後に HuggingFace が不調になる不運に見舞われました。**  
-	**[HuggingFace の Status](https://status.huggingface.co/) が online であることを確認してからインストールを開始してください。**
+**[過去の更新履歴](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E6%9B%B4%E6%96%B0%E5%B1%A5%E6%AD%B4)**
 
 ## 動作環境
 
@@ -163,13 +148,13 @@ RAM 64GB だと超カツカツですが、[CommandR+ の `IQ4_XS` が `L4` で�
 ## サンプルについて
 
 - **サンプルはそのまま生成するだけでなく、自分好みに書き換えてください。**
-	- まずはキャラクターの名前を書き換えたり、特徴を書き換えたり・書き加えたりしてみましょう。
+	- まずは `設定` メニューで名前を変更したり、キャラの特徴を書き換えたり・書き加えたりしてみましょう。
 	- 心に響く文章が生成されたら、出力欄の該当文章を範囲選択して中クリックで入力欄に付け足して続きを生成します。
 		- 想定と異なるストーリーが生成された場合は、想定するストーリーの出だしまでを入力欄に記載します。
 - サンプルの内容によっては、[`生成`] - [`生成文の長さ`] を [`4096`] などと長く設定したほうが合う場合があります。
 - サンプルは `LightChatAssistant-TypeB-2x7B-IQ4_XS` で動作を確認しています。
 	- 他のモデルでは入力欄右クリックメニューの `指示タグの挿入` などが必要になる場合があります。
-	- **LightChatAssistant は自動的に指示タグを挿入していません。**
+	- **EasyNovelAssistant は自動的に指示タグを挿入していません。**
 - EasyNovelAssistant は起動時にサンプルを更新しますので、いつの間にかサンプルが増えている可能性があります。
 - サンプルはネット上の記事などのプロンプトを元に微調整したものです。  
 	- 『[最新AI Claude 3で長編小説執筆支援【GPT-4を超えた⁉︎】](https://kakuyomu.jp/works/16818093074043995181)』 [まとめ](https://kakuyomu.jp/works/16818093074043995181/episodes/16818093074305285059)
@@ -197,6 +182,11 @@ RAM 64GB だと超カツカツですが、[CommandR+ の `IQ4_XS` が `L4` で�
 - ウィルスチェックソフトのアバストが有効だとインストールに失敗します。
 - グラフィックスドライバが古いと、起動に失敗することがあります。
 	- ドライバを更新したら `NVIDIA コントロールパネル` の `3D 設定の管理` で、`CUDA - システム メモリ フォールバック ポリシー` を `システム メモリ フォルバックなしを優先` にします。
+
+## ドキュメント
+
+- [更新履歴](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E6%9B%B4%E6%96%B0%E5%B1%A5%E6%AD%B4)
+	- 過去の更新履歴です。
 
 ## ライセンス
 
