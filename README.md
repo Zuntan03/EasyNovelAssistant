@@ -4,7 +4,8 @@
 ローカル特権の永続生成 Generate forever で、当たりガチャを積み上げます。
 
 ## 利用者の感想
- <!--  -->
+
+[@AonekoSS](https://twitter.com/AonekoSS/status/1784650868195024996) <!--  -->
 [@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1784446620916146273),
 [@2ewsHQJgnvkGNPr](https://twitter.com/2ewsHQJgnvkGNPr/status/1784123670451130527),
 [@ainiji981](https://twitter.com/ainiji981/status/1784140730094805215)
