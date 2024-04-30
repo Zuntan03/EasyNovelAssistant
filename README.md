@@ -12,8 +12,9 @@
 ### つぶやき
 
 [@kgmkm_inma_ai](https://twitter.com/kgmkm_inma_ai/status/1785149941448663443)
-[@mikumiku_aloha](https://twitter.com/mikumiku_aloha/status/1785300629461799372)
-[@AonekoSS](https://twitter.com/AonekoSS/status/1784650868195024996) <!--  -->
+[@AonekoSS](https://twitter.com/AonekoSS/status/1784650868195024996)
+[@StelsRay](https://twitter.com/StelsRay/status/1785338281485553757)
+[@mikumiku_aloha](https://twitter.com/mikumiku_aloha/status/1785300629461799372) <!--  -->
 [@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1784446620916146273),
 [@2ewsHQJgnvkGNPr](https://twitter.com/2ewsHQJgnvkGNPr/status/1784123670451130527),
 [@ainiji981](https://twitter.com/ainiji981/status/1784140730094805215)
