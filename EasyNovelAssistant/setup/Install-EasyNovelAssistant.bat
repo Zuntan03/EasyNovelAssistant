@@ -33,6 +33,8 @@ if not exist %APP_VENV_DIR%\ (
 	echo https://github.com/git-for-windows
 	echo https://github.com/Zuntan03/EasyNovelAssistant
 	echo https://github.com/LostRuins/koboldcpp
+	echo https://github.com/litagin02/Style-Bert-VITS2
+	echo https://github.com/BtbN/FFmpeg-Builds
 	echo.
 	echo https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF
 	echo https://huggingface.co/Sdff-Ltba/LightChatAssistant-2x7B-GGUF
@@ -45,6 +47,9 @@ if not exist %APP_VENV_DIR%\ (
 	echo https://huggingface.co/dranger003/c4ai-command-r-plus-iMat.GGUF
 	echo https://huggingface.co/pmysl/c4ai-command-r-plus-GGUF
 	echo.
+	echo https://huggingface.co/RinneAi/Rinne_Style-Bert-VITS2
+	echo.
+	echo "未成年の方はインストール禁止です。"
 	echo "以上の配布元から関連ファイルをダウンロードして利用します（URL を Ctrl + クリックで開けます）。"
 	echo よろしいですか？ [y/n]
 	set /p YES_OR_NO=

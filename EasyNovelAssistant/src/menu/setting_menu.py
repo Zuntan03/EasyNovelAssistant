@@ -10,7 +10,7 @@ class SettingMenu:
         self.ctx = ctx
 
         self.menu = tk.Menu(form.win, tearoff=False)
-        self.form.menu_bar.add_cascade(label="(New) 設定", menu=self.menu)
+        self.form.menu_bar.add_cascade(label="設定", menu=self.menu)
         self.menu.configure(postcommand=self._on_menu_open)
 
     def _on_menu_open(self):

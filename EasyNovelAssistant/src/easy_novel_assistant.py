@@ -6,6 +6,7 @@ from form import Form
 from generator import Generator
 from kobold_cpp import KoboldCpp
 from path import Path
+from style_bert_vits2 import StyleBertVits2
 
 
 class EasyNovelAssistant:
@@ -17,6 +18,7 @@ class EasyNovelAssistant:
         Const.init(self.ctx)
 
         self.ctx.kobold_cpp = KoboldCpp(self.ctx)
+        self.ctx.style_bert_vits2 = StyleBertVits2(self.ctx)
         self.ctx.form = Form(self.ctx)
 
         self.ctx.file_menu = self.ctx.form.file_menu
@@ -36,6 +38,7 @@ class EasyNovelAssistant:
 
     def mainloop(self):
         self.ctx.generator.update()
+        self.ctx.style_bert_vits2.update()
         self.ctx.form.win.after(self.SLEEP_TIME, self.mainloop)
 
 

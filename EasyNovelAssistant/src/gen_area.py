@@ -32,23 +32,37 @@ class GenArea:
             self.text_area.see(tk.END)
         self.text_area.configure(state=tk.DISABLED)
 
-    def _on_middle_click(self, e):
+    def _speech(self, e):
+        line_num = self.text_area.index(f"@{e.x},{e.y}").split(".")[0]
+        text = self.text_area.get(f"{line_num}.0", f"{line_num}.end") + "\n"
+        self.ctx.style_bert_vits2.generate(text)
+
+    def _send_to_input(self, e):
         text = None
         if self.text_area.tag_ranges(tk.SEL):
             text = self.text_area.get(tk.SEL_FIRST, tk.SEL_LAST)
         else:
             line_num = self.text_area.index(f"@{e.x},{e.y}").split(".")[0]
             text = self.text_area.get(f"{line_num}.0", f"{line_num}.end") + "\n"
-            # text_area の座標を取得
-            # selected_text に text_area を中クリックした行のテキストを代入
-
         self.ctx.input_area.insert_text(text)
+
+    def _on_middle_click(self, e):
+        if self.ctx["middle_click_speech"]:
+            self._speech(e)
+        else:
+            self._send_to_input(e)
         return "break"
 
     def _on_ctx_menu(self, event):
         self.ctx_menu.delete(0, tk.END)
 
-        self.ctx_menu.add_command(label="入力欄に送る", command=lambda: self._on_middle_click(None))
+        if self.ctx.style_bert_vits2.models is None:
+            self.ctx.style_bert_vits2.get_models()
+
+        if self.ctx.style_bert_vits2.models is not None:
+            self.ctx_menu.add_command(label="読み上げる", command=lambda: self._speech(event))
+
+        self.ctx_menu.add_command(label="入力欄に送る", command=lambda: self._send_to_input(event))
 
         self.text_area.mark_set(tk.INSERT, f"@{event.x},{event.y}")
         self.ctx_menu.post(event.x_root, event.y_root)

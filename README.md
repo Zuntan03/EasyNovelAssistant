@@ -23,6 +23,32 @@
 
 **サンプルに `{char_name}` や `{user_name}` が表示される場合は、`Update-EasyNovelAssistant.bat` で更新してください。**
 
+### 2024/04/30
+
+[![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.png)](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.mp4)
+![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.mp4)
+
+- [Style-Bert-VITS2](https://github.com/litagin02/Style-Bert-VITS2) による読み上げに対応しました。  
+	- 中クリックによる手動読み上げと、`キャラ名「～」` セリフフォーマットによる生成時自動読み上げに対応しています。
+	- `Style-Bert-VITS2/` フォルダ内は通常の Style-Bert-VITS2 として利用できます。
+		- Style-Bert-VITS2 のチュートリアル: [YouTube](https://www.youtube.com/watch?v=aTUSzgDl1iY), [ニコニコ](https://www.nicovideo.jp/watch/sm43391524)
+		- `Style-Bert-VITS2/Editor.bat` で、音程調整ありの音声生成ができます。
+		- モデルの追加は `Style-Bert-VITS2/model_assets/` にフォルダを作ってモデルのファイルを配置します。
+			- 例）`Style-Bert-VITS2/model_assets/` に [`tsukuyomi-chan/`](https://huggingface.co/ayousanz/tsukuyomi-chan-style-bert-vits2-model) フォルダを作成して、[`.safetensors`](https://huggingface.co/ayousanz/tsukuyomi-chan-style-bert-vits2-model/resolve/main/tsukuyomi-chan_e200_s5200.safetensors) と [`config.json`](https://huggingface.co/ayousanz/tsukuyomi-chan-style-bert-vits2-model/resolve/main/config.json) と [`style_vectors.npy`](https://huggingface.co/ayousanz/tsukuyomi-chan-style-bert-vits2-model/resolve/main/style_vectors.npy) を保存するとモデルを利用できます。
+		- `Style-Bert-VITS2/App.bat` でお手元の音声データからモデルを作成できます。
+			- 音声の分割、読みの追加など学習に必要な機能が一通り揃っています。詳細は [公式ページ](https://github.com/litagin02/Style-Bert-VITS2#%E5%AD%A6%E7%BF%92) を参照ください。
+
+#### 読み上げ利用手順
+
+1. EasyNovelAssistant を起動したら、[`読み上げ`] - [`Style-Bert-VITS2 をインストール"`] でインストールの完了を待ちます。
+1. インストールが完了したら [`読み上げ`] - [`読み上げサーバーを立ち上げる`] で読み上げサーバーの起動を待ちます。
+	- `Style-Bert-VITS2 読み上げサーバー` に `00-00 00:00:00 |  INFO  | server_fastapi.py:306 | server listen: http://127.0.0.1:5000` が表示されたら起動完了です。
+	- **LLM(KoboldCpp) で VRAM ギリギリまで GPU レイヤーを増やしていた場合は、VRAM を 2GB 程度開けるために GPU レイヤーを 5 枚程度(Run-LightChatAssistant-2x7B-IQ4_XS 換算) 減らしてください。**
+	- **VRAM が 6GB 未満の場合は [`読み上げ`] - [`GPU を使用する`] を無効にします。**
+	- KoboldCpp と同様に `Style-Bert-VITS2/Server.bat` や `Style-Bert-VITS2/ServerCpu.bat` で、あらかじめ読み上げサーバーを立ち上げておくこともできます。
+1. 読み上げサーバーが起動したら、[`読み上げ`] メニューで読み上げの有効/無効、音量、スピード、声の選択ができます。
+1. 中クリックで読み上げたり、[`読み上げサンプル`] メニューを参考に生成時に自動で読み上げたりできます。
+
 ### 2024/04/28
 
 - [`設定`] メニューでサンプル用のキャラクター名とユーザー名を指定できるようにしました。
@@ -68,7 +94,6 @@ Geforce RTX 3060 12GB なら `13.5 T/s` です。
 ## インストールと更新
 
 問題が発生したら [インストールのトラブルシューティング](#インストールのトラブルシューティング) を確認してください。  
-未成年の方は利用しないでください。
 
 1. [`Install-EasyNovelAssistant.bat`](https://github.com/Zuntan03/EasyNovelAssistant/raw/main/EasyNovelAssistant/setup/Install-EasyNovelAssistant.bat?v=2) を右クリックからダウンロードして、**パスが英数字のインストール先フォルダ** でダブルクリックして実行します。
 	- **`WindowsによってPCが保護されました` と表示されたら、`詳細表示` から `実行` します。**
@@ -81,6 +106,7 @@ Geforce RTX 3060 12GB なら `13.5 T/s` です。
 
 [Linux 版（moc67331 さん作）](https://github.com/Zuntan03/EasyNovelAssistant/issues/1) の [`Install-EasyNovelAssistant.sh`](https://github.com/Zuntan03/EasyNovelAssistant/raw/main/EasyNovelAssistant/setup/Install-EasyNovelAssistant.sh?v=0) も同様に、インストール先フォルダで実行してインストールします。  
 動作確認をしてませんので、動かなかったらパッチをください。
+読み上げはインストール先に [Style-Bert-VITS2](https://github.com/litagin02/Style-Bert-VITS2) をインストールして、`EasyNovelAssistant/setup/res/config.yml` を `Style-Bert-VITS2/` にコピーすれば動作するかもです。
 
 ### はじめての生成
 
@@ -193,4 +219,6 @@ RAM 64GB だと超カツカツですが、[CommandR+ の `IQ4_XS` が `L4` で�
 
 このリポジトリの内容は以下を除き [MIT License](./LICENSE.txt) です。
 
+- インストール時に [ダウンロードするモノの一覧](https://github.com/Zuntan03/EasyNovelAssistant/blob/48350f45c838e4cda4f2a977c446e1f4141c858f/EasyNovelAssistant/setup/Install-EasyNovelAssistant.bat#L31) を表示します。
 - `EasyNovelAssistant/setup/res/tkinter-PythonSoftwareFoundationLicense.zip` は Python Software Foundation License です。
+- [Style-Bert-VITS2](https://github.com/litagin02/Style-Bert-VITS2) がダウンロードする [JVNV](https://sites.google.com/site/shinnosuketakamichi/research-topics/jvnv_corpus) 派生物は [CC BY-SA 4.0 DEED](https://creativecommons.org/licenses/by-sa/4.0/deed.ja) です。

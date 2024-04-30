@@ -28,6 +28,8 @@ CLONE_URL="https://github.com/"$GITHUB"/EasyNovelAssistant"
 if [ ! -d "$APP_VENV_DIR" ]; then
     echo "https://github.com/"$GITHUB"/EasyNovelAssistant"
     echo "https://github.com/LostRuins/koboldcpp"
+    echo "https://github.com/litagin02/Style-Bert-VITS2"
+    echo "https://github.com/BtbN/FFmpeg-Builds"
     echo
     echo "https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF"
     echo "https://huggingface.co/Sdff-Ltba/LightChatAssistant-2x7B-GGUF"
@@ -40,6 +42,9 @@ if [ ! -d "$APP_VENV_DIR" ]; then
     echo "https://huggingface.co/dranger003/c4ai-command-r-plus-iMat.GGUF"
     echo "https://huggingface.co/pmysl/c4ai-command-r-plus-GGUF"
     echo
+    echo "https://huggingface.co/RinneAi/Rinne_Style-Bert-VITS2"
+    echo
+    echo "未成年の方はインストール禁止です。"
     echo "以上の配布元から関連ファイルをダウンロードして利用します。"
     read -p "よろしいですか？ [y/n] " YES_OR_NO
     if [ "$YES_OR_NO" != "y" ]; then

@@ -19,6 +19,11 @@ if exist nsfw.json (
 	%CURL_CMD% -sLO https://yyy.wpx.jp/EasyNovelAssistant/sample/nsfw.json
 	if !errorlevel! neq 0 ( pause & popd & exit /b 1 )
 )
+if exist speech.json (
+	echo %CURL_CMD% -sLO https://yyy.wpx.jp/EasyNovelAssistant/sample/speech.json
+	%CURL_CMD% -sLO https://yyy.wpx.jp/EasyNovelAssistant/sample/speech.json
+	if !errorlevel! neq 0 ( pause & popd & exit /b 1 )
+)
 endlocal
 popd
 

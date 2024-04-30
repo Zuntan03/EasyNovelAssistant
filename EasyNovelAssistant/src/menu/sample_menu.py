@@ -29,6 +29,12 @@ class SampleMenu:
                 "path": "nsfw.json",
                 "splitter_names": ["ボーイズラブ、ファンタジー、悪魔、美形", "妄想ジェネレーター"],
             },
+            {
+                "label": "読み上げサンプル",
+                "mode": "set",
+                "path": "speech.json",
+                "splitter_names": [],
+            },
         ]
 
         for desc in descs:

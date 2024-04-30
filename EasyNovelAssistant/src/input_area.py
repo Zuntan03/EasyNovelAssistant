@@ -15,8 +15,7 @@ class InputArea:
         self.ctx_menu = tk.Menu(self.text_area, tearoff=False)
         self.text_area.bind("<Button-3>", self._on_ctx_menu)
 
-        # 中クリックのペーストを無効化
-        self.text_area.bind("<Button-2>", lambda e: "break")
+        self.text_area.bind("<Button-2>", self._on_middle_click)
 
     def set_text(self, text):
         self.text_area.delete("1.0", tk.END)
@@ -36,6 +35,11 @@ class InputArea:
     def get_text(self):
         return self.text_area.get("1.0", "end-1c")
 
+    def _speech(self, e):
+        line_num = self.text_area.index(f"@{e.x},{e.y}").split(".")[0]
+        text = self.text_area.get(f"{line_num}.0", f"{line_num}.end") + "\n"
+        self.ctx.style_bert_vits2.generate(text)
+
     def _insert_instruct_tag(self):
         sequence = self.ctx.kobold_cpp.get_instruct_sequence()
         if sequence is None:
@@ -46,8 +50,19 @@ class InputArea:
         else:
             self.text_area.insert(tk.INSERT, sequence.format(""))
 
+    def _on_middle_click(self, e):
+        if self.ctx["middle_click_speech"]:
+            self._speech(e)
+        return "break"
+
     def _on_ctx_menu(self, event):
         self.ctx_menu.delete(0, tk.END)
+
+        if self.ctx.style_bert_vits2.models is None:
+            self.ctx.style_bert_vits2.get_models()
+
+        if self.ctx.style_bert_vits2.models is not None:
+            self.ctx_menu.add_command(label="読み上げる", command=lambda: self._speech(event))
 
         sequence = self.ctx.kobold_cpp.get_instruct_sequence()
         if sequence is not None:

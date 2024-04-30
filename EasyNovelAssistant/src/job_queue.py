@@ -75,3 +75,6 @@ class JobQueue:
             self._queue[i].cancel()
             if self._queue[i].finished:
                 self._queue.pop(i)
+
+    def len(self):
+        return len(self._queue) + (0 if (self._current is None) or self._current.finished else 1)
