@@ -3,8 +3,16 @@
 軽量で規制も検閲もない日本語ローカル LLM『[LightChatAssistant-TypeB](https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF)』による、簡単なノベル生成アシスタントです。  
 ローカル特権の永続生成 Generate forever で、当たりガチャを積み上げます。
 
-## 利用者の感想
+## 利用者の声
 
+### 記事
+
+- 『[【検閲なし】GPUで生成するローカルAIチャット環境と小説企画＋執筆用ゴールシークプロンプトで叡智小説生成最強に見える](https://note.com/kagami_kami/n/n3a321d926684)』[@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1785313774620246194)
+
+### つぶやき
+
+[@kgmkm_inma_ai](https://twitter.com/kgmkm_inma_ai/status/1785149941448663443)
+[@mikumiku_aloha](https://twitter.com/mikumiku_aloha/status/1785300629461799372)
 [@AonekoSS](https://twitter.com/AonekoSS/status/1784650868195024996) <!--  -->
 [@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1784446620916146273),
 [@2ewsHQJgnvkGNPr](https://twitter.com/2ewsHQJgnvkGNPr/status/1784123670451130527),
