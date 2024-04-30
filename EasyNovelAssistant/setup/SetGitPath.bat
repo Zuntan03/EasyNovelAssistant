@@ -5,7 +5,7 @@ where /Q git
 if %ERRORLEVEL% equ 0 ( exit /b 0 )
 cd > NUL
 
-set PORTABLE_GIT_DIR=%~dp0..\lib\PortableGit
+set PORTABLE_GIT_DIR=%~dp0lib\PortableGit\bin
 if not exist %PORTABLE_GIT_DIR% (
 	echo [Error] git が見つかりませんでした。Git for Windows をインストールしてください。
 	start https://gitforwindows.org/

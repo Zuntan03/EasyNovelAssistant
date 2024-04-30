@@ -25,8 +25,8 @@
 
 ### 2024/04/30
 
-[![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.png)](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.mp4)
-![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.mp4)
+[![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.png)](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.mp4)  
+[動画 DL](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.mp4)
 
 - [Style-Bert-VITS2](https://github.com/litagin02/Style-Bert-VITS2) による読み上げに対応しました。  
 	- 中クリックによる手動読み上げと、`キャラ名「～」` セリフフォーマットによる生成時自動読み上げに対応しています。
