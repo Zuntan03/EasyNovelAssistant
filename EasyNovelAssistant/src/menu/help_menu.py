@@ -10,12 +10,14 @@ class HelpMenu:
         self.ctx = ctx
 
         self.menu = tk.Menu(form.win, tearoff=False)
-        self.form.menu_bar.add_cascade(label="ヘルプ", menu=self.menu)
+        self.form.menu_bar.add_cascade(label="(New) ヘルプ", menu=self.menu)
         self.menu.configure(postcommand=self.on_menu_open)
 
     def on_menu_open(self):
         self.menu.delete(0, tk.END)
-        ena = "https://github.com/Zuntan03/EasyNovelAssistant"
+
+        cmd = lambda: self._show_url("https://note.com/kagami_kami/n/n3a321d926684")
+        self.menu.add_command(label="(New) ゴールシーク", command=cmd)
 
         sample_menu = tk.Menu(self.menu, tearoff=False)
         self.menu.add_cascade(label="サンプル原典", menu=sample_menu)
@@ -48,7 +50,7 @@ class HelpMenu:
         self._show_hf_url(reference_menu, "pmysl/c4ai-command-r-plus-GGUF")
 
         self.menu.add_separator()
-        cmd = lambda: self._show_url(ena)
+        cmd = lambda: self._show_url("https://github.com/Zuntan03/EasyNovelAssistant")
         self.menu.add_command(label="EasyNovelAssistant", command=cmd)
 
     def _show_hf_url(self, menu, hf_name):

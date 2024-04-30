@@ -17,10 +17,13 @@ class SampleMenu:
 
         descs = [
             {
-                "label": "テンプレート",
+                "label": "(New) テンプレート",
                 "mode": "insert",
                 "path": "template.json",
-                "splitter_names": ["画像生成用プロンプト（実験的）"],
+                "splitter_names": [
+                    "(New) ゴールシーク: 生成した設定とプロットで執筆",
+                    "キャラ画像生成用プロンプト（実験的）",
+                ],
             },
             {"label": "サンプル", "mode": "set", "path": "sample.json", "splitter_names": []},
             {

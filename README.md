@@ -31,6 +31,12 @@
 
 **サンプルに `{char_name}` や `{user_name}` が表示される場合は、`Update-EasyNovelAssistant.bat` で更新してください。**
 
+### 2024/05/01
+
+- `テンプレート` メニューに `ゴールシーク: 小説企画からプロッティング` と `ゴールシーク: 生成した設定とプロットで執筆` を追加しました。
+	- 使い方は『[【検閲なし】GPUで生成するローカルAIチャット環境と小説企画＋執筆用ゴールシークプロンプトで叡智小説生成最強に見える](https://note.com/kagami_kami/n/n3a321d926684)』を確認ください。
+	- `ヘルプ` の `ゴールシーク` からも上記記事を確認できます。
+
 ### 2024/04/30
 
 [![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.png)](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.mp4)  
