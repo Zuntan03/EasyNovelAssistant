@@ -50,6 +50,7 @@
 		- `Style-Bert-VITS2/Editor.bat` で、音程調整ありの音声生成ができます。
 		- モデルの追加は `Style-Bert-VITS2/model_assets/` にフォルダを作ってモデルのファイルを配置します。
 			- 例）`Style-Bert-VITS2/model_assets/` に [`tsukuyomi-chan/`](https://huggingface.co/ayousanz/tsukuyomi-chan-style-bert-vits2-model) フォルダを作成して、[`.safetensors`](https://huggingface.co/ayousanz/tsukuyomi-chan-style-bert-vits2-model/resolve/main/tsukuyomi-chan_e200_s5200.safetensors) と [`config.json`](https://huggingface.co/ayousanz/tsukuyomi-chan-style-bert-vits2-model/resolve/main/config.json) と [`style_vectors.npy`](https://huggingface.co/ayousanz/tsukuyomi-chan-style-bert-vits2-model/resolve/main/style_vectors.npy) を保存するとモデルを利用できます。
+			- 他のモデル: [Anneli](https://booth.pm/ja/items/5511064), [Anneli-nsfw](https://booth.pm/ja/items/5511852)
 		- `Style-Bert-VITS2/App.bat` でお手元の音声データからモデルを作成できます。
 			- 音声の分割、読みの追加など学習に必要な機能が一通り揃っています。詳細は [公式ページ](https://github.com/litagin02/Style-Bert-VITS2#%E5%AD%A6%E7%BF%92) を参照ください。
 
