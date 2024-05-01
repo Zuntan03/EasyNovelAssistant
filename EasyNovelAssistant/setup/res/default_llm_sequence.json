@@ -20,7 +20,7 @@
 			"[/INST]"
 		]
 	},
-	"Ninja-v1": {
+	"Ninja": {
 		"instruct": "USER: </s>\nUSER: {0}\nASSISTANT: ",
 		"stop": [
 			"USER:",

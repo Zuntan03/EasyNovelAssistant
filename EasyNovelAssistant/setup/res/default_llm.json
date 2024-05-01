@@ -6,6 +6,13 @@
 			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-GGUF/resolve/main/Ninja-v1-NSFW_Q_8_0.gguf"
 		]
 	},
+	"Ninja-v1-NSFW-128k-Q_8_0": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-128k-GGUF/resolve/main/Ninja-NSFW-128k_Q_8_0.gguf"
+		]
+	},
 	"Vecteus-v1-Q4_K": {
 		"max_gpu_layer": 33,
 		"context_size": 4096,

@@ -42,6 +42,7 @@ if [ ! -d "$APP_VENV_DIR" ]; then
     echo "https://huggingface.co/dranger003/c4ai-command-r-plus-iMat.GGUF"
     echo "https://huggingface.co/pmysl/c4ai-command-r-plus-GGUF"
     echo "https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-GGUF"
+    echo "https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-128k-GGUF"
     echo "https://huggingface.co/Local-Novel-LLM-project/Vecteus-v1-gguf"
     echo "https://huggingface.co/mmnga/umiyuki-Japanese-Chat-Umievo-itr001-7b-gguf"
     echo
