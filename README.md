@@ -34,13 +34,17 @@
 
 ### 2024/05/01
 
+- モデルに [`Ninja-v1-NSFW-Q_8_0`](https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-GGUF), [`Vecteus-v1-Q4_K`](https://huggingface.co/Local-Novel-LLM-project/Vecteus-v1-gguf), [`umiyuki-Japanese-Chat-Umievo-itr001-7b-Q4_K_M`](https://huggingface.co/mmnga/umiyuki-Japanese-Chat-Umievo-itr001-7b-gguf) を追加しました。
 - `テンプレート` メニューに `ゴールシーク: 小説企画からプロッティング` と `ゴールシーク: 生成した設定とプロットで執筆` を追加しました。
 	- 使い方は『[【検閲なし】GPUで生成するローカルAIチャット環境と小説企画＋執筆用ゴールシークプロンプトで叡智小説生成最強に見える](https://note.com/kagami_kami/n/n3a321d926684)』を確認ください。
 	- `ヘルプ` の `ゴールシーク` からも上記記事を確認できます。
+- 読み上げ文章の抽出ロジックを変更しました。
+	- より文脈に沿った読み上げになりますが、文末ノイズが乗る可能性があります。
+		- 個別に対処しますので、文末ノイズが乗る文面がありましたら、連絡をください。
 
 ### 2024/04/30
 
-[![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.png)](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.mp4)  
+[![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.png)](https://twitter.com/Zuntan03/status/1785252082343440723)  
 [動画 DL](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.mp4)
 
 - [Style-Bert-VITS2](https://github.com/litagin02/Style-Bert-VITS2) による読み上げに対応しました。  

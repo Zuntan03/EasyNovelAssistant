@@ -60,13 +60,15 @@ class Generator:
                     if result != self.gen_area_text:
                         if result.startswith(self.gen_area_text):
                             append_text = result[len(self.gen_area_text) :]
+
                             lines = (self.last_line + append_text).splitlines()
                             if len(lines) > 0:
                                 for line in lines[:-1]:
                                     self._auto_speech(line)
                                 self.last_line = lines[-1]
-                            else:
-                                self.last_line = self.last_line + append_text
+                                if append_text.endswith("\n"):
+                                    self._auto_speech(self.last_line)
+                                    self.last_line = ""
                             self.ctx.form.gen_area.append_text(append_text)
                         else:
                             lines = result.splitlines()
@@ -74,6 +76,9 @@ class Generator:
                                 for line in lines[:-1]:
                                     self._auto_speech(line)
                                 self.last_line = lines[-1]
+                                if result.endswith("\n"):
+                                    self._auto_speech(self.last_line)
+                                    self.last_line = ""
                             else:
                                 self.last_line = ""
                             self.ctx.form.gen_area.set_text(result)
@@ -95,24 +100,39 @@ class Generator:
         self.gen_queue.update()
 
     def _auto_speech(self, text):
-        text = text.replace(f'{self.ctx["char_name"]}「', f'\n{self.ctx["char_name"]}「')
-        text = text.replace(f'{self.ctx["user_name"]}「', f'\n{self.ctx["user_name"]}「')
-        lines = text.splitlines()
-
-        char_start = f'{self.ctx["char_name"]}「'
-        user_start = f'{self.ctx["user_name"]}「'
-        for line in lines:
-            if line == "":
-                continue
-            if line.startswith(char_start):
+        if text == "":
+            return
+        if "「" in text:
+            name = text.split("「", 1)[0]
+            if self.ctx["char_name"] in name:
                 if self.ctx["auto_speech_char"]:
-                    self.ctx.style_bert_vits2.generate(line)
-            elif line.startswith(user_start):
+                    self.ctx.style_bert_vits2.generate(text)
+            elif self.ctx["user_name"] in name:
                 if self.ctx["auto_speech_user"]:
-                    self.ctx.style_bert_vits2.generate(line)
+                    self.ctx.style_bert_vits2.generate(text)
             else:
                 if self.ctx["auto_speech_other"]:
-                    self.ctx.style_bert_vits2.generate(line)
+                    self.ctx.style_bert_vits2.generate(text)
+
+    # def _auto_speech(self, text):
+    #     text = text.replace(f'{self.ctx["char_name"]}「', f'\n{self.ctx["char_name"]}「')
+    #     text = text.replace(f'{self.ctx["user_name"]}「', f'\n{self.ctx["user_name"]}「')
+    #     lines = text.splitlines()
+
+    #     char_start = f'{self.ctx["char_name"]}「'
+    #     user_start = f'{self.ctx["user_name"]}「'
+    #     for line in lines:
+    #         if line == "":
+    #             continue
+    #         if line.startswith(char_start):
+    #             if self.ctx["auto_speech_char"]:
+    #                 self.ctx.style_bert_vits2.generate(line)
+    #         elif line.startswith(user_start):
+    #             if self.ctx["auto_speech_user"]:
+    #                 self.ctx.style_bert_vits2.generate(line)
+    #         else:
+    #             if self.ctx["auto_speech_other"]:
+    #                 self.ctx.style_bert_vits2.generate(line)
 
     def _generate(self, input_text):
         return self.ctx.kobold_cpp.generate(input_text)

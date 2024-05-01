@@ -1,4 +1,25 @@
 ﻿{
+	"Ninja-v1-NSFW-Q_8_0": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-GGUF/resolve/main/Ninja-v1-NSFW_Q_8_0.gguf"
+		]
+	},
+	"Vecteus-v1-Q4_K": {
+		"max_gpu_layer": 33,
+		"context_size": 4096,
+		"urls": [
+			"https://huggingface.co/Local-Novel-LLM-project/Vecteus-v1-gguf/resolve/main/ggml-model-Q4_K.gguf"
+		]
+	},
+	"umiyuki-Japanese-Chat-Umievo-itr001-7b-Q4_K_M": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/mmnga/umiyuki-Japanese-Chat-Umievo-itr001-7b-gguf/resolve/main/umiyuki-Japanese-Chat-Umievo-itr001-7b-Q4_K_M.gguf"
+		]
+	},
 	"LightChatAssistant-TypeB-2x7B-IQ4_XS": {
 		"max_gpu_layer": 33,
 		"context_size": 32768,

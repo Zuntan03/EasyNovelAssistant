@@ -20,6 +20,21 @@
 			"[/INST]"
 		]
 	},
+	"Ninja-v1": {
+		"instruct": "USER: </s>\nUSER: {0}\nASSISTANT: ",
+		"stop": [
+			"USER:",
+			"ASSISTANT:",
+			"</s>"
+		]
+	},
+	"umiyuki-Japanese-Chat-Umievo-itr001-7b": {
+		"instruct": "[INST] {0} [/INST]",
+		"stop": [
+			"[INST]",
+			"[/INST]"
+		]
+	},
 	"japanese-starling": {
 		"instruct": "[INST] <<SYS>>\n<</SYS>>\n\n{0} [/INST]",
 		"stop": [

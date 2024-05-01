@@ -5,14 +5,18 @@ from path import Path
 
 
 class ModelMenu:
-    SEPALATER_NAMES = ["LightChatAssistant-4x7B-IQ4_XS", "JapaneseStarlingChatV-7B-Q4_K_M"]
+    SEPALATER_NAMES = [
+        "umiyuki-Japanese-Chat-Umievo-itr001-7b-Q4_K_M",
+        "LightChatAssistant-4x7B-IQ4_XS",
+        "JapaneseStarlingChatV-7B-Q4_K_M",
+    ]
 
     def __init__(self, form, ctx):
         self.form = form
         self.ctx = ctx
 
         self.menu = tk.Menu(form.win, tearoff=False)
-        self.form.menu_bar.add_cascade(label="モデル", menu=self.menu)
+        self.form.menu_bar.add_cascade(label="(New) モデル", menu=self.menu)
         self.menu.configure(postcommand=self.on_menu_open)
 
     def on_menu_open(self):
@@ -22,6 +26,9 @@ class ModelMenu:
             llm = self.ctx.llm[llm_name]
             llm_menu = tk.Menu(self.menu, tearoff=False)
             self.menu.add_cascade(label=llm_name, menu=llm_menu)
+
+            if llm_name in self.SEPALATER_NAMES:
+                self.menu.add_separator()
 
             llm_path = os.path.join(Path.kobold_cpp, llm["file_name"])
             if not os.path.exists(llm_path):
@@ -43,9 +50,6 @@ class ModelMenu:
                     llm_menu.add_command(
                         label=f"L{gpu_layer}", command=lambda ln=llm_name, gl=gpu_layer: self.select_model(ln, gl)
                     )
-
-            if llm_name in self.SEPALATER_NAMES:
-                self.menu.add_separator()
 
     def select_model(self, llm_name, gpu_layer):
         self.ctx["llm_name"] = llm_name

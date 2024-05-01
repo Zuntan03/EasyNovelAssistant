@@ -48,6 +48,9 @@ class HelpMenu:
         self._show_hf_url(reference_menu, "andrewcanis/c4ai-command-r-v01-GGUF")
         self._show_hf_url(reference_menu, "dranger003/c4ai-command-r-plus-iMat.GGUF")
         self._show_hf_url(reference_menu, "pmysl/c4ai-command-r-plus-GGUF")
+        self._show_hf_url(reference_menu, "Local-Novel-LLM-project/Ninja-v1-NSFW-GGUF")
+        self._show_hf_url(reference_menu, "Local-Novel-LLM-project/Vecteus-v1-gguf")
+        self._show_hf_url(reference_menu, "umiyuki-Japanese-Chat-Umievo-itr001-7b-gguf")
 
         self.menu.add_separator()
         cmd = lambda: self._show_url("https://github.com/Zuntan03/EasyNovelAssistant")

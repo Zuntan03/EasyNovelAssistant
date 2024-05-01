@@ -1,2 +1,3 @@
 ﻿requests==2.31.0
 tkinterdnd2==0.3.0
+scipy==1.13.0

@@ -4,12 +4,15 @@ import subprocess
 import time
 from sys import platform
 
+import numpy as np
 import requests
 from job_queue import JobQueue
 from path import Path
+from scipy.io import wavfile
 
 
 class StyleBertVits2:
+    SILENT_SEC = 0.3
 
     def __init__(self, ctx):
         self.ctx = ctx
@@ -76,37 +79,60 @@ class StyleBertVits2:
             return None
 
         model_id = 0
-        char_start = f'{self.ctx["char_name"]}「'
-        user_start = f'{self.ctx["user_name"]}「'
-        text = text.strip()
-        if text.startswith(char_start):
-            if self.ctx["char_voice"] in self.models:
-                model_id = self.models[self.ctx["char_voice"]]
-            text = text[len(char_start) :]
-            if text.endswith("」"):
-                text = text[:-1]
-        elif text.startswith(user_start):
-            if self.ctx["user_voice"] in self.models:
-                model_id = self.models[self.ctx["user_voice"]]
-            text = text[len(user_start) :]
-            if text.endswith("」"):
-                text = text[:-1]
-        else:
-            if self.ctx["other_voice"] in self.models:
-                model_id = self.models[self.ctx["other_voice"]]
-
-        nl_text = text
-        new_line_tokens = "。.！!？?…♪♥️♡"
-        for token in new_line_tokens:
-            nl_text = nl_text.replace(token + token + token, token).replace(token + token, token)
-            nl_text = nl_text.replace(token, f"{token}\n")
-        nl_text += "\n "
+        if "「" in text:
+            name, msg = text.split("「", 1)
+            if msg.endswith("」"):
+                msg = msg[:-1]
+            if self.ctx["char_name"] in name:
+                if self.ctx["char_voice"] in self.models:
+                    model_id = self.models[self.ctx["char_voice"]]
+                    text = msg
+            elif self.ctx["user_name"] in name:
+                if self.ctx["user_voice"] in self.models:
+                    model_id = self.models[self.ctx["user_voice"]]
+                    text = msg
+            else:
+                if self.ctx["other_voice"] in self.models:
+                    model_id = self.models[self.ctx["other_voice"]]
 
         params = {
-            "text": nl_text,
+            "text": text,
             "model_id": model_id,
             "split_interval": 0.2,
         }
+
+        # model_id = 0
+        # char_start = f'{self.ctx["char_name"]}「'
+        # user_start = f'{self.ctx["user_name"]}「'
+        # text = text.strip()
+        # if text.startswith(char_start):
+        #     if self.ctx["char_voice"] in self.models:
+        #         model_id = self.models[self.ctx["char_voice"]]
+        #     text = text[len(char_start) :]
+        #     if text.endswith("」"):
+        #         text = text[:-1]
+        # elif text.startswith(user_start):
+        #     if self.ctx["user_voice"] in self.models:
+        #         model_id = self.models[self.ctx["user_voice"]]
+        #     text = text[len(user_start) :]
+        #     if text.endswith("」"):
+        #         text = text[:-1]
+        # else:
+        #     if self.ctx["other_voice"] in self.models:
+        #         model_id = self.models[self.ctx["other_voice"]]
+
+        # nl_text = text
+        # new_line_tokens = "。.！!？?…♪♥️♡"
+        # for token in new_line_tokens:
+        #     nl_text = nl_text.replace(token + token + token, token).replace(token + token, token)
+        #     nl_text = nl_text.replace(token, f"{token}\n")
+        # nl_text += "\n "
+
+        # params = {
+        #     "text": nl_text,
+        #     "model_id": model_id,
+        #     "split_interval": 0.2,
+        # }
 
         try:
             start_time = time.perf_counter()
@@ -117,6 +143,13 @@ class StyleBertVits2:
                 wav_path = os.path.join(Path.speech_date, f"{YYYYMMDD_HHMMSS}-{Path.get_path_name(text[:128])}.wav")
                 with open(wav_path, "wb") as f:
                     f.write(response.content)
+
+                # 無音の付与
+                sample_rate, data = wavfile.read(wav_path)
+                silence = np.zeros(int(sample_rate * self.SILENT_SEC))
+                data_with_silence = np.append(data, silence)
+                wavfile.write(wav_path, sample_rate, data_with_silence.astype(np.int16))
+
                 self.play_queue.push(self._play, wav_path=wav_path)
                 print(f"読み上げ {time.perf_counter() - start_time:.2f}秒: {text}")
                 return True
