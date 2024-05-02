@@ -6,7 +6,7 @@
 	"watch_file": false,
 	"style_bert_vits2_host": "localhost",
 	"style_bert_vits2_port": 5000,
-	"style_bert_vits2_gpu": true,
+	"style_bert_vits2_gpu": false,
 	"style_bert_vits2_command_timeout": 0.05,
 	"middle_click_speech": true,
 	"auto_speech_char": true,
