@@ -10,9 +10,12 @@
 ### 記事
 
 - 『[【検閲なし】GPUで生成するローカルAIチャット環境と小説企画＋執筆用ゴールシークプロンプトで叡智小説生成最強に見える](https://note.com/kagami_kami/n/n3a321d926684)』[@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1785313774620246194)
+- 作例『[[AI試運転]スパーリング・ウィズ・ツクモドウ](https://note.com/liruk/n/nfd0bb54903cb)』と[制作の感想](https://twitter.com/liruk/status/1785596479631204420)。
 
 ### つぶやき
 
+[@liruk](https://twitter.com/liruk/status/1785596479631204420),
+[@luta_ai](https://twitter.com/luta_ai/status/1785933828730802214),
 [@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1785805841410691320),
 [@AonekoSS](https://twitter.com/AonekoSS/status/1785327191859122446),
 [@maaibook](https://twitter.com/maaibook/status/1785540609627054413),
