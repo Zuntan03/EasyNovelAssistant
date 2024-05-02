@@ -50,7 +50,7 @@ class Context:
         self.cfg[key] = value
 
     def finalize(self):
-        if not self.file_menu.ask_save():
+        if not self.form.file_menu.ask_save():
             return
         self.form.update_config()
 

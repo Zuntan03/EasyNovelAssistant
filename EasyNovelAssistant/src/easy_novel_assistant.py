@@ -21,9 +21,9 @@ class EasyNovelAssistant:
         self.ctx.style_bert_vits2 = StyleBertVits2(self.ctx)
         self.ctx.form = Form(self.ctx)
 
-        self.ctx.file_menu = self.ctx.form.file_menu
-        self.ctx.model_menu = self.ctx.form.model_menu
-        self.ctx.gen_menu = self.ctx.form.gen_menu
+        # self.ctx.file_menu = self.ctx.form.file_menu
+        # self.ctx.model_menu = self.ctx.form.model_menu
+        # self.ctx.gen_menu = self.ctx.form.gen_menu
 
         self.ctx.input_area = self.ctx.form.input_area
         self.ctx.output_area = self.ctx.form.output_area
@@ -39,6 +39,7 @@ class EasyNovelAssistant:
     def mainloop(self):
         self.ctx.generator.update()
         self.ctx.style_bert_vits2.update()
+        self.ctx.form.file_menu.update()
         self.ctx.form.win.after(self.SLEEP_TIME, self.mainloop)
 
 

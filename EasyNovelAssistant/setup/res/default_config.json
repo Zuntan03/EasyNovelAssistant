@@ -3,6 +3,7 @@
 	"user_name": "俺くん",
 	"input_text": "吾輩は猫である。名前はまだない。",
 	"output_format": "\n### {0}\n{1}\n",
+	"watch_file": false,
 	"style_bert_vits2_host": "localhost",
 	"style_bert_vits2_port": 5000,
 	"style_bert_vits2_gpu": true,

@@ -31,7 +31,7 @@ class Form:
             win_geom += f'+{ctx["win_x"]}+{self.ctx["win_y"]}'
         self.win.geometry(win_geom)
         self.win.protocol("WM_DELETE_WINDOW", self.ctx.finalize)
-        self.win.dnd_bind("<<Drop>>", lambda e: self.ctx.dnd_file(e))
+        self.win.dnd_bind("<<Drop>>", lambda e: self.file_menu.dnd_file(e))
 
         self.menu_bar = tk.Menu(self.win)
         self.win.config(menu=self.menu_bar)

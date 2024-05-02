@@ -53,6 +53,10 @@
 
 ### 2024/05/02
 
+- `ファイル` メニューに `ファイル監視` を追加して、お好みのテキストエディタと連携できるようになりました。  
+	あなたの手に馴染んだテキストエディタで入力を保存すると、EasyNovelAssistant が自動で読み込みます。  
+	これもローカル LLM の利点ですね。  
+	![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/file_watch.png)
 - メニュー周りを整理しました。
 	- `特集テーマ` メニューと `作例や記事` メニューを追加しました。
 	- `モデル` メニューをカテゴリ分けしました。
