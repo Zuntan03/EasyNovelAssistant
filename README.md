@@ -13,15 +13,21 @@
 
 ### つぶやき
 
-[@kgmkm_inma_ai](https://twitter.com/kgmkm_inma_ai/status/1785149941448663443)
-[@AonekoSS](https://twitter.com/AonekoSS/status/1784650868195024996)
-[@StelsRay](https://twitter.com/StelsRay/status/1785338281485553757)
-[@mikumiku_aloha](https://twitter.com/mikumiku_aloha/status/1785300629461799372) <!--  -->
+[@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1785805841410691320),
+[@AonekoSS](https://twitter.com/AonekoSS/status/1785327191859122446),
+[@maaibook](https://twitter.com/maaibook/status/1785540609627054413),
+[@corpsmanWelt](https://twitter.com/corpsmanWelt/status/1785878852792901738),
+[@kiyoshi_shin](https://twitter.com/kiyoshi_shin/status/1785363555132596593),
+[@AINewsDev](https://twitter.com/AINewsDev/status/1784241585183658138),
+[@kgmkm_inma_ai](https://twitter.com/kgmkm_inma_ai/status/1785149941448663443),
+[@AonekoSS](https://twitter.com/AonekoSS/status/1784650868195024996),
+[@StelsRay](https://twitter.com/StelsRay/status/1785338281485553757),
+[@mikumiku_aloha](https://twitter.com/mikumiku_aloha/status/1785300629461799372), <!--  -->
 [@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1784446620916146273),
 [@2ewsHQJgnvkGNPr](https://twitter.com/2ewsHQJgnvkGNPr/status/1784123670451130527),
-[@ainiji981](https://twitter.com/ainiji981/status/1784140730094805215)
-[@Neve_AI](https://twitter.com/Neve_AI/status/1784207868549542307)
-[@WreckerAi](https://twitter.com/WreckerAi/status/1784245468798836773)
+[@ainiji981](https://twitter.com/ainiji981/status/1784140730094805215),
+[@Neve_AI](https://twitter.com/Neve_AI/status/1784207868549542307),
+[@WreckerAi](https://twitter.com/WreckerAi/status/1784245468798836773),
 [@ai_1610](https://twitter.com/ai_1610/status/1784075370330992763),
 [@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1783113042576003282),
 [@kohya_tech](https://twitter.com/kohya_tech/status/1782920101328732513),
@@ -31,6 +37,16 @@
 [0549](https://mercury.bbspink.com/test/read.cgi/onatech/1694810015/549)
 
 ## 最近の更新情報
+
+### [Ninja](https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-128k) の使い方
+
+![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/Ninja.png)
+
+1. 自動で起動している `[元祖] LightChatAssistant-TypeB-2x7B-IQ4_XS` のコマンドプロンプトを閉じます。
+1. `モデル` メニューから `[期待の新人] Ninja-v1-NSFW-128k-Q_8_0` の `L0` を選びます。
+	- `L0` の数値を上げれば上げるほど高速に動作しますが、VRAM が必要になります。
+	- Ninja は 7B ですが量子化が Q8 版で IQ4_XS 版が存在しないため、VRAM 12GB で `L20` 程度での運用になります。
+		- IQ4_XS 版がリリースされたら全レイヤー載せ＋音声合成が RTX 3600 で動きそうです。
 
 ### 2024/05/02
 
