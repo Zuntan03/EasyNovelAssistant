@@ -108,14 +108,14 @@
 		"max_gpu_layer": 33,
 		"context_size": 4096,
 		"urls": [
-			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-GGUF/resolve/main/Ninja-v1-NSFW_Q_8_0.gguf"
+			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-GGUF/resolve/main/Ninja-v1_Q_8_0.gguf"
 		]
 	},
 	"Ninja シリーズ/Ninja-v1-128k-Q_8_0": {
 		"max_gpu_layer": 33,
 		"context_size": 8192,
 		"urls": [
-			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-128k-GGUF/resolve/main/Ninja-NSFW-128k_Q_8_0.gguf"
+			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-128k-GGUF/resolve/main/Ninja-v1-128k_Q_8_0.gguf"
 		]
 	},
 	"軽量級/JapaneseStarlingChatV-7B-Q4_K_M": {

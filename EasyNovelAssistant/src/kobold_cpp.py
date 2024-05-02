@@ -52,18 +52,18 @@ popd
             llm["file_name"] = llm["file_names"][0]
 
             bat_file = os.path.join(Path.kobold_cpp, f'Run-{llm["name"]}-L0.bat')
-            if not os.path.exists(bat_file):
-                curl_cmd = ""
-                for url in llm["urls"]:
-                    curl_cmd += self.CURL_TEMPLATE.format(url=url, file_name=url.split("/")[-1])
-                bat_text = self.BAT_TEMPLATE.format(
-                    curl_cmd=curl_cmd,
-                    option=ctx["koboldcpp_arg"],
-                    context_size=llm["context_size"],
-                    file_name=llm["file_name"],
-                )
-                with open(bat_file, "w", encoding="utf-8") as f:
-                    f.write(bat_text)
+
+            curl_cmd = ""
+            for url in llm["urls"]:
+                curl_cmd += self.CURL_TEMPLATE.format(url=url, file_name=url.split("/")[-1])
+            bat_text = self.BAT_TEMPLATE.format(
+                curl_cmd=curl_cmd,
+                option=ctx["koboldcpp_arg"],
+                context_size=llm["context_size"],
+                file_name=llm["file_name"],
+            )
+            with open(bat_file, "w", encoding="utf-8") as f:
+                f.write(bat_text)
 
     def get_model(self):
         try:
