@@ -41,15 +41,26 @@
 
 ## 最近の更新情報
 
-### [Ninja](https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-128k) の使い方
+### Vecteus や Ninja の使い方
 
 ![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/Ninja.png)
 
 1. 自動で起動している `[元祖] LightChatAssistant-TypeB-2x7B-IQ4_XS` のコマンドプロンプトを閉じます。
-1. `モデル` メニューから `[期待の新人] Ninja-v1-NSFW-128k-Q_8_0` の `L0` を選びます。
+1. `モデル` メニューから `Vecteus` や `Ninja` の `L0` を選びます。
 	- `L0` の数値を上げれば上げるほど高速に動作しますが、VRAM が必要になります。
+	- Vecteus Q4_K_M なので VRAM 12GB でも全 33 レイヤーが載ります。
 	- Ninja は 7B ですが量子化が Q8 版で IQ4_XS 版が存在しないため、VRAM 12GB で `L20` 程度での運用になります。
 		- IQ4_XS 版がリリースされたら全レイヤー載せ＋音声合成が RTX 3600 で動きそうです。
+
+Vecteus と Ninja の個人の感想
+
+- Vecteus Q4_K のコスパが凄まじい。ぜひ IQ4_XS 版を触ってみたい。
+	- Vecteus のコンテキスト広げた版にも期待。
+- Ninja も 128K でない版を 4K コンテキストで動かしていると良好。
+	- 128K 版ではコンテキスト 16K あたりから品質に悪影響があるような気がする？（LCA 32K 感覚比）
+		- とりあえず 128K 版を 8K 運用。
+- Ninja に Instruction format を適用すると、申し訳される？
+- Ninja の量子化が Q_8_0 までしか無い。IQ4_XS 版を触ってみたい。
 
 ### 2024/05/02
 

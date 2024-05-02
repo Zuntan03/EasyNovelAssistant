@@ -6,7 +6,7 @@
 			"https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF/resolve/main/LightChatAssistant-TypeB-2x7B_iq4xs_imatrix.gguf"
 		]
 	},
-	"[速い] Vecteus-v1-Q4_K": {
+	"[良く速い] Vecteus-v1-Q4_K": {
 		"max_gpu_layer": 33,
 		"context_size": 4096,
 		"urls": [
@@ -78,7 +78,7 @@
 	},
 	"Ninja シリーズ/Ninja-v1-NSFW-128k-Q_8_0": {
 		"max_gpu_layer": 33,
-		"context_size": 32768,
+		"context_size": 8192,
 		"urls": [
 			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-128k-GGUF/resolve/main/Ninja-NSFW-128k_Q_8_0.gguf"
 		]
@@ -92,7 +92,7 @@
 	},
 	"Ninja シリーズ/Ninja-v1-128k-Q_8_0": {
 		"max_gpu_layer": 33,
-		"context_size": 32768,
+		"context_size": 8192,
 		"urls": [
 			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-128k-GGUF/resolve/main/Ninja-NSFW-128k_Q_8_0.gguf"
 		]
