@@ -13,9 +13,9 @@ pip install -r ./EasyNovelAssistant/setup/res/requirements.txt
 mkdir -p KoboldCpp
 cd KoboldCpp
 
-if [ ! -e "koboldcpp-linux-x64" ]; then
-    curl -LO https://github.com/LostRuins/koboldcpp/releases/download/v1.63/koboldcpp-linux-x64
-    chmod +x koboldcpp-linux-x64
+if [ ! -e "koboldcpp-linux-x64-cuda1150" ]; then
+    curl -LO https://github.com/LostRuins/koboldcpp/releases/download/v1.64/koboldcpp-linux-x64-cuda1150
+    chmod +x koboldcpp-linux-x64-cuda1150
 fi
 
 if [ ! -e "LightChatAssistant-TypeB-2x7B_iq4xs_imatrix.gguf" ]; then

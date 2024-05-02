@@ -37,11 +37,14 @@
 - メニュー周りを整理しました。
 	- `特集テーマ` メニューと `作例や記事` メニューを追加しました。
 	- `モデル` メニューをカテゴリ分けしました。
+	- `ツール` メニューを追加しました。
 - 注意書きを追加しました。
 	- AVX2 をサポートしていない CPU では、`koboldcpp_cublas.dll` の初期化に失敗します。
 		- `KoboldCpp/koboldcpp.exe` で KoboldCpp を直接起動して、動作する起動オプションを探します。
 			- 例）`Presets:` を `CLBlast NoAVX2(Old CPU)` にして、`GPU ID:` を NVIDIA 系にする。
 		- KoboldCpp が起動している状態で `Run-EasyNovelAssistant.bat` で EasyNovelAssistant を起動すると、そのまま利用できます。
+- Linux 版の KoboldCpp のバージョンを 1.64 に上げました。
+	- ファイル名が `koboldcpp-linux-x64` から `koboldcpp-linux-x64-cuda1150` に変更されていますので更新してください。
 
 ### 2024/05/01
 

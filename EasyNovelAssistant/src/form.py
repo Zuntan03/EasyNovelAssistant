@@ -10,6 +10,7 @@ from menu.model_menu import ModelMenu
 from menu.sample_menu import SampleMenu
 from menu.setting_menu import SettingMenu
 from menu.speech_menu import SpeechMenu
+from menu.tool_menu import ToolMenu
 from output_area import OutputArea
 from tkinterdnd2 import DND_FILES, TkinterDnD
 
@@ -41,6 +42,7 @@ class Form:
         self.speech_menu = SpeechMenu(self, ctx)
         self.setting_menu = SettingMenu(self, ctx)
         self.sample_menu = SampleMenu(self, ctx)
+        self.tool_menu = ToolMenu(self, ctx)
         self.help_menu = HelpMenu(self, ctx)
 
         self.pane_h = tk.PanedWindow(self.win, orient=tk.HORIZONTAL, sashpad=2)

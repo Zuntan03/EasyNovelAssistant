@@ -127,9 +127,9 @@ popd
         if platform == "win32":
             command = ["start", f"{llm_name} L{gpu_layer}", "cmd", "/c"]
             command.append(f"{Path.kobold_cpp_win} {command_args} || pause")
-            subprocess.run(command, shell=True)
+            subprocess.run(command, cwd=Path.kobold_cpp, shell=True)
         else:
-            subprocess.Popen(f"{Path.kobold_cpp_linux} {command_args}", shell=True)
+            subprocess.Popen(f"{Path.kobold_cpp_linux} {command_args}", cwd=Path.kobold_cpp, shell=True)
         return None
 
     def generate(self, text):

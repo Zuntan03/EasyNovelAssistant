@@ -50,10 +50,14 @@ class StyleBertVits2:
                 models = None
                 for key in data:
                     model_id = int(key)
-                    model_name = data[key]["id2spk"]["0"]
+                    model = data[key]
+                    model_name = model["id2spk"]["0"]
+                    model_style = "Neutral"
+                    if not model_style in model["style2id"]:
+                        model_style = list(model["style2id"].keys())[0]
                     if models is None:
                         models = {}
-                    models[model_name] = model_id
+                    models[model_name] = {"id": model_id, "style": model_style}
                 self.models = models
                 return self.models
         except Exception as e:
@@ -79,27 +83,31 @@ class StyleBertVits2:
             return None
 
         model_id = 0
+        model_style = "Neutral"
         if "「" in text:
             name, msg = text.split("「", 1)
             if msg.endswith("」"):
                 msg = msg[:-1]
             if self.ctx["char_name"] in name:
                 if self.ctx["char_voice"] in self.models:
-                    model_id = self.models[self.ctx["char_voice"]]
+                    model_id = self.models[self.ctx["char_voice"]]["id"]
+                    model_style = self.models[self.ctx["char_voice"]]["style"]
                     text = msg
             elif self.ctx["user_name"] in name:
                 if self.ctx["user_voice"] in self.models:
-                    model_id = self.models[self.ctx["user_voice"]]
+                    model_id = self.models[self.ctx["user_voice"]]["id"]
+                    model_style = self.models[self.ctx["user_voice"]]["style"]
                     text = msg
             else:
                 if self.ctx["other_voice"] in self.models:
-                    model_id = self.models[self.ctx["other_voice"]]
+                    model_id = self.models[self.ctx["other_voice"]]["id"]
+                    model_style = self.models[self.ctx["other_voice"]]["style"]
+        else:
+            if self.ctx["other_voice"] in self.models:
+                model_id = self.models[self.ctx["other_voice"]]["id"]
+                model_style = self.models[self.ctx["other_voice"]]["style"]
 
-        params = {
-            "text": text,
-            "model_id": model_id,
-            "split_interval": 0.2,
-        }
+        params = {"text": text, "model_id": model_id, "split_interval": 0.2, "style": model_style}
 
         # model_id = 0
         # char_start = f'{self.ctx["char_name"]}「'
