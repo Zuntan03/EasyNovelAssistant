@@ -109,7 +109,7 @@ class FileMenu:
                 self.observer.start()
 
             if self.open_request is not None:
-                if self.ask_save():
+                if self.ask_save(self.save_as_file):
                     self._open_file(self.open_request)
                 self.open_request = None
 
@@ -158,7 +158,7 @@ class FileMenu:
         self.form.update_title()
         return True
 
-    def ask_save(self):
+    def ask_save(self, func=None):
         input_text = self.ctx.input_area.get_text()
         if self.ctx.file_text == input_text:
             return True
@@ -166,7 +166,9 @@ class FileMenu:
         if result is None:
             return False
         if result:
-            return self.save_file()
+            if func is None:
+                func = self.save_file
+            return func()
         return True
 
     # TODO: watch_file
