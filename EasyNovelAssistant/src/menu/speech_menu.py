@@ -12,7 +12,7 @@ class SpeechMenu:
         self.ctx = ctx
 
         self.menu = tk.Menu(form.win, tearoff=False)
-        self.form.menu_bar.add_cascade(label="(New) 読み上げ", menu=self.menu)
+        self.form.menu_bar.add_cascade(label="読み上げ", menu=self.menu)
         self.menu.configure(postcommand=self.on_menu_open)
 
     def on_menu_open(self):

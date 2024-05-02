@@ -24,7 +24,9 @@ class Generator:
     def initial_launch(self):
         model_name = self.ctx.kobold_cpp.get_model()
         if model_name is None:
-            self.ctx.kobold_cpp.launch_server()
+            result = self.ctx.kobold_cpp.launch_server()
+            if result is not None:
+                print(result)
         else:
             self.enabled = True
             self.ctx.form.update_title()

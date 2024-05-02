@@ -1,14 +1,13 @@
 ﻿import os
 import tkinter as tk
+from tkinter import simpledialog
 
 from path import Path
 
 
 class ModelMenu:
     SEPALATER_NAMES = [
-        "umiyuki-Japanese-Chat-Umievo-itr001-7b-Q4_K_M",
         "LightChatAssistant-4x7B-IQ4_XS",
-        "JapaneseStarlingChatV-7B-Q4_K_M",
     ]
 
     def __init__(self, form, ctx):
@@ -16,19 +15,31 @@ class ModelMenu:
         self.ctx = ctx
 
         self.menu = tk.Menu(form.win, tearoff=False)
-        self.form.menu_bar.add_cascade(label="(New) モデル", menu=self.menu)
+        self.form.menu_bar.add_cascade(label="モデル", menu=self.menu)
         self.menu.configure(postcommand=self.on_menu_open)
 
     def on_menu_open(self):
         self.menu.delete(0, tk.END)
 
+        categories = {}
+
         for llm_name in self.ctx.llm:
             llm = self.ctx.llm[llm_name]
-            llm_menu = tk.Menu(self.menu, tearoff=False)
-            self.menu.add_cascade(label=llm_name, menu=llm_menu)
 
-            if llm_name in self.SEPALATER_NAMES:
-                self.menu.add_separator()
+            llm_menu = tk.Menu(self.menu, tearoff=False)
+            name = llm_name
+            if "/" in llm_name:
+                category, name = llm_name.split("/")
+                if category not in categories:
+                    categories[category] = tk.Menu(self.menu, tearoff=False)
+                    self.menu.add_cascade(label=category, menu=categories[category])
+                categories[category].add_cascade(label=name, menu=llm_menu)
+            else:
+                self.menu.add_cascade(label=llm_name, menu=llm_menu)
+
+            for sep_name in self.SEPALATER_NAMES:
+                if sep_name in name:
+                    self.menu.add_separator()
 
             llm_path = os.path.join(Path.kobold_cpp, llm["file_name"])
             if not os.path.exists(llm_path):
@@ -54,4 +65,7 @@ class ModelMenu:
     def select_model(self, llm_name, gpu_layer):
         self.ctx["llm_name"] = llm_name
         self.ctx["llm_gpu_layer"] = gpu_layer
-        self.ctx.kobold_cpp.launch_server()
+        result = self.ctx.kobold_cpp.launch_server()
+        if result is not None:
+            print(result)
+            simpledialog.messagebox.showerror("エラー", result, parent=self.form.win)

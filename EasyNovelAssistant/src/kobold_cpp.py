@@ -39,13 +39,19 @@ popd
 
         for llm_name in ctx.llm:
             llm = ctx.llm[llm_name]
-            llm["name"] = llm_name
+            name = llm_name
+            if "/" in llm_name:
+                _, name = llm_name.split("/")
+            if " " in name:
+                name = name.split(" ")[-1]
+            llm["name"] = name
+
             llm["file_names"] = []
             for url in llm["urls"]:
                 llm["file_names"].append(url.split("/")[-1])
             llm["file_name"] = llm["file_names"][0]
 
-            bat_file = os.path.join(Path.kobold_cpp, f"Run-{llm_name}-L0.bat")
+            bat_file = os.path.join(Path.kobold_cpp, f'Run-{llm["name"]}-L0.bat')
             if not os.path.exists(bat_file):
                 curl_cmd = ""
                 for url in llm["urls"]:
@@ -89,28 +95,31 @@ popd
         for url in llm["urls"]:
             curl_cmd = f"curl --ssl-no-revoke -LO {url}"
             if subprocess.run(curl_cmd, shell=True, cwd=Path.kobold_cpp).returncode != 0:
-                print(f"{llm_name} のダウンロードに失敗しました。\n{curl_cmd}")
-                return False
-        return True
+                return f"{llm_name} のダウンロードに失敗しました。\n{curl_cmd}"
+        return None
 
     def launch_server(self):
         loaded_model = self.get_model()
         if loaded_model is not None:
-            print(f"{loaded_model} がすでにロード済みです。\nモデルのサーバーを終了してからロードしてください。")
-            return
+            return f"{loaded_model} がすでにロード済みです。\nモデルサーバーのコマンドプロンプトを閉じてからロードしてください。"
+
+        if self.ctx["llm_name"] not in self.ctx.llm:
+            self.ctx["llm_name"] = "[元祖] LightChatAssistant-TypeB-2x7B-IQ4_XS"
+            self.ctx["llm_gpu_layer"] = 0
 
         llm_name = self.ctx["llm_name"]
         gpu_layer = self.ctx["llm_gpu_layer"]
+
         llm = self.ctx.llm[llm_name]
         llm_path = os.path.join(Path.kobold_cpp, llm["file_name"])
 
         if not os.path.exists(llm_path):
-            if not self.download_model(llm_name):
-                return
+            result = self.download_model(llm_name)
+            if result is not None:
+                return result
 
         if not os.path.exists(llm_path):
-            print(f"{llm_path} がありません。")
-            return
+            return f"{llm_path} がありません。"
 
         command_args = (
             f'{self.ctx["koboldcpp_arg"]} --gpulayers {gpu_layer} --contextsize {llm["context_size"]} {llm_path}'
@@ -121,9 +130,15 @@ popd
             subprocess.run(command, shell=True)
         else:
             subprocess.Popen(f"{Path.kobold_cpp_linux} {command_args}", shell=True)
+        return None
 
     def generate(self, text):
         ctx = self.ctx
+
+        if self.ctx["llm_name"] not in self.ctx.llm:
+            self.ctx["llm_name"] = "[元祖] LightChatAssistant-TypeB-2x7B-IQ4_XS"
+            self.ctx["llm_gpu_layer"] = 0
+
         llm_name = ctx["llm_name"]
         llm = ctx.llm[llm_name]
 

@@ -17,25 +17,45 @@ class SampleMenu:
 
         descs = [
             {
-                "label": "(New) テンプレート",
+                "label": "(New!) 特集テーマ",
+                "mode": "open",
+                "change_mode": {
+                    "サンプル: ": "set",
+                    "テンプレ: ": "set",
+                },
+                "path": "special.json",
+                "splitter_names": ["ゴールシークのリポジトリ"],
+            },
+            {
+                "label": "テンプレート",
                 "mode": "insert",
+                "change_mode": {},
                 "path": "template.json",
                 "splitter_names": [
                     "(New) ゴールシーク: 生成した設定とプロットで執筆",
                     "キャラ画像生成用プロンプト（実験的）",
                 ],
             },
-            {"label": "サンプル", "mode": "set", "path": "sample.json", "splitter_names": []},
+            {"label": "サンプル", "mode": "set", "change_mode": {}, "path": "sample.json", "splitter_names": []},
             {
                 "label": "NSFW サンプル",
                 "mode": "set",
+                "change_mode": {},
                 "path": "nsfw.json",
                 "splitter_names": ["ボーイズラブ、ファンタジー、悪魔、美形", "妄想ジェネレーター"],
             },
             {
                 "label": "読み上げサンプル",
                 "mode": "set",
+                "change_mode": {},
                 "path": "speech.json",
+                "splitter_names": [],
+            },
+            {
+                "label": "(New!) 作例や記事",
+                "mode": "open",
+                "change_mode": {},
+                "path": "url.json",
                 "splitter_names": [],
             },
         ]
@@ -49,10 +69,6 @@ class SampleMenu:
     def on_menu_open(self, menu, desc):
         menu.delete(0, tk.END)
 
-        func = self.ctx.input_area.set_text
-        if desc["mode"] == "insert":
-            func = self.ctx.input_area.insert_text
-
         categories = {}
 
         json_path = os.path.join(Path.sample, desc["path"])
@@ -65,18 +81,27 @@ class SampleMenu:
             menu.add_command(label=f'{desc["label"]} をダウンロード', command=lambda p=desc["path"]: self._download(p))
             return
 
+        change_mode = desc["change_mode"]
         for key in dic:
+            item = dic[key]
+            mode = desc["mode"]
+            if "mode" in item:
+                mode = item["mode"]
             name = key
             if "/" in name:
                 category, name = name.split("/")
+                for change_name in change_mode:
+                    if change_name in name:
+                        mode = change_mode[change_name]
                 if category not in categories:
                     categories[category] = tk.Menu(menu, tearoff=False)
                     menu.add_cascade(label=category, menu=categories[category])
-                categories[category].add_command(
-                    label=name, command=lambda v=dic[key], f=func: self.on_menu_select(v, f)
-                )
+                categories[category].add_command(label=name, command=lambda i=item, m=mode: self.on_menu_select(i, m))
             else:
-                menu.add_command(label=name, command=lambda v=dic[key], f=func: self.on_menu_select(v, f))
+                for change_name in change_mode:
+                    if change_name in name:
+                        mode = change_mode[change_name]
+                menu.add_command(label=name, command=lambda i=item, m=mode: self.on_menu_select(i, m))
 
             if name in desc["splitter_names"]:
                 menu.add_separator()
@@ -93,16 +118,28 @@ class SampleMenu:
             print(e)
         return None
 
-    def on_menu_select(self, value, func):
-        if value.startswith("http"):
-            url = quote(value, safe=":/")
-            try:
-                with urllib.request.urlopen(url) as res:
-                    value = res.read().decode("utf-8-sig")
-            except Exception as e:
+    def on_menu_select(self, item, mode):
+        if (mode == "set") or (mode == "insert"):
+            if item.startswith("http"):
+                url = quote(item, safe=":/?=")
+                try:
+                    with urllib.request.urlopen(url) as res:
+                        item = res.read().decode("utf-8-sig")
+                except Exception as e:
+                    webbrowser.open(url)
+                    print(f"{e}. {url}")
+                    return
+            if ("{char_name}" in item) or ("{user_name}" in item):
+                item = item.format(char_name=self.ctx["char_name"], user_name=self.ctx["user_name"])
+            if mode == "set":
+                self.ctx.input_area.set_text(item)
+            else:
+                self.ctx.input_area.insert_text(item)
+        elif mode == "open":
+            if item.startswith("http"):
+                url = quote(item, safe=":/?=")
                 webbrowser.open(url)
-                print(f"{e}. {url}")
-                return
-        if ("{char_name}" in value) or ("{user_name}" in value):
-            value = value.format(char_name=self.ctx["char_name"], user_name=self.ctx["user_name"])
-        func(value)
+            else:
+                print(f"SampleMenu invalid URL: {mode}, {item}")
+        else:
+            print(f"SampleMenu unknown mode: {mode}, {item}")

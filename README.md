@@ -3,6 +3,8 @@
 軽量で規制も検閲もない日本語ローカル LLM『[LightChatAssistant-TypeB](https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF)』による、簡単なノベル生成アシスタントです。  
 ローカル特権の永続生成 Generate forever で、当たりガチャを積み上げます。
 
+内部で呼び出している [KoboldCpp](https://github.com/LostRuins/koboldcpp) や [Style-Bert-VITS2](https://github.com/litagin02/Style-Bert-VITS2) を直接利用することもできますし、[EasySdxlWebUi](https://github.com/Zuntan03/EasySdxlWebUi) で画像生成しながら利用することもできます。
+
 ## 利用者の声
 
 ### 記事
@@ -30,7 +32,16 @@
 
 ## 最近の更新情報
 
-**サンプルに `{char_name}` や `{user_name}` が表示される場合は、`Update-EasyNovelAssistant.bat` で更新してください。**
+### 2024/05/02
+
+- メニュー周りを整理しました。
+	- `特集テーマ` メニューと `作例や記事` メニューを追加しました。
+	- `モデル` メニューをカテゴリ分けしました。
+- 注意書きを追加しました。
+	- AVX2 をサポートしていない CPU では、`koboldcpp_cublas.dll` の初期化に失敗します。
+		- `KoboldCpp/koboldcpp.exe` で KoboldCpp を直接起動して、動作する起動オプションを探します。
+			- 例）`Presets:` を `CLBlast NoAVX2(Old CPU)` にして、`GPU ID:` を NVIDIA 系にする。
+		- KoboldCpp が起動している状態で `Run-EasyNovelAssistant.bat` で EasyNovelAssistant を起動すると、そのまま利用できます。
 
 ### 2024/05/01
 
@@ -230,6 +241,10 @@ RAM 64GB だと超カツカツですが、[CommandR+ の `IQ4_XS` が `L4` で�
 - ウィルスチェックソフトのアバストが有効だとインストールに失敗します。
 - グラフィックスドライバが古いと、起動に失敗することがあります。
 	- ドライバを更新したら `NVIDIA コントロールパネル` の `3D 設定の管理` で、`CUDA - システム メモリ フォールバック ポリシー` を `システム メモリ フォルバックなしを優先` にします。
+- AVX2 をサポートしていない CPU では、`koboldcpp_cublas.dll` の初期化に失敗します。
+	- `KoboldCpp/koboldcpp.exe` で KoboldCpp を直接起動して、動作する起動オプションを探します。
+		- 例）`Presets:` を `CLBlast NoAVX2(Old CPU)` にして、`GPU ID:` を NVIDIA 系にする。
+	- KoboldCpp が起動している状態で `Run-EasyNovelAssistant.bat` で EasyNovelAssistant を起動すると、そのまま利用できます。
 
 ## ドキュメント
 

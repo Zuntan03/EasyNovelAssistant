@@ -10,14 +10,11 @@ class HelpMenu:
         self.ctx = ctx
 
         self.menu = tk.Menu(form.win, tearoff=False)
-        self.form.menu_bar.add_cascade(label="(New) ヘルプ", menu=self.menu)
+        self.form.menu_bar.add_cascade(label="ヘルプ", menu=self.menu)
         self.menu.configure(postcommand=self.on_menu_open)
 
     def on_menu_open(self):
         self.menu.delete(0, tk.END)
-
-        cmd = lambda: self._show_url("https://note.com/kagami_kami/n/n3a321d926684")
-        self.menu.add_command(label="(New) ゴールシーク", command=cmd)
 
         sample_menu = tk.Menu(self.menu, tearoff=False)
         self.menu.add_cascade(label="サンプル原典", menu=sample_menu)

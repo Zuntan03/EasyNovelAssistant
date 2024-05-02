@@ -1,138 +1,138 @@
 ﻿{
-	"Ninja-v1-NSFW-Q_8_0": {
-		"max_gpu_layer": 33,
-		"context_size": 32768,
-		"urls": [
-			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-GGUF/resolve/main/Ninja-v1-NSFW_Q_8_0.gguf"
-		]
-	},
-	"Ninja-v1-NSFW-128k-Q_8_0": {
-		"max_gpu_layer": 33,
-		"context_size": 32768,
-		"urls": [
-			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-128k-GGUF/resolve/main/Ninja-NSFW-128k_Q_8_0.gguf"
-		]
-	},
-	"Ninja-v1-Q_8_0": {
-		"max_gpu_layer": 33,
-		"context_size": 32768,
-		"urls": [
-			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-GGUF/resolve/main/Ninja-v1-NSFW_Q_8_0.gguf"
-		]
-	},
-	"Ninja-v1-128k-Q_8_0": {
-		"max_gpu_layer": 33,
-		"context_size": 32768,
-		"urls": [
-			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-128k-GGUF/resolve/main/Ninja-NSFW-128k_Q_8_0.gguf"
-		]
-	},
-	"Vecteus-v1-Q4_K": {
-		"max_gpu_layer": 33,
-		"context_size": 4096,
-		"urls": [
-			"https://huggingface.co/Local-Novel-LLM-project/Vecteus-v1-gguf/resolve/main/ggml-model-Q4_K.gguf"
-		]
-	},
-	"umiyuki-Japanese-Chat-Umievo-itr001-7b-Q4_K_M": {
-		"max_gpu_layer": 33,
-		"context_size": 32768,
-		"urls": [
-			"https://huggingface.co/mmnga/umiyuki-Japanese-Chat-Umievo-itr001-7b-gguf/resolve/main/umiyuki-Japanese-Chat-Umievo-itr001-7b-Q4_K_M.gguf"
-		]
-	},
-	"LightChatAssistant-TypeB-2x7B-IQ4_XS": {
+	"[元祖] LightChatAssistant-TypeB-2x7B-IQ4_XS": {
 		"max_gpu_layer": 33,
 		"context_size": 32768,
 		"urls": [
 			"https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF/resolve/main/LightChatAssistant-TypeB-2x7B_iq4xs_imatrix.gguf"
 		]
 	},
-	"SniffyOtter-7B-Novel-Writing-NSFW-IQ4_XS": {
+	"[期待の新人] Ninja-v1-NSFW-128k-Q_8_0": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-128k-GGUF/resolve/main/Ninja-NSFW-128k_Q_8_0.gguf"
+		]
+	},
+	"[ノベルズ] SniffyOtter-7B-Novel-Writing-NSFW-IQ4_XS": {
 		"max_gpu_layer": 33,
 		"context_size": 8192,
 		"urls": [
 			"https://huggingface.co/Aratako/SniffyOtter-7B-Novel-Writing-NSFW-GGUF/resolve/main/SniffyOtter-7B-Novel-Writing-NSFW_IQ4_XS.gguf"
 		]
 	},
-	"LightChatAssistant-4x7B-IQ4_XS": {
+	"[VRAM 24GB 向け] LightChatAssistant-4x7B-IQ4_XS": {
 		"max_gpu_layer": 33,
 		"context_size": 32768,
 		"urls": [
 			"https://huggingface.co/Aratako/LightChatAssistant-4x7B-GGUF/resolve/main/LightChatAssistant-4x7B_IQ4_XS.gguf"
 		]
 	},
-	"LightChatAssistant-TypeB-2x7B-IQ3_XXS": {
-		"max_gpu_layer": 33,
-		"context_size": 32768,
-		"urls": [
-			"https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF/resolve/main/LightChatAssistant-TypeB-2x7B_iq3xxs_imatrix.gguf"
-		]
-	},
-	"LightChatAssistant-2x7B-IQ3_XXS": {
-		"max_gpu_layer": 33,
-		"context_size": 32768,
-		"urls": [
-			"https://huggingface.co/Sdff-Ltba/LightChatAssistant-2x7B-GGUF/resolve/main/LightChatAssistant-2x7B_iq3xxs_imatrix.gguf"
-		]
-	},
-	"LightChatAssistant-2x7B-IQ4_XS": {
-		"max_gpu_layer": 33,
-		"context_size": 32768,
-		"urls": [
-			"https://huggingface.co/Sdff-Ltba/LightChatAssistant-2x7B-GGUF/resolve/main/LightChatAssistant-2x7B_iq4xs_imatrix.gguf"
-		]
-	},
-	"LightChatAssistant-4x7B-IQ3_S": {
-		"max_gpu_layer": 33,
-		"context_size": 32768,
-		"urls": [
-			"https://huggingface.co/Aratako/LightChatAssistant-4x7B-GGUF/resolve/main/LightChatAssistant-4x7B_IQ3_S.gguf"
-		]
-	},
-	"SniffyOtter-7B-Novel-Writing-NSFW-Q8_0": {
+	"Novel-Writing シリーズ/SniffyOtter-7B-Novel-Writing-NSFW-Q8_0": {
 		"max_gpu_layer": 33,
 		"context_size": 8192,
 		"urls": [
 			"https://huggingface.co/Aratako/SniffyOtter-7B-Novel-Writing-NSFW-GGUF/resolve/main/SniffyOtter-7B-Novel-Writing-NSFW_Q8_0.gguf"
 		]
 	},
-	"SniffyOtter-7B-Q4_0": {
-		"max_gpu_layer": 33,
-		"context_size": 8192,
-		"urls": [
-			"https://huggingface.co/Elizezen/SniffyOtter-7B-GGUF/resolve/main/SniffyOtter-7B-q4_0.gguf"
-		]
-	},
-	"Antler-7B-Novel-Writing-IQ4_XS": {
+	"Novel-Writing シリーズ/Antler-7B-Novel-Writing-IQ4_XS": {
 		"max_gpu_layer": 33,
 		"context_size": 4096,
 		"urls": [
 			"https://huggingface.co/Aratako/Antler-7B-Novel-Writing-GGUF/resolve/main/Antler-7B-Novel-Writing_IQ4_XS.gguf"
 		]
 	},
-	"JapaneseStarlingChatV-7B-Q4_K_M": {
+	"LightChatAssistant バリエーション/LightChatAssistant-TypeB-2x7B-IQ3_XXS": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF/resolve/main/LightChatAssistant-TypeB-2x7B_iq3xxs_imatrix.gguf"
+		]
+	},
+	"LightChatAssistant バリエーション/LightChatAssistant-2x7B-IQ3_XXS": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Sdff-Ltba/LightChatAssistant-2x7B-GGUF/resolve/main/LightChatAssistant-2x7B_iq3xxs_imatrix.gguf"
+		]
+	},
+	"LightChatAssistant バリエーション/LightChatAssistant-2x7B-IQ4_XS": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Sdff-Ltba/LightChatAssistant-2x7B-GGUF/resolve/main/LightChatAssistant-2x7B_iq4xs_imatrix.gguf"
+		]
+	},
+	"LightChatAssistant バリエーション/LightChatAssistant-4x7B-IQ3_S": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Aratako/LightChatAssistant-4x7B-GGUF/resolve/main/LightChatAssistant-4x7B_IQ3_S.gguf"
+		]
+	},
+	"Ninja シリーズ/Ninja-v1-NSFW-Q_8_0": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-GGUF/resolve/main/Ninja-v1-NSFW_Q_8_0.gguf"
+		]
+	},
+	"Ninja シリーズ/Ninja-v1-Q_8_0": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-GGUF/resolve/main/Ninja-v1-NSFW_Q_8_0.gguf"
+		]
+	},
+	"Ninja シリーズ/Ninja-v1-128k-Q_8_0": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-128k-GGUF/resolve/main/Ninja-NSFW-128k_Q_8_0.gguf"
+		]
+	},
+	"Ninja シリーズ/Vecteus-v1-Q4_K": {
+		"max_gpu_layer": 33,
+		"context_size": 4096,
+		"urls": [
+			"https://huggingface.co/Local-Novel-LLM-project/Vecteus-v1-gguf/resolve/main/ggml-model-Q4_K.gguf"
+		]
+	},
+	"軽量級/JapaneseStarlingChatV-7B-Q4_K_M": {
 		"max_gpu_layer": 33,
 		"context_size": 32768,
 		"urls": [
 			"https://huggingface.co/TFMC/Japanese-Starling-ChatV-7B-GGUF/resolve/main/japanese-starling-chatv-7b.Q4_K_M.gguf"
 		]
 	},
-	"CommandRv1-Q4_K_M": {
+	"軽量級/umiyuki-Japanese-Chat-Umievo-itr001-7b-Q4_K_M": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/mmnga/umiyuki-Japanese-Chat-Umievo-itr001-7b-gguf/resolve/main/umiyuki-Japanese-Chat-Umievo-itr001-7b-Q4_K_M.gguf"
+		]
+	},
+	"軽量級/SniffyOtter-7B-Q4_0": {
+		"max_gpu_layer": 33,
+		"context_size": 8192,
+		"urls": [
+			"https://huggingface.co/Elizezen/SniffyOtter-7B-GGUF/resolve/main/SniffyOtter-7B-q4_0.gguf"
+		]
+	},
+	"重量級、放置生成用、要 64GB RAM/CommandRv1-Q4_K_M": {
 		"max_gpu_layer": 41,
 		"context_size": 32768,
 		"urls": [
 			"https://huggingface.co/andrewcanis/c4ai-command-r-v01-GGUF/resolve/main/c4ai-command-r-v01-Q4_K_M.gguf"
 		]
 	},
-	"CommandRPlus-IQ3_S": {
+	"重量級、放置生成用、要 64GB RAM/CommandRPlus-IQ3_S": {
 		"max_gpu_layer": 65,
 		"context_size": 32768,
 		"urls": [
 			"https://huggingface.co/dranger003/c4ai-command-r-plus-iMat.GGUF/resolve/main/ggml-c4ai-command-r-plus-104b-iq3_s.gguf"
 		]
 	},
-	"CommandRPlus-IQ4_XS": {
+	"重量級、放置生成用、要 64GB RAM/CommandRPlus-IQ4_XS": {
 		"max_gpu_layer": 65,
 		"context_size": 32768,
 		"urls": [
@@ -140,7 +140,7 @@
 			"https://huggingface.co/dranger003/c4ai-command-r-plus-iMat.GGUF/resolve/main/ggml-c4ai-command-r-plus-104b-iq4_xs-00002-of-00002.gguf"
 		]
 	},
-	"CommandRPlus-Q3_K_M": {
+	"重量級、放置生成用、要 64GB RAM/CommandRPlus-Q3_K_M": {
 		"max_gpu_layer": 65,
 		"context_size": 32768,
 		"urls": [
