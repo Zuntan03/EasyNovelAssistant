@@ -109,15 +109,13 @@ class Generator:
             if self.ctx["char_name"] in name:
                 if self.ctx["auto_speech_char"]:
                     self.ctx.style_bert_vits2.generate(text)
+                    return
             elif self.ctx["user_name"] in name:
                 if self.ctx["auto_speech_user"]:
                     self.ctx.style_bert_vits2.generate(text)
-            else:
-                if self.ctx["auto_speech_other"]:
-                    self.ctx.style_bert_vits2.generate(text)
-        else:
-            if self.ctx["auto_speech_other"]:
-                self.ctx.style_bert_vits2.generate(text)
+                    return
+        if self.ctx["auto_speech_other"]:
+            self.ctx.style_bert_vits2.generate(text)
 
     # def _auto_speech(self, text):
     #     text = text.replace(f'{self.ctx["char_name"]}「', f'\n{self.ctx["char_name"]}「')

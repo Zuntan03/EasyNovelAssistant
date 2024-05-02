@@ -6,11 +6,18 @@
 			"https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF/resolve/main/LightChatAssistant-TypeB-2x7B_iq4xs_imatrix.gguf"
 		]
 	},
-	"[期待の新人] Ninja-v1-NSFW-128k-Q_8_0": {
+	"[速い] Vecteus-v1-Q4_K": {
 		"max_gpu_layer": 33,
-		"context_size": 32768,
+		"context_size": 4096,
 		"urls": [
-			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-128k-GGUF/resolve/main/Ninja-NSFW-128k_Q_8_0.gguf"
+			"https://huggingface.co/Local-Novel-LLM-project/Vecteus-v1-gguf/resolve/main/ggml-model-Q4_K.gguf"
+		]
+	},
+	"[期待の新人] Ninja-v1-NSFW-Q_8_0": {
+		"max_gpu_layer": 33,
+		"context_size": 4096,
+		"urls": [
+			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-GGUF/resolve/main/Ninja-v1-NSFW_Q_8_0.gguf"
 		]
 	},
 	"[ノベルズ] SniffyOtter-7B-Novel-Writing-NSFW-IQ4_XS": {
@@ -69,16 +76,16 @@
 			"https://huggingface.co/Aratako/LightChatAssistant-4x7B-GGUF/resolve/main/LightChatAssistant-4x7B_IQ3_S.gguf"
 		]
 	},
-	"Ninja シリーズ/Ninja-v1-NSFW-Q_8_0": {
+	"Ninja シリーズ/Ninja-v1-NSFW-128k-Q_8_0": {
 		"max_gpu_layer": 33,
 		"context_size": 32768,
 		"urls": [
-			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-GGUF/resolve/main/Ninja-v1-NSFW_Q_8_0.gguf"
+			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-128k-GGUF/resolve/main/Ninja-NSFW-128k_Q_8_0.gguf"
 		]
 	},
 	"Ninja シリーズ/Ninja-v1-Q_8_0": {
 		"max_gpu_layer": 33,
-		"context_size": 32768,
+		"context_size": 4096,
 		"urls": [
 			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-GGUF/resolve/main/Ninja-v1-NSFW_Q_8_0.gguf"
 		]
@@ -88,13 +95,6 @@
 		"context_size": 32768,
 		"urls": [
 			"https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-128k-GGUF/resolve/main/Ninja-NSFW-128k_Q_8_0.gguf"
-		]
-	},
-	"Ninja シリーズ/Vecteus-v1-Q4_K": {
-		"max_gpu_layer": 33,
-		"context_size": 4096,
-		"urls": [
-			"https://huggingface.co/Local-Novel-LLM-project/Vecteus-v1-gguf/resolve/main/ggml-model-Q4_K.gguf"
 		]
 	},
 	"軽量級/JapaneseStarlingChatV-7B-Q4_K_M": {
