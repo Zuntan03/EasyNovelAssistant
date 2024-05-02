@@ -11,7 +11,7 @@
 	"middle_click_speech": true,
 	"auto_speech_char": true,
 	"auto_speech_user": false,
-	"auto_speech_other": false,
+	"auto_speech_other": true,
 	"max_speech_queue": 3,
 	"speech_volume": 50,
 	"speech_speed": 1.0,
