@@ -115,6 +115,9 @@ class Generator:
             else:
                 if self.ctx["auto_speech_other"]:
                     self.ctx.style_bert_vits2.generate(text)
+        else:
+            if self.ctx["auto_speech_other"]:
+                self.ctx.style_bert_vits2.generate(text)
 
     # def _auto_speech(self, text):
     #     text = text.replace(f'{self.ctx["char_name"]}「', f'\n{self.ctx["char_name"]}「')

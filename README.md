@@ -68,6 +68,7 @@
 		- KoboldCpp が起動している状態で `Run-EasyNovelAssistant.bat` で EasyNovelAssistant を起動すると、そのまま利用できます。
 - Linux 版の KoboldCpp のバージョンを 1.64 に上げました。
 	- ファイル名が `koboldcpp-linux-x64` から `koboldcpp-linux-x64-cuda1150` に変更されていますので更新してください。
+- 「」の無い文章を読み上げなくなっていた不具合を修正しました。
 
 ### 2024/05/01
 
