@@ -31,10 +31,7 @@ class SampleMenu:
                 "mode": "insert",
                 "change_mode": {},
                 "path": "template.json",
-                "splitter_names": [
-                    "(New) ゴールシーク: 生成した設定とプロットで執筆",
-                    "キャラ画像生成用プロンプト（実験的）",
-                ],
+                "splitter_names": [],
             },
             {"label": "サンプル", "mode": "set", "change_mode": {}, "path": "sample.json", "splitter_names": []},
             {
@@ -42,7 +39,7 @@ class SampleMenu:
                 "mode": "set",
                 "change_mode": {},
                 "path": "nsfw.json",
-                "splitter_names": ["ボーイズラブ、ファンタジー、悪魔、美形", "妄想ジェネレーター"],
+                "splitter_names": ["妄想ジェネレーター"],
             },
             {
                 "label": "読み上げサンプル",
