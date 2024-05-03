@@ -58,7 +58,7 @@
 
 インストールや更新で困ったことが起きたら、[こちら](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%A8%E6%9B%B4%E6%96%B0) を参照してください。  
 
-1. [`Install-EasyNovelAssistant.bat`](https://github.com/Zuntan03/EasyNovelAssistant/raw/main/EasyNovelAssistant/setup/Install-EasyNovelAssistant.bat?v=2) を右クリックして `名前をつけて保存` し、インストール先フォルダ（**パスが英数字で空白を含まない**）にダウンロードして実行します。
+1. [`Install-EasyNovelAssistant.bat`](https://github.com/Zuntan03/EasyNovelAssistant/raw/main/EasyNovelAssistant/setup/Install-EasyNovelAssistant.bat?v=2) を右クリックして `名前をつけて保存` で、インストール先フォルダ（**英数字のパスで空白を含まない**）にダウンロードして実行します。
 	- **`WindowsによってPCが保護されました` と表示されたら、`詳細表示` から `実行` します。**
 	- `配布元から関連ファイルをダウンロード` することに問題がなければ `y` を入力します。
 	- `Windows セキュリティ` のネットワークへのアクセス許可は `許可` してください。
@@ -76,6 +76,8 @@
 ### 2024/05/04
 
 - 急な開発で混み合ったり古くなったりしたドキュメントを整理しました。
+	- 最初のインストールから音声読み上げまでがスムーズになったはずです。
+	- 詰まる所があったらお知らせください。
 
 ### 2024/05/03
 
