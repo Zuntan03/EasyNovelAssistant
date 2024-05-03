@@ -36,21 +36,23 @@ class HelpMenu:
         reference_menu.add_command(label="LostRuins/KoboldCpp", command=cmd)
 
         self._show_hf_url(reference_menu, "Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF")
-        self._show_hf_url(reference_menu, "Sdff-Ltba/LightChatAssistant-2x7B-GGUF")
+        self._show_hf_url(reference_menu, "mmnga/Vecteus-v1-gguf")
+        self._show_hf_url(reference_menu, "mmnga/Ninja-v1-NSFW-128k-gguf")
+        self._show_hf_url(reference_menu, "mmnga/Ninja-v1-128k-gguf")
         self._show_hf_url(reference_menu, "Aratako/LightChatAssistant-4x7B-GGUF")
+
         self._show_hf_url(reference_menu, "Aratako/SniffyOtter-7B-Novel-Writing-NSFW-GGUF")
-        self._show_hf_url(reference_menu, "Elizezen/SniffyOtter-7B-GGUF")
         self._show_hf_url(reference_menu, "Aratako/Antler-7B-Novel-Writing-GGUF")
+
+        self._show_hf_url(reference_menu, "Sdff-Ltba/LightChatAssistant-2x7B-GGUF")
+
         self._show_hf_url(reference_menu, "TFMC/Japanese-Starling-ChatV-7B-GGUF")
+        self._show_hf_url(reference_menu, "umiyuki-Japanese-Chat-Umievo-itr001-7b-gguf")
+        self._show_hf_url(reference_menu, "Elizezen/SniffyOtter-7B-GGUF")
+
         self._show_hf_url(reference_menu, "andrewcanis/c4ai-command-r-v01-GGUF")
         self._show_hf_url(reference_menu, "dranger003/c4ai-command-r-plus-iMat.GGUF")
         self._show_hf_url(reference_menu, "pmysl/c4ai-command-r-plus-GGUF")
-        self._show_hf_url(reference_menu, "Local-Novel-LLM-project/Ninja-v1-NSFW-GGUF")
-        self._show_hf_url(reference_menu, "Local-Novel-LLM-project/Ninja-v1-NSFW-128k-GGUF")
-        self._show_hf_url(reference_menu, "Local-Novel-LLM-project/Ninja-v1-GGUF")
-        self._show_hf_url(reference_menu, "Local-Novel-LLM-project/Ninja-v1-128k-GGUF")
-        self._show_hf_url(reference_menu, "Local-Novel-LLM-project/Vecteus-v1-gguf")
-        self._show_hf_url(reference_menu, "umiyuki-Japanese-Chat-Umievo-itr001-7b-gguf")
 
         self.menu.add_separator()
         cmd = lambda: self._show_url("https://github.com/Zuntan03/EasyNovelAssistant")

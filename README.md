@@ -7,6 +7,8 @@
 
 ## 利用者の声
 
+- [絵と文章と音声をローカル PC で同時生成](https://twitter.com/Zuntan03/status/1786165587573715394)
+
 ### 記事
 
 - 『[【検閲なし】GPUで生成するローカルAIチャット環境と小説企画＋執筆用ゴールシークプロンプトで叡智小説生成最強に見える](https://note.com/kagami_kami/n/n3a321d926684)』[@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1785313774620246194)
@@ -63,6 +65,10 @@ Vecteus と Ninja の個人の感想
 
 ### 2024/05/03
 
+- LLM 入出力のコンテキストサイズの上限を `モデル` - `コンテキストサイズ上限` メニューで指定するようにしました。
+	- デフォルト値は `4K` で、VRAM 8GB 環境で `LightChatAssistant-2x7B-IQ4_XS` の `L30` か `L33` が動作します。
+	- 長い文章を取り扱いたい場合は、より大きなコンテキストサイズを指定します。  
+	ただし GPU レイヤー数に応じて消費 VRAM が増えます。
 - [mmnga/Vecteus-v1-gguf](https://huggingface.co/mmnga/Vecteus-v1-gguf), [mmnga/Ninja-v1-128k-gguf](https://huggingface.co/mmnga/Ninja-v1-128k-gguf), [mmnga/Ninja-v1-NSFW-128k-gguf](https://huggingface.co/mmnga/Ninja-v1-NSFW-128k-gguf) の IQ4_XS 版をダウンロードできるようにしました。
 - コンテキストウィンドウの仕様変更に備えて、`KoboldCpp/Run-*-L0.bat` を起動時に再生成するようにしました。
 	- 当初から「[bat ファイルをコピーして、set GPU_LAYERS=0 あたりをお好みに変更してご利用ください。](https://github.com/Zuntan03/EasyNovelAssistant?tab=readme-ov-file#tips)」とは案内しておりましたが、失われて困る変更がありましたらコピーしてから更新してください。

@@ -21,6 +21,29 @@ class ModelMenu:
     def on_menu_open(self):
         self.menu.delete(0, tk.END)
 
+        def context_label(context_size):
+            return f"C{context_size // 1024}K ({context_size})"
+
+        self.llm_context_size_menu = tk.Menu(self.menu, tearoff=False)
+        self.menu.add_cascade(
+            label=f'コンテキストサイズ上限（増やすと VRAM 消費増）: {context_label(self.ctx["llm_context_size"])})',
+            menu=self.llm_context_size_menu,
+        )
+
+        def set_llm_context_size(llm_context_size):
+            self.ctx["llm_context_size"] = llm_context_size
+
+        llm_context_sizes = [2048, 4096, 8192, 16384, 32768, 65536, 131072]
+        for llm_context_size in llm_context_sizes:
+            check_var = tk.BooleanVar(value=self.ctx["llm_context_size"] == llm_context_size)
+            self.llm_context_size_menu.add_checkbutton(
+                label=context_label(llm_context_size),
+                variable=check_var,
+                command=lambda v=llm_context_size, _=check_var: set_llm_context_size(v),
+            )
+
+        self.menu.add_separator()
+
         categories = {}
 
         for llm_name in self.ctx.llm:
@@ -28,14 +51,15 @@ class ModelMenu:
 
             llm_menu = tk.Menu(self.menu, tearoff=False)
             name = llm_name
+            context_size = min(llm["context_size"], self.ctx["llm_context_size"]) // 1024
             if "/" in llm_name:
                 category, name = llm_name.split("/")
                 if category not in categories:
                     categories[category] = tk.Menu(self.menu, tearoff=False)
                     self.menu.add_cascade(label=category, menu=categories[category])
-                categories[category].add_cascade(label=name, menu=llm_menu)
+                categories[category].add_cascade(label=f"{name} C{context_size}K", menu=llm_menu)
             else:
-                self.menu.add_cascade(label=llm_name, menu=llm_menu)
+                self.menu.add_cascade(label=f"{llm_name} C{context_size}K", menu=llm_menu)
 
             for sep_name in self.SEPALATER_NAMES:
                 if sep_name in name:

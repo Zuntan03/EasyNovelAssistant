@@ -13,7 +13,10 @@ chcp 65001 > NUL
 pushd %~dp0
 set CURL_CMD=C:\Windows\System32\curl.exe --ssl-no-revoke
 
+@REM 7B: 33, 35B: 41, 70B: 65
 set GPU_LAYERS=0
+
+@REM 2048, 4096, 8192, 16384, 32768, 65536, 131072
 set CONTEXT_SIZE={context_size}
 
 {curl_cmd}
@@ -51,7 +54,8 @@ popd
                 llm["file_names"].append(url.split("/")[-1])
             llm["file_name"] = llm["file_names"][0]
 
-            bat_file = os.path.join(Path.kobold_cpp, f'Run-{llm["name"]}-L0.bat')
+            context_size = min(llm["context_size"], ctx["llm_context_size"])
+            bat_file = os.path.join(Path.kobold_cpp, f'Run-{llm["name"]}-C{context_size // 1024}K-L0.bat')
 
             curl_cmd = ""
             for url in llm["urls"]:
@@ -59,7 +63,7 @@ popd
             bat_text = self.BAT_TEMPLATE.format(
                 curl_cmd=curl_cmd,
                 option=ctx["koboldcpp_arg"],
-                context_size=llm["context_size"],
+                context_size=context_size,
                 file_name=llm["file_name"],
             )
             with open(bat_file, "w", encoding="utf-8") as f:
@@ -121,9 +125,8 @@ popd
         if not os.path.exists(llm_path):
             return f"{llm_path} がありません。"
 
-        command_args = (
-            f'{self.ctx["koboldcpp_arg"]} --gpulayers {gpu_layer} --contextsize {llm["context_size"]} {llm_path}'
-        )
+        context_size = min(llm["context_size"], self.ctx["llm_context_size"])
+        command_args = f'{self.ctx["koboldcpp_arg"]} --gpulayers {gpu_layer} --contextsize {context_size} {llm_path}'
         if platform == "win32":
             command = ["start", f"{llm_name} L{gpu_layer}", "cmd", "/c"]
             command.append(f"{Path.kobold_cpp_win} {command_args} || pause")
@@ -143,7 +146,7 @@ popd
         llm = ctx.llm[llm_name]
 
         args = {
-            "max_context_length": llm["context_size"],
+            "max_context_length": min(llm["context_size"], ctx["llm_context_size"]),
             "max_length": ctx["max_length"],
             "prompt": text,
             "quiet": False,
