@@ -8,6 +8,7 @@
 ## 利用者の声
 
 - [絵と文章と音声をローカル PC で同時生成](https://twitter.com/Zuntan03/status/1786165587573715394)
+	- [@StelsRay](https://twitter.com/StelsRay/status/1786289235324207593), [@hysierra](https://twitter.com/hysierra/status/1786300104338731172), [@currnya](https://twitter.com/currnya/status/1786357838492946803), [984](https://bbs.punipuni.eu/test/read.cgi/vaporeon/1712647603/984)
 
 ### 記事
 
@@ -16,8 +17,11 @@
 
 ### つぶやき
 
-[@liruk](https://twitter.com/liruk/status/1785596479631204420),
+[@kurayamimousou](https://twitter.com/kurayamimousou/status/1786377248033136794),
+[@boxheadroom](https://twitter.com/boxheadroom/status/1786031076617703640),
 [@luta_ai](https://twitter.com/luta_ai/status/1785933828730802214),
+[0026](https://mercury.bbspink.com/test/read.cgi/onatech/1714642045/26),
+[@liruk](https://twitter.com/liruk/status/1785596479631204420),
 [@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1785805841410691320),
 [@AonekoSS](https://twitter.com/AonekoSS/status/1785327191859122446),
 [@maaibook](https://twitter.com/maaibook/status/1785540609627054413),
@@ -72,6 +76,8 @@ Vecteus と Ninja の個人の感想
 - [mmnga/Vecteus-v1-gguf](https://huggingface.co/mmnga/Vecteus-v1-gguf), [mmnga/Ninja-v1-128k-gguf](https://huggingface.co/mmnga/Ninja-v1-128k-gguf), [mmnga/Ninja-v1-NSFW-128k-gguf](https://huggingface.co/mmnga/Ninja-v1-NSFW-128k-gguf) の IQ4_XS 版をダウンロードできるようにしました。
 - コンテキストウィンドウの仕様変更に備えて、`KoboldCpp/Run-*-L0.bat` を起動時に再生成するようにしました。
 	- 当初から「[bat ファイルをコピーして、set GPU_LAYERS=0 あたりをお好みに変更してご利用ください。](https://github.com/Zuntan03/EasyNovelAssistant?tab=readme-ov-file#tips)」とは案内しておりましたが、失われて困る変更がありましたらコピーしてから更新してください。
+- ファイルの保存時に上書きするファイルがある場合は、`log/` にバックアップするようにしました。
+	- うっかり上書きしてしまったら `log/` を覗いてみてください。
 
 ### 2024/05/02
 

@@ -1,4 +1,6 @@
 ﻿import os
+import shutil
+import time
 import tkinter as tk
 from tkinter import filedialog, messagebox
 
@@ -130,9 +132,18 @@ class FileMenu:
         self.form.update_title()
         return True
 
+    def _backup_file(self, file_path):
+        if not os.path.exists(file_path):
+            return False
+        YYYYMMDD_HHMMSS = time.strftime("%Y%m%d_%H%M%S", time.localtime())
+        log_file_name = f"{YYYYMMDD_HHMMSS}-{os.path.basename(file_path)}"
+        shutil.copy2(file_path, os.path.join(Path.daily_log, log_file_name))
+        return True
+
     def save_file(self):
         if self.ctx.file_path is None:
             return self.save_as_file()
+        self._backup_file(self.ctx.file_path)
         input_text = self.ctx.input_area.get_text()
         with open(self.ctx.file_path, "w", encoding="utf-8-sig") as f:
             f.write(input_text)
@@ -140,16 +151,19 @@ class FileMenu:
         return True
 
     def save_as_file(self):
+        file_name = f'{time.strftime("%Y%m%d_%H%M%S", time.localtime())}.txt'
         if self.ctx.file_path is None:
             initial_dir = Path.cwd
         else:
             initial_dir = os.path.dirname(self.ctx.file_path)
-        file_path = filedialog.asksaveasfilename(filetypes=[("テキストファイル", "*.txt")], initialdir=initial_dir)
+        file_types = [("テキストファイル", "*.txt")]
+        file_path = filedialog.asksaveasfilename(filetypes=file_types, initialdir=initial_dir, initialfile=file_name)
         if file_path == "":
             return False
         if not file_path.endswith(".txt"):
             file_path += ".txt"
 
+        self._backup_file(file_path)
         input_text = self.ctx.input_area.get_text()
         with open(file_path, "w", encoding="utf-8-sig") as f:
             f.write(input_text)
@@ -170,5 +184,3 @@ class FileMenu:
                 func = self.save_file
             return func()
         return True
-
-    # TODO: watch_file

@@ -34,12 +34,12 @@ class Path:
     YYYYMMDD = time.strftime("%Y%m%d", time.localtime())
 
     log = os.path.join(cwd, "log")
-    log_date = os.path.join(log, YYYYMMDD)
-    os.makedirs(log_date, exist_ok=True)
+    daily_log = os.path.join(log, YYYYMMDD)
+    os.makedirs(daily_log, exist_ok=True)
 
     YYYYMMDD_HHMMSS = time.strftime("%Y%m%d_%H%M%S", time.localtime())
-    generate_log = os.path.join(log_date, f"{YYYYMMDD_HHMMSS}-generate.txt")
-    output_log = os.path.join(log_date, f"{YYYYMMDD_HHMMSS}-output.txt")
+    generate_log = os.path.join(daily_log, f"{YYYYMMDD_HHMMSS}-generate.txt")
+    output_log = os.path.join(daily_log, f"{YYYYMMDD_HHMMSS}-output.txt")
 
     speech = os.path.join(cwd, "speech")
     speech_date = os.path.join(speech, YYYYMMDD)
