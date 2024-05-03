@@ -15,8 +15,8 @@
 - [EasyNovelAssistant の音声読み上げ対応](https://twitter.com/Zuntan03/status/1785252082343440723)
 	- [@StelsRay](https://twitter.com/StelsRay/status/1785338281485553757)
 	[@555zamagi](https://twitter.com/555zamagi/status/1785259670141374741),
-	[879](https://mercury.bbspink.com/test/read.cgi/onatech/1702817339/879)
-
+	[879](https://mercury.bbspink.com/test/read.cgi/onatech/1702817339/879),
+	[@kurayamimousou](https://twitter.com/kurayamimousou/status/1786379824187220016)
 
 ### 記事
 
@@ -55,19 +55,26 @@
 
 ## インストールと更新
 
-1. [`Install-EasyNovelAssistant.bat`](https://github.com/Zuntan03/EasyNovelAssistant/raw/main/EasyNovelAssistant/setup/Install-EasyNovelAssistant.bat?v=2) を右クリックからダウンロードして、**パスが英数字のインストール先フォルダ** でダブルクリックして実行します。
+インストールや更新で困ったことが起きたら、[こちら](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%A8%E6%9B%B4%E6%96%B0) を参照してください。  
+
+1. [`Install-EasyNovelAssistant.bat`](https://github.com/Zuntan03/EasyNovelAssistant/raw/main/EasyNovelAssistant/setup/Install-EasyNovelAssistant.bat?v=2) を右クリックして `名前をつけて保存` し、インストール先フォルダ（**パスが英数字で空白を含まない**）にダウンロードして実行します。
 	- **`WindowsによってPCが保護されました` と表示されたら、`詳細表示` から `実行` します。**
-		- 注意書きに問題がなければ `y` を入力します。
+	- `配布元から関連ファイルをダウンロード` することに問題がなければ `y` を入力します。
 	- `Windows セキュリティ` のネットワークへのアクセス許可は `許可` してください。
-1. インストールが終了すると、自動的に EasyNovelAssistant が起動します。  
-	- 次回以降は `Run-EasyNovelAssistant.bat` で起動します。
+1. インストールが完了すると、自動的に EasyNovelAssistant が起動します。  
 
-更新は `Update-EasyNovelAssistant.bat` を実行します。  
-次のステップは [はじめての生成](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%E7%94%9F%E6%88%90) です。
+インストール完了後は
+- `Run-EasyNovelAssistant.bat` で起動します。
+- `Update-EasyNovelAssistant.bat` で更新します。
 
-困ったことがあったら [インストールと更新](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%A8%E6%9B%B4%E6%96%B0) を参照してください。  
+**次のステップは [はじめての生成](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%E7%94%9F%E6%88%90) です。**
+
 
 ## 最近の更新情報
+
+### 2024/05/04
+
+- 急な開発で混み合ったり古くなったりしたドキュメントを整理しています。
 
 ### 2024/05/03
 
