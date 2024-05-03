@@ -21,10 +21,11 @@
 ### 記事
 
 - 『[【検閲なし】GPUで生成するローカルAIチャット環境と小説企画＋執筆用ゴールシークプロンプトで叡智小説生成最強に見える](https://note.com/kagami_kami/n/n3a321d926684)』[@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1785313774620246194)
-- 作例『[[AI試運転]スパーリング・ウィズ・ツクモドウ](https://note.com/liruk/n/nfd0bb54903cb)』と[制作の感想](https://twitter.com/liruk/status/1785596479631204420)。
+- 作例『[[AI試運転]スパーリング・ウィズ・ツクモドウ](https://note.com/liruk/n/nfd0bb54903cb)』と [制作の感想](https://twitter.com/liruk/status/1785596479631204420)。
 
 ### つぶやき
 
+[186](https://fate.5ch.net/test/read.cgi/liveuranus/1714702930/186),
 [@kurayamimousou](https://twitter.com/kurayamimousou/status/1786377248033136794),
 [@boxheadroom](https://twitter.com/boxheadroom/status/1786031076617703640),
 [@luta_ai](https://twitter.com/luta_ai/status/1785933828730802214),
@@ -74,7 +75,7 @@
 
 ### 2024/05/04
 
-- 急な開発で混み合ったり古くなったりしたドキュメントを整理しています。
+- 急な開発で混み合ったり古くなったりしたドキュメントを整理しました。
 
 ### 2024/05/03
 
@@ -84,86 +85,9 @@
 	ただし GPU レイヤー数に応じて消費 VRAM が増えます。
 - [mmnga/Vecteus-v1-gguf](https://huggingface.co/mmnga/Vecteus-v1-gguf), [mmnga/Ninja-v1-128k-gguf](https://huggingface.co/mmnga/Ninja-v1-128k-gguf), [mmnga/Ninja-v1-NSFW-128k-gguf](https://huggingface.co/mmnga/Ninja-v1-NSFW-128k-gguf) の IQ4_XS 版をダウンロードできるようにしました。
 - コンテキストウィンドウの仕様変更に備えて、`KoboldCpp/Run-*-L0.bat` を起動時に再生成するようにしました。
-	- 当初から「[bat ファイルをコピーして、set GPU_LAYERS=0 あたりをお好みに変更してご利用ください。](https://github.com/Zuntan03/EasyNovelAssistant?tab=readme-ov-file#tips)」とは案内しておりましたが、失われて困る変更がありましたらコピーしてから更新してください。
+	- 当初より「bat ファイルをコピーして、set GPU_LAYERS=0 あたりをお好みに変更してご利用ください。」と案内しておりましたが、失われて困る変更がありましたらコピーしてから更新してください。
 - ファイルの保存時に上書きするファイルがある場合は、`log/` にバックアップするようにしました。
 	- うっかり上書きしてしまったら `log/` を覗いてみてください。
-
-### 2024/05/02
-
-- `ファイル` メニューに `ファイル監視` を追加して、お好みのテキストエディタと連携できるようになりました。  
-	あなたの手に馴染んだテキストエディタで入力を保存すると、EasyNovelAssistant が自動で読み込みます。  
-	これもローカル LLM の利点ですね。  
-	![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/file_watch.png)
-- メニュー周りを整理しました。
-	- `特集テーマ` メニューと `作例や記事` メニューを追加しました。
-	- `モデル` メニューをカテゴリ分けしました。
-	- `ツール` メニューを追加しました。
-- 注意書きを追加しました。
-	- AVX2 をサポートしていない CPU では、`koboldcpp_cublas.dll` の初期化に失敗します。
-		- `KoboldCpp/koboldcpp.exe` で KoboldCpp を直接起動して、動作する起動オプションを探します。
-			- 例）`Presets:` を `CLBlast NoAVX2(Old CPU)` にして、`GPU ID:` を NVIDIA 系にする。
-		- KoboldCpp が起動している状態で `Run-EasyNovelAssistant.bat` で EasyNovelAssistant を起動すると、そのまま利用できます。
-- Linux 版の KoboldCpp のバージョンを 1.64 に上げました。
-	- ファイル名が `koboldcpp-linux-x64` から `koboldcpp-linux-x64-cuda1150` に変更されていますので更新してください。
-- 「」の無い文章を読み上げなくなっていた不具合を修正しました。
-
-### Vecteus や Ninja の使い方
-
-![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/Ninja.png)
-
-1. 自動で起動している `[元祖] LightChatAssistant-TypeB-2x7B-IQ4_XS` のコマンドプロンプトを閉じます。
-1. `モデル` メニューから `Vecteus` や `Ninja` の `L0` を選びます。
-	- `L0` の数値を上げれば上げるほど高速に動作しますが、VRAM が必要になります。
-	- Vecteus IQ4_XS (コンテキストウィンドウ 4K) は VRAM 6GB でも全 33 レイヤーが載ります。
-	- Ninja 128K はコンテキストウィンドウと GPU レイヤーで、VRAM をトレードオフすることになります。
-
-Vecteus と Ninja の個人の感想
-
-- Vecteus Q4_K のコスパが凄まじい。~~ぜひ IQ4_XS 版を触ってみたい。~~
-	- Vecteus のコンテキスト広げた版にも期待。
-- Ninja も 128K でない版を 4K コンテキストで動かしていると良好。
-	- 128K 版ではコンテキスト 16K あたりから品質に悪影響があるような気がする？（LCA 32K 感覚比）
-		- とりあえず 128K 版を 8K 運用。
-- Ninja に Instruction format を適用すると、申し訳される？
-- ~~Ninja の量子化が Q_8_0 までしか無い。IQ4_XS 版を触ってみたい。~~
-
-### 2024/05/01
-
-- モデルに [`Ninja-v1-NSFW-128k-Q_8_0`](https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-128k-GGUF), [`Ninja-v1-NSFW-Q_8_0`](https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-NSFW-GGUF), [`Ninja-v1-128k-Q_8_0`](https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-128k-GGUF), [`Ninja-v1-Q_8_0`](https://huggingface.co/Local-Novel-LLM-project/Ninja-v1-GGUF), [`Vecteus-v1-Q4_K`](https://huggingface.co/Local-Novel-LLM-project/Vecteus-v1-gguf), [`umiyuki-Japanese-Chat-Umievo-itr001-7b-Q4_K_M`](https://huggingface.co/mmnga/umiyuki-Japanese-Chat-Umievo-itr001-7b-gguf) を追加しました。
-- `テンプレート` メニューに `ゴールシーク: 小説企画からプロッティング` と `ゴールシーク: 生成した設定とプロットで執筆` を追加しました。
-	- 使い方は『[【検閲なし】GPUで生成するローカルAIチャット環境と小説企画＋執筆用ゴールシークプロンプトで叡智小説生成最強に見える](https://note.com/kagami_kami/n/n3a321d926684)』を確認ください。
-	- `ヘルプ` の `ゴールシーク` からも上記記事を確認できます。
-- 読み上げ文章の抽出ロジックを変更しました。
-	- より文脈に沿った読み上げになりますが、文末ノイズが乗る可能性があります。
-		- 個別に対処しますので、文末ノイズが乗る文面がありましたら、連絡をください。
-
-### 2024/04/30
-
-[![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.png)](https://twitter.com/Zuntan03/status/1785252082343440723)  
-[動画 DL](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/StyleBertVits2.mp4)
-
-- [Style-Bert-VITS2](https://github.com/litagin02/Style-Bert-VITS2) による読み上げに対応しました。  
-	- 中クリックによる手動読み上げと、`キャラ名「～」` セリフフォーマットによる生成時自動読み上げに対応しています。
-	- `Style-Bert-VITS2/` フォルダ内は通常の Style-Bert-VITS2 として利用できます。
-		- Style-Bert-VITS2 のチュートリアル: [YouTube](https://www.youtube.com/watch?v=aTUSzgDl1iY), [ニコニコ](https://www.nicovideo.jp/watch/sm43391524)
-		- `Style-Bert-VITS2/Editor.bat` で、音程調整ありの音声生成ができます。
-		- モデルの追加は `Style-Bert-VITS2/model_assets/` にフォルダを作ってモデルのファイルを配置します。
-			- 例）`Style-Bert-VITS2/model_assets/` に [`tsukuyomi-chan/`](https://huggingface.co/ayousanz/tsukuyomi-chan-style-bert-vits2-model) フォルダを作成して、[`.safetensors`](https://huggingface.co/ayousanz/tsukuyomi-chan-style-bert-vits2-model/resolve/main/tsukuyomi-chan_e200_s5200.safetensors) と [`config.json`](https://huggingface.co/ayousanz/tsukuyomi-chan-style-bert-vits2-model/resolve/main/config.json) と [`style_vectors.npy`](https://huggingface.co/ayousanz/tsukuyomi-chan-style-bert-vits2-model/resolve/main/style_vectors.npy) を保存するとモデルを利用できます。
-			- 他のモデル: [Anneli](https://booth.pm/ja/items/5511064), [Anneli-nsfw](https://booth.pm/ja/items/5511852)
-		- `Style-Bert-VITS2/App.bat` でお手元の音声データからモデルを作成できます。
-			- 音声の分割、読みの追加など学習に必要な機能が一通り揃っています。詳細は [公式ページ](https://github.com/litagin02/Style-Bert-VITS2#%E5%AD%A6%E7%BF%92) を参照ください。
-
-#### 読み上げ利用手順
-
-1. EasyNovelAssistant を起動したら、[`読み上げ`] - [`Style-Bert-VITS2 をインストール"`] でインストールの完了を待ちます。
-1. インストールが完了したら [`読み上げ`] - [`読み上げサーバーを立ち上げる`] で読み上げサーバーの起動を待ちます。
-	- `Style-Bert-VITS2 読み上げサーバー` に `00-00 00:00:00 |  INFO  | server_fastapi.py:306 | server listen: http://127.0.0.1:5000` が表示されたら起動完了です。
-	- **LLM(KoboldCpp) で VRAM ギリギリまで GPU レイヤーを増やしていた場合は、VRAM を 2GB 程度開けるために GPU レイヤーを 5 枚程度(Run-LightChatAssistant-2x7B-IQ4_XS 換算) 減らしてください。**
-	- **VRAM が 6GB 未満の場合は [`読み上げ`] - [`GPU を使用する`] を無効にします。**
-	- KoboldCpp と同様に `Style-Bert-VITS2/Server.bat` や `Style-Bert-VITS2/ServerCpu.bat` で、あらかじめ読み上げサーバーを立ち上げておくこともできます。
-1. 読み上げサーバーが起動したら、[`読み上げ`] メニューで読み上げの有効/無効、音量、スピード、声の選択ができます。
-1. 中クリックで読み上げたり、[`読み上げサンプル`] メニューを参考に生成時に自動で読み上げたりできます。
-	- **重要！ [`設定`] メニューで名前を設定するのを忘れないでください！**
 
 **[過去の更新履歴](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E6%9B%B4%E6%96%B0%E5%B1%A5%E6%AD%B4)**
 
@@ -175,6 +99,8 @@ Vecteus と Ninja の個人の感想
 	- インストールと更新の詳細説明とトラブルシューティングです。
 - [はじめての生成](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%E7%94%9F%E6%88%90)
 	- EasyNovelAssistant のチュートリアルです。
+- [モデルと GPU レイヤー数の選択](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E3%83%A2%E3%83%87%E3%83%AB%E3%81%A8-GPU-%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E6%95%B0%E3%81%AE%E9%81%B8%E6%8A%9E)
+	- 多様なモデルを効率的に利用する方法の解説です。
 - [Tips](https://github.com/Zuntan03/EasyNovelAssistant/wiki/Tips)
 	- ちょっとした情報です。
 - [更新履歴](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E6%9B%B4%E6%96%B0%E5%B1%A5%E6%AD%B4)

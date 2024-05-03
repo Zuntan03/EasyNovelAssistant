@@ -34,12 +34,12 @@ class SpeechMenu:
                     label="読み上げサーバーを立ち上げる", command=self.ctx.style_bert_vits2.launch_server
                 )
 
-                def set_style_bert_vits2_gpu(*args):
-                    self.ctx["style_bert_vits2_gpu"] = self.gpu_var.get()
+            def set_style_bert_vits2_gpu(*args):
+                self.ctx["style_bert_vits2_gpu"] = self.gpu_var.get()
 
-                self.gpu_var = tk.BooleanVar(value=self.ctx["style_bert_vits2_gpu"])
-                self.gpu_var.trace_add("write", set_style_bert_vits2_gpu)
-                self.menu.add_checkbutton(label="GPU を使用する", variable=self.gpu_var)
+            self.gpu_var = tk.BooleanVar(value=self.ctx["style_bert_vits2_gpu"])
+            self.gpu_var.trace_add("write", set_style_bert_vits2_gpu)
+            self.menu.add_checkbutton(label="GPU を使用する", variable=self.gpu_var)
             return
 
         def set_middle_click(*args):

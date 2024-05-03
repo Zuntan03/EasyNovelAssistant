@@ -66,7 +66,7 @@ class InputArea:
 
         sequence = self.ctx.kobold_cpp.get_instruct_sequence()
         if sequence is not None:
-            self.ctx_menu.add_command(label="指示タグの挿入", command=self._insert_instruct_tag)
+            self.ctx_menu.add_command(label="指示タグを挿入", command=self._insert_instruct_tag)
             self.ctx_menu.add_separator()
 
         self.ctx_menu.add_command(label="元に戻す (Ctrl+Z)", command=self.text_area.edit_undo)

@@ -18,8 +18,8 @@ if [ ! -e "koboldcpp-linux-x64-cuda1150" ]; then
     chmod +x koboldcpp-linux-x64-cuda1150
 fi
 
-if [ ! -e "LightChatAssistant-TypeB-2x7B_iq4xs_imatrix.gguf" ]; then
-    curl -LO https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF/resolve/main/LightChatAssistant-TypeB-2x7B_iq4xs_imatrix.gguf
+if [ ! -e "Vecteus-v1-IQ4_XS.gguf" ]; then
+    curl -LO %CURL_CMD% -LO https://huggingface.co/mmnga/Vecteus-v1-gguf/resolve/main/Vecteus-v1-IQ4_XS.gguf
 fi
 
 cd -
