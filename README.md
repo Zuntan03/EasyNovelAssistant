@@ -1,14 +1,22 @@
 ﻿# EasyNovelAssistant
 
 軽量で規制も検閲もない日本語ローカル LLM『[LightChatAssistant-TypeB](https://huggingface.co/Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF)』による、簡単なノベル生成アシスタントです。  
-ローカル特権の永続生成 Generate forever で、当たりガチャを積み上げます。
+ローカル特権の永続生成 Generate forever で、当たりガチャを積み上げます。読み上げにも対応。
 
-内部で呼び出している [KoboldCpp](https://github.com/LostRuins/koboldcpp) や [Style-Bert-VITS2](https://github.com/litagin02/Style-Bert-VITS2) を直接利用することもできますし、[EasySdxlWebUi](https://github.com/Zuntan03/EasySdxlWebUi) で画像生成しながら利用することもできます。
+内部で呼び出している [KoboldCpp](https://github.com/LostRuins/koboldcpp) や [Style-Bert-VITS2](https://github.com/litagin02/Style-Bert-VITS2) を直接利用することもできますし、[EasySdxlWebUi](https://github.com/Zuntan03/EasySdxlWebUi) で画像を生成しながら利用することもできます。
 
 ## 利用者の声
 
 - [絵と文章と音声をローカル PC で同時生成](https://twitter.com/Zuntan03/status/1786165587573715394)
-	- [@StelsRay](https://twitter.com/StelsRay/status/1786289235324207593), [@hysierra](https://twitter.com/hysierra/status/1786300104338731172), [@currnya](https://twitter.com/currnya/status/1786357838492946803), [984](https://bbs.punipuni.eu/test/read.cgi/vaporeon/1712647603/984)
+	- [@StelsRay](https://twitter.com/StelsRay/status/1786289235324207593),
+	[@hysierra](https://twitter.com/hysierra/status/1786300104338731172),
+	[@currnya](https://twitter.com/currnya/status/1786357838492946803),
+	[984](https://bbs.punipuni.eu/test/read.cgi/vaporeon/1712647603/984)
+- [音声読み上げ対応](https://twitter.com/Zuntan03/status/1785252082343440723)
+	- [@StelsRay](https://twitter.com/StelsRay/status/1785338281485553757)
+	[@555zamagi](https://twitter.com/555zamagi/status/1785259670141374741),
+	[879](https://mercury.bbspink.com/test/read.cgi/onatech/1702817339/879)
+
 
 ### 記事
 
@@ -47,26 +55,6 @@
 
 ## 最近の更新情報
 
-### Vecteus や Ninja の使い方
-
-![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/Ninja.png)
-
-1. 自動で起動している `[元祖] LightChatAssistant-TypeB-2x7B-IQ4_XS` のコマンドプロンプトを閉じます。
-1. `モデル` メニューから `Vecteus` や `Ninja` の `L0` を選びます。
-	- `L0` の数値を上げれば上げるほど高速に動作しますが、VRAM が必要になります。
-	- Vecteus IQ4_XS (コンテキストウィンドウ 4K) は VRAM 6GB でも全 33 レイヤーが載ります。
-	- Ninja 128K はコンテキストウィンドウと GPU レイヤーで、VRAM をトレードオフすることになります。
-
-Vecteus と Ninja の個人の感想
-
-- Vecteus Q4_K のコスパが凄まじい。~~ぜひ IQ4_XS 版を触ってみたい。~~
-	- Vecteus のコンテキスト広げた版にも期待。
-- Ninja も 128K でない版を 4K コンテキストで動かしていると良好。
-	- 128K 版ではコンテキスト 16K あたりから品質に悪影響があるような気がする？（LCA 32K 感覚比）
-		- とりあえず 128K 版を 8K 運用。
-- Ninja に Instruction format を適用すると、申し訳される？
-- ~~Ninja の量子化が Q_8_0 までしか無い。IQ4_XS 版を触ってみたい。~~
-
 ### 2024/05/03
 
 - LLM 入出力のコンテキストサイズの上限を `モデル` - `コンテキストサイズ上限` メニューで指定するようにしました。
@@ -97,6 +85,26 @@ Vecteus と Ninja の個人の感想
 - Linux 版の KoboldCpp のバージョンを 1.64 に上げました。
 	- ファイル名が `koboldcpp-linux-x64` から `koboldcpp-linux-x64-cuda1150` に変更されていますので更新してください。
 - 「」の無い文章を読み上げなくなっていた不具合を修正しました。
+
+### Vecteus や Ninja の使い方
+
+![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/Ninja.png)
+
+1. 自動で起動している `[元祖] LightChatAssistant-TypeB-2x7B-IQ4_XS` のコマンドプロンプトを閉じます。
+1. `モデル` メニューから `Vecteus` や `Ninja` の `L0` を選びます。
+	- `L0` の数値を上げれば上げるほど高速に動作しますが、VRAM が必要になります。
+	- Vecteus IQ4_XS (コンテキストウィンドウ 4K) は VRAM 6GB でも全 33 レイヤーが載ります。
+	- Ninja 128K はコンテキストウィンドウと GPU レイヤーで、VRAM をトレードオフすることになります。
+
+Vecteus と Ninja の個人の感想
+
+- Vecteus Q4_K のコスパが凄まじい。~~ぜひ IQ4_XS 版を触ってみたい。~~
+	- Vecteus のコンテキスト広げた版にも期待。
+- Ninja も 128K でない版を 4K コンテキストで動かしていると良好。
+	- 128K 版ではコンテキスト 16K あたりから品質に悪影響があるような気がする？（LCA 32K 感覚比）
+		- とりあえず 128K 版を 8K 運用。
+- Ninja に Instruction format を適用すると、申し訳される？
+- ~~Ninja の量子化が Q_8_0 までしか無い。IQ4_XS 版を触ってみたい。~~
 
 ### 2024/05/01
 
@@ -135,34 +143,6 @@ Vecteus と Ninja の個人の感想
 1. 読み上げサーバーが起動したら、[`読み上げ`] メニューで読み上げの有効/無効、音量、スピード、声の選択ができます。
 1. 中クリックで読み上げたり、[`読み上げサンプル`] メニューを参考に生成時に自動で読み上げたりできます。
 	- **重要！ [`設定`] メニューで名前を設定するのを忘れないでください！**
-
-### 2024/04/28
-
-- [`設定`] メニューでサンプル用のキャラクター名とユーザー名を指定できるようにしました。
-	- サンプルを毎度書き換えなくとも、お好みの名前を自動的に設定します。
-	- **旧バージョンではサンプルに `{char_name}` や `{user_name}` が表示されます。**  
-	**`Update-EasyNovelAssistant.bat` で更新してください。**
-
-![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/name_setting.png)
-
-### 2024/04/27
-
-- 細かな実装改善
-	- 非選択時の中ボタンで、クリックした行を入力欄に送る対応。
-	- 出力欄だけでなく、生成欄でも中クリックで入力欄に送る対応。
-	- サンプル系メニューにスプリッタ追加。
-	- ログを日付ディレクトリに格納。
-	- コンソールへの生成ログ表示。
-	- モデルサーバーがビジーだった場合に自動で中断送信。
-
-### 2024/04/26
-
-- モデルに超軽量日本語 NSFW 小説モデルの [SniffyOtter-7B-Novel-Writing-NSFW-IQ4_XS](https://huggingface.co/Aratako/SniffyOtter-7B-Novel-Writing-NSFW-GGUF) を追加しました。
-	- 合わせて追加したメニューの [`テンプレート`] - [`SniffyOtter-7B-Novel-Writing-NSFW`] で [プロンプトフォーマット](https://huggingface.co/Aratako/SniffyOtter-7B-Novel-Writing-NSFW#%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88) に沿ってご利用ください。  
-	キーワードはジャンルに合わせて設定する必要があります。
-		- `男性向け`: [ノクターンノベルズ 人気キーワード一覧](https://noc.syosetu.com/search/classified/)
-		- `女性向け`, `BL`: [ムーンライトノベルズ 人気キーワード一覧](https://mnlt.syosetu.com/search/classified/)
-		- `大人向け`: [ミッドナイトノベルズ 人気キーワード一覧](https://mid.syosetu.com/search/classified/)
 
 **[過去の更新履歴](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E6%9B%B4%E6%96%B0%E5%B1%A5%E6%AD%B4)**
 
