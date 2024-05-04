@@ -11,7 +11,7 @@ class KoboldCpp:
     BAT_TEMPLATE = """@echo off
 chcp 65001 > NUL
 pushd %~dp0
-set CURL_CMD=C:\Windows\System32\curl.exe --ssl-no-revoke
+set CURL_CMD=C:\Windows\System32\curl.exe -k
 
 @REM 7B: 33, 35B: 41, 70B: 65
 set GPU_LAYERS=0
@@ -97,7 +97,7 @@ popd
     def download_model(self, llm_name):
         llm = self.ctx.llm[llm_name]
         for url in llm["urls"]:
-            curl_cmd = f"curl --ssl-no-revoke -LO {url}"
+            curl_cmd = f"curl -k -LO {url}"
             if subprocess.run(curl_cmd, shell=True, cwd=Path.kobold_cpp).returncode != 0:
                 return f"{llm_name} のダウンロードに失敗しました。\n{curl_cmd}"
         return None

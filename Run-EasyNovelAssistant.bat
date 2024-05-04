@@ -1,6 +1,6 @@
 @echo off
 chcp 65001 > NUL
-set CURL_CMD=C:\Windows\System32\curl.exe --ssl-no-revoke
+set CURL_CMD=C:\Windows\System32\curl.exe -k
 
 if not exist %~dp0sample\ ( mkdir %~dp0sample )
 pushd %~dp0sample
