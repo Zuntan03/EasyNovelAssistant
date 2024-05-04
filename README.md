@@ -7,6 +7,7 @@
 
 ## 利用者の声
 
+- (New!) [読み上げ音声に画像を割り当てて、字幕付きの動画の簡単作成に対応](https://twitter.com/Zuntan03/status/1786694765997924371)
 - [EasyNovelAssistant と EasySdxlWebUi で、絵と文章と音声をローカル PC で同時生成](https://twitter.com/Zuntan03/status/1786165587573715394)
 	- [@StelsRay](https://twitter.com/StelsRay/status/1786289235324207593),
 	[@hysierra](https://twitter.com/hysierra/status/1786300104338731172),
@@ -75,7 +76,7 @@
 
 #### [動画の作成](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E5%8B%95%E7%94%BB%E3%81%AE%E4%BD%9C%E6%88%90) に対応しました。
 
-読み上げ音声に画像を割り当てて、字幕付きの動画を簡単に作成します。以下作成手順。
+読み上げ音声に画像を割り当てて、字幕付きの動画の簡単作成に対応。以下作成手順。
 
 1. [読み上げたい音声](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%E7%94%9F%E6%88%90#%E8%AA%AD%E3%81%BF%E4%B8%8A%E3%81%92%E3%81%AE%E5%88%A9%E7%94%A8) と [音声に割り当てたい画像](https://github.com/Zuntan03/EasySdxlWebUi) を用意します。
 1. `ツール` の `動画の作成` で音声と動画のペアを再生順に合わせて選択します。
