@@ -17,7 +17,7 @@ class SampleMenu:
 
         descs = [
             {
-                "label": "(New!) 特集テーマ",
+                "label": "特集テーマ",
                 "mode": "open",
                 "change_mode": {
                     "サンプル: ": "set",
@@ -49,7 +49,7 @@ class SampleMenu:
                 "splitter_names": [],
             },
             {
-                "label": "(New!) 作例や記事",
+                "label": "作例や記事",
                 "mode": "open",
                 "change_mode": {},
                 "path": "url.json",

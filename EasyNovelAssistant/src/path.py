@@ -42,7 +42,14 @@ class Path:
     output_log = os.path.join(daily_log, f"{YYYYMMDD_HHMMSS}-output.txt")
 
     speech = os.path.join(cwd, "speech")
-    speech_date = os.path.join(speech, YYYYMMDD)
+    daily_speech = os.path.join(speech, YYYYMMDD)
+
+    movie = os.path.join(cwd, "movie")
+    os.makedirs(movie, exist_ok=True)
+    venv = os.path.join(cwd, "venv")
+    scripts = os.path.join(venv, "Scripts")
+    ffmpeg = os.path.join(scripts, "ffmpeg.exe")
+    ffplay = os.path.join(scripts, "ffplay.exe")
 
     @classmethod
     def init(cls, ctx):
@@ -50,4 +57,4 @@ class Path:
 
     @classmethod
     def get_path_name(cls, name):
-        return cls.path_regex.sub("_", name).replace("___", "_").replace("__", "_")
+        return cls.path_regex.sub("_", name.strip()).replace("___", "_").replace("__", "_")

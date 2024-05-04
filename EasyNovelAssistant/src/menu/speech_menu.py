@@ -1,6 +1,5 @@
 ﻿import os
 import tkinter as tk
-import webbrowser
 
 from path import Path
 
@@ -73,7 +72,7 @@ class SpeechMenu:
         self.menu.add_separator()
 
         self.volume_menu = tk.Menu(self.menu, tearoff=False)
-        self.menu.add_cascade(label=f'読み上げ音量: {self.ctx["speech_volume"]}', menu=self.volume_menu)
+        self.menu.add_cascade(label=f'読み上げ音量: {self.ctx["speech_volume"]}%', menu=self.volume_menu)
 
         def set_speech_volume(volume):
             self.ctx["speech_volume"] = volume
@@ -82,11 +81,11 @@ class SpeechMenu:
         for volume in volumes:
             check_var = tk.BooleanVar(value=self.ctx["speech_volume"] == volume)
             self.volume_menu.add_checkbutton(
-                label=volume, variable=check_var, command=lambda v=volume, _=check_var: set_speech_volume(v)
+                label=f"{volume}%", variable=check_var, command=lambda v=volume, _=check_var: set_speech_volume(v)
             )
 
         self.speed_menu = tk.Menu(self.menu, tearoff=False)
-        self.menu.add_cascade(label=f'読み上げスピード: {self.ctx["speech_speed"]}', menu=self.speed_menu)
+        self.menu.add_cascade(label=f'読み上げ速度: {self.ctx["speech_speed"]}倍', menu=self.speed_menu)
 
         def set_speech_speed(speed):
             self.ctx["speech_speed"] = speed
@@ -95,7 +94,22 @@ class SpeechMenu:
         for speed in speeds:
             check_var = tk.BooleanVar(value=self.ctx["speech_speed"] == speed)
             self.speed_menu.add_checkbutton(
-                label=speed, variable=check_var, command=lambda s=speed, _=check_var: set_speech_speed(s)
+                label=f"{speed}倍", variable=check_var, command=lambda s=speed, _=check_var: set_speech_speed(s)
+            )
+
+        self.interval_menu = tk.Menu(self.menu, tearoff=False)
+        self.menu.add_cascade(label=f'読み上げ間隔: {self.ctx["speech_interval"]}秒', menu=self.interval_menu)
+
+        def set_speech_interval(interval):
+            self.ctx["speech_interval"] = interval
+
+        intervals = [3.0, 2.0, 1.5, 1.0, 0.8, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.0]
+        for interval in intervals:
+            check_var = tk.BooleanVar(value=self.ctx["speech_interval"] == interval)
+            self.interval_menu.add_checkbutton(
+                label=f"{interval}秒",
+                variable=check_var,
+                command=lambda i=interval, _=check_var: set_speech_interval(i),
             )
 
         self.menu.add_separator()

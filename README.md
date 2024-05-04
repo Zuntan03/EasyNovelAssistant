@@ -73,11 +73,27 @@
 
 ## 最近の更新情報
 
+#### [動画の作成](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E5%8B%95%E7%94%BB%E3%81%AE%E4%BD%9C%E6%88%90) に対応しました。
+
+読み上げ音声に画像を割り当てて、字幕付きの動画を簡単に作成します。以下作成手順。
+
+1. [読み上げたい音声](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%E7%94%9F%E6%88%90#%E8%AA%AD%E3%81%BF%E4%B8%8A%E3%81%92%E3%81%AE%E5%88%A9%E7%94%A8) と [音声に割り当てたい画像](https://github.com/Zuntan03/EasySdxlWebUi) を用意します。
+1. `ツール` の `動画の作成` で音声と動画のペアを再生順に合わせて選択します。
+	- `キャンセル` すると次に進みます。
+1. 動画の保存先を指定します。
+
+- 動画ファイルと同じ名前のフォルダに、再生成用の `.bat` ファイルと字幕用の `.srt` ファイルがあります。
+	- **字幕が動画の横幅に収まらない場合は `.srt` ファイルで字幕を改行し、 `.bat` ファイルで再生成してください。**
+	- `*.bat` ファイルを編集して [FFmpeg](https://ffmpeg.org/) の詳細なオプションを指定することもできます。
+
 ### 2024/05/04
 
+- [動画の作成](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E5%8B%95%E7%94%BB%E3%81%AE%E4%BD%9C%E6%88%90) に対応しました。
+	- 読み上げ音声に画像を割り当てて、字幕付きの動画を簡単に作成します。
 - 急な開発で混み合ったり古くなったりしたドキュメントを整理しました。
 	- 最初のインストールから音声読み上げまでがスムーズになったはずです。
-	- 詰まる所があったらお知らせください。
+	- 詰まる記述がありましたら、お知らせください。
+- 読み上げ間隔を設定できるようにしました。
 
 ### 2024/05/03
 
@@ -102,9 +118,11 @@
 - [はじめての生成](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%E7%94%9F%E6%88%90)
 	- EasyNovelAssistant のチュートリアルです。
 - [モデルと GPU レイヤー数の選択](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E3%83%A2%E3%83%87%E3%83%AB%E3%81%A8-GPU-%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E6%95%B0%E3%81%AE%E9%81%B8%E6%8A%9E)
-	- 多様なモデルを効率的に利用する方法の解説です。
+	- 多様なモデルを効率的に利用する方法です。
 - [Tips](https://github.com/Zuntan03/EasyNovelAssistant/wiki/Tips)
 	- ちょっとした情報です。
+- [動画の作成](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E5%8B%95%E7%94%BB%E3%81%AE%E4%BD%9C%E6%88%90)
+	- 読み上げ音声に画像を割り当てて、字幕付きの動画を簡単に作成します。
 - [更新履歴](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E6%9B%B4%E6%96%B0%E5%B1%A5%E6%AD%B4)
 	- 過去の更新履歴です。
 

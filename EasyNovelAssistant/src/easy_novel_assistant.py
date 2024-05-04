@@ -5,6 +5,7 @@ from context import Context
 from form import Form
 from generator import Generator
 from kobold_cpp import KoboldCpp
+from movie_maker import MovieMaker
 from path import Path
 from style_bert_vits2 import StyleBertVits2
 
@@ -19,11 +20,8 @@ class EasyNovelAssistant:
 
         self.ctx.kobold_cpp = KoboldCpp(self.ctx)
         self.ctx.style_bert_vits2 = StyleBertVits2(self.ctx)
+        self.ctx.movie_maker = MovieMaker(self.ctx)
         self.ctx.form = Form(self.ctx)
-
-        # self.ctx.file_menu = self.ctx.form.file_menu
-        # self.ctx.model_menu = self.ctx.form.model_menu
-        # self.ctx.gen_menu = self.ctx.form.gen_menu
 
         self.ctx.input_area = self.ctx.form.input_area
         self.ctx.output_area = self.ctx.form.output_area

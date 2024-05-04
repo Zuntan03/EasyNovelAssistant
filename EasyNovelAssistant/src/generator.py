@@ -117,26 +117,6 @@ class Generator:
         if self.ctx["auto_speech_other"]:
             self.ctx.style_bert_vits2.generate(text)
 
-    # def _auto_speech(self, text):
-    #     text = text.replace(f'{self.ctx["char_name"]}「', f'\n{self.ctx["char_name"]}「')
-    #     text = text.replace(f'{self.ctx["user_name"]}「', f'\n{self.ctx["user_name"]}「')
-    #     lines = text.splitlines()
-
-    #     char_start = f'{self.ctx["char_name"]}「'
-    #     user_start = f'{self.ctx["user_name"]}「'
-    #     for line in lines:
-    #         if line == "":
-    #             continue
-    #         if line.startswith(char_start):
-    #             if self.ctx["auto_speech_char"]:
-    #                 self.ctx.style_bert_vits2.generate(line)
-    #         elif line.startswith(user_start):
-    #             if self.ctx["auto_speech_user"]:
-    #                 self.ctx.style_bert_vits2.generate(line)
-    #         else:
-    #             if self.ctx["auto_speech_other"]:
-    #                 self.ctx.style_bert_vits2.generate(line)
-
     def _generate(self, input_text):
         return self.ctx.kobold_cpp.generate(input_text)
 
