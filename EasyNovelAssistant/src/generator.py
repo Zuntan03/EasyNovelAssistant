@@ -34,7 +34,7 @@ class Generator:
     def update(self):
         if self.enabled:
             if self.generate_job is None:
-                input_text = self.ctx.input_area.get_text()
+                input_text = self.ctx.input_area.get_comment_removed_text()
                 if input_text != "":
                     self.generate_job = self.gen_queue.push(self._generate, input_text=input_text)
             elif self.generate_job.successful():
@@ -58,7 +58,8 @@ class Generator:
             elif self.check_job.successful():
                 result = self.check_job.result
                 if result is not None:
-                    result = self._get_last_voice(self.ctx.input_area.get_text()) + result
+                    input_text = self.ctx.input_area.get_comment_removed_text()
+                    result = self._get_last_voice(input_text) + result
                     if result != self.gen_area_text:
                         if result.startswith(self.gen_area_text):
                             append_text = result[len(self.gen_area_text) :]

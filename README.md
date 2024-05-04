@@ -8,6 +8,7 @@
 ## 利用者の声
 
 - (New!) [読み上げ音声に画像を割り当てて、字幕付きの動画の簡単作成に対応](https://twitter.com/Zuntan03/status/1786694765997924371)
+	- [@yuki_shikihime](https://twitter.com/yuki_shikihime/status/1786718565384790201)
 - [EasyNovelAssistant と EasySdxlWebUi で、絵と文章と音声をローカル PC で同時生成](https://twitter.com/Zuntan03/status/1786165587573715394)
 	- [@StelsRay](https://twitter.com/StelsRay/status/1786289235324207593),
 	[@hysierra](https://twitter.com/hysierra/status/1786300104338731172),
@@ -86,6 +87,10 @@
 - 動画ファイルと同じ名前のフォルダに、再生成用の `.bat` ファイルと字幕用の `.srt` ファイルがあります。
 	- **字幕が動画の横幅に収まらない場合は `.srt` ファイルで字幕を改行し、 `.bat` ファイルで再生成してください。**
 	- `*.bat` ファイルを編集して [FFmpeg](https://ffmpeg.org/) の詳細なオプションを指定することもできます。
+
+### 2024/05/05
+
+- 入力欄の **行頭** に `//` で、その行をコメントとして扱うようにしました。
 
 ### 2024/05/04
 

@@ -35,6 +35,16 @@ class InputArea:
     def get_text(self):
         return self.text_area.get("1.0", "end-1c")
 
+    def get_comment_removed_text(self):
+        text = self.get_text()
+        lines = text.splitlines()
+        new_lines = []
+        for line in lines:
+            if line.startswith("//"):
+                continue
+            new_lines.append(line)
+        return "\n".join(new_lines)
+
     def _speech(self, e):
         line_num = self.text_area.index(f"@{e.x},{e.y}").split(".")[0]
         text = self.text_area.get(f"{line_num}.0", f"{line_num}.end") + "\n"
