@@ -27,6 +27,8 @@
 
 ### つぶやき
 
+[@bla_tanuki](https://twitter.com/bla_tanuki/status/1786969054336700924),
+[@bla_tanuki](https://twitter.com/bla_tanuki/status/1786968425430167829),
 [186](https://fate.5ch.net/test/read.cgi/liveuranus/1714702930/186),
 [@kurayamimousou](https://twitter.com/kurayamimousou/status/1786377248033136794),
 [@boxheadroom](https://twitter.com/boxheadroom/status/1786031076617703640),
