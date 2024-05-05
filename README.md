@@ -91,6 +91,7 @@
 ### 2024/05/05
 
 - 入力欄の **行頭** に `//` で、その行をコメントとして扱うようにしました。
+- [Anneli と Anneli-nsfw](https://huggingface.co/kaunista/kaunista-style-bert-vits2-models) をインストール時にダウンロードするようにしました。
 
 ### 2024/05/04
 

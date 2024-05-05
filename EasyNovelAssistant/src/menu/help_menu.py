@@ -53,6 +53,10 @@ class HelpMenu:
         self._show_hf_url(reference_menu, "dranger003/c4ai-command-r-plus-iMat.GGUF")
         self._show_hf_url(reference_menu, "pmysl/c4ai-command-r-plus-GGUF")
 
+        reference_menu.add_separator()
+        self._show_hf_url(reference_menu, "kaunista/kaunista-style-bert-vits2-models")
+        self._show_hf_url(reference_menu, "RinneAi/Rinne_Style-Bert-VITS2")
+
         self.menu.add_separator()
         cmd = lambda: self._show_url("https://github.com/Zuntan03/EasyNovelAssistant")
         self.menu.add_command(label="EasyNovelAssistant", command=cmd)

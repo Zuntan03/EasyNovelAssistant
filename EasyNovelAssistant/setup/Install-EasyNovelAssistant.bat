@@ -55,6 +55,7 @@ if not exist %APP_VENV_DIR%\ (
 	echo https://huggingface.co/dranger003/c4ai-command-r-plus-iMat.GGUF
 	echo https://huggingface.co/pmysl/c4ai-command-r-plus-GGUF
 	echo.
+	echo https://huggingface.co/kaunista/kaunista-style-bert-vits2-models
 	echo https://huggingface.co/RinneAi/Rinne_Style-Bert-VITS2
 	echo.
 	echo "未成年の方はインストール禁止です。"

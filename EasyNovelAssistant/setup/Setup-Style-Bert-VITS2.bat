@@ -73,27 +73,14 @@ if not exist Server_cpu.bat (
 	copy %~dp0res\Server_cpu.bat .
 )
 
-if not exist model_assets\Rinne ( mkdir model_assets\Rinne )
+call :DL_HF_MODEL RinneAi/Rinne_Style-Bert-VITS2 model_assets/Rinne Rinne Rinne
+if %errorlevel% neq 0 ( popd & exit /b 1 )
 
-setlocal enabledelayedexpansion
-if not exist model_assets\Rinne\Rinne.safetensors (
-	echo %CURL_CMD% -Lo model_assets\Rinne\Rinne.safetensors https://huggingface.co/RinneAi/Rinne_Style-Bert-VITS2/resolve/main/model_assets/Rinne/Rinne.safetensors
-	%CURL_CMD% -Lo model_assets\Rinne\Rinne.safetensors https://huggingface.co/RinneAi/Rinne_Style-Bert-VITS2/resolve/main/model_assets/Rinne/Rinne.safetensors
-	if !errorlevel! neq 0 ( pause & popd & exit /b 1 )
-)
+call :DL_HF_MODEL kaunista/kaunista-style-bert-vits2-models Anneli Anneli Anneli_e116_s32000
+if %errorlevel% neq 0 ( popd & exit /b 1 )
 
-if not exist model_assets\Rinne\config.json (
-	echo %CURL_CMD% -Lo model_assets\Rinne\config.json https://huggingface.co/RinneAi/Rinne_Style-Bert-VITS2/resolve/main/model_assets/Rinne/config.json
-	%CURL_CMD% -Lo model_assets\Rinne\config.json https://huggingface.co/RinneAi/Rinne_Style-Bert-VITS2/resolve/main/model_assets/Rinne/config.json
-	if !errorlevel! neq 0 ( pause & popd & exit /b 1 )
-)
-
-if not exist model_assets\Rinne\style_vectors.npy (
-	echo %CURL_CMD% -Lo model_assets\Rinne\style_vectors.npy https://huggingface.co/RinneAi/Rinne_Style-Bert-VITS2/resolve/main/model_assets/Rinne/style_vectors.npy
-	%CURL_CMD% -Lo model_assets\Rinne\style_vectors.npy https://huggingface.co/RinneAi/Rinne_Style-Bert-VITS2/resolve/main/model_assets/Rinne/style_vectors.npy
-	if !errorlevel! neq 0 ( pause & popd & exit /b 1 )
-)
-endlocal
+call :DL_HF_MODEL kaunista/kaunista-style-bert-vits2-models Anneli-nsfw Anneli-nsfw Anneli-nsfw_e300_s5100
+if %errorlevel% neq 0 ( popd & exit /b 1 )
 
 if not exist config.yml (
 	echo copy %~dp0res\config.yml .
@@ -101,3 +88,34 @@ if not exist config.yml (
 )
 
 popd
+exit /b 0
+
+:DL_HF_MODEL
+set HF_REP=%1
+set MODEL_DIR=%2
+set MODEL_NAME=%3
+set MODEL_SAFETENSORS=%4
+
+if not exist model_assets\%MODEL_NAME% ( mkdir model_assets\%MODEL_NAME% )
+
+setlocal enabledelayedexpansion
+if not exist model_assets\%MODEL_NAME%\%MODEL_NAME%.safetensors (
+	echo %CURL_CMD% -Lo model_assets\%MODEL_NAME%\%MODEL_NAME%.safetensors https://huggingface.co/%HF_REP%/resolve/main/%MODEL_DIR%/%MODEL_SAFETENSORS%.safetensors
+	%CURL_CMD% -Lo model_assets\%MODEL_NAME%\%MODEL_NAME%.safetensors https://huggingface.co/%HF_REP%/resolve/main/%MODEL_DIR%/%MODEL_SAFETENSORS%.safetensors
+	if !errorlevel! neq 0 ( pause & popd & exit /b 1 )
+)
+
+if not exist model_assets\%MODEL_NAME%\config.json (
+	echo %CURL_CMD% -Lo model_assets\%MODEL_NAME%\config.json https://huggingface.co/%HF_REP%/resolve/main/%MODEL_DIR%/config.json
+	%CURL_CMD% -Lo model_assets\%MODEL_NAME%\config.json https://huggingface.co/%HF_REP%/resolve/main/%MODEL_DIR%/config.json
+	if !errorlevel! neq 0 ( pause & popd & exit /b 1 )
+)
+
+if not exist model_assets\%MODEL_NAME%\style_vectors.npy (
+	echo %CURL_CMD% -Lo model_assets\%MODEL_NAME%\style_vectors.npy https://huggingface.co/%HF_REP%/resolve/main/%MODEL_DIR%/style_vectors.npy
+	%CURL_CMD% -Lo model_assets\%MODEL_NAME%\style_vectors.npy https://huggingface.co/%HF_REP%/resolve/main/%MODEL_DIR%/style_vectors.npy
+	if !errorlevel! neq 0 ( pause & popd & exit /b 1 )
+)
+endlocal
+
+exit /b 0

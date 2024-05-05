@@ -83,14 +83,8 @@ class ToolMenu:
             )
 
             self.menu.add_separator()
-            url = "https://booth.pm/ja/items/5511852"
-            self.menu.add_command(label="(高品質) Anneli-nsfw 音声モデル", command=lambda: webbrowser.open(url))
-            url = "https://booth.pm/ja/items/5511064"
-            self.menu.add_command(label="(高品質) Anneli 音声モデル", command=lambda: webbrowser.open(url))
             url = "https://booth.pm/ja/search/Style-Bert-VITS2"
             self.menu.add_command(label="BOOTH (Style-Bert-VITS2)", command=lambda: webbrowser.open(url))
-
-            self.menu.add_separator()
             url = "https://booth.pm/ja/items/5511738"
             self.menu.add_command(label="黄琴まひろ (V3-JP-T)", command=lambda: webbrowser.open(url))
             url = "https://booth.pm/ja/items/5566669"
