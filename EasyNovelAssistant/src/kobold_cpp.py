@@ -145,6 +145,7 @@ popd
         llm_name = ctx["llm_name"]
         llm = ctx.llm[llm_name]
 
+        # api/extra/true_max_context_length なら立ち上げ済みサーバーに対応可能
         max_context_length = min(llm["context_size"], ctx["llm_context_size"])
         if ctx["max_length"] >= max_context_length:
             print(

@@ -7,19 +7,6 @@
 
 ## 利用者の声
 
-- (New!) [読み上げ音声に画像を割り当てて、字幕付きの動画の簡単作成に対応](https://twitter.com/Zuntan03/status/1786694765997924371)
-	- [@yuki_shikihime](https://twitter.com/yuki_shikihime/status/1786718565384790201)
-- [EasyNovelAssistant と EasySdxlWebUi で、絵と文章と音声をローカル PC で同時生成](https://twitter.com/Zuntan03/status/1786165587573715394)
-	- [@StelsRay](https://twitter.com/StelsRay/status/1786289235324207593),
-	[@hysierra](https://twitter.com/hysierra/status/1786300104338731172),
-	[@currnya](https://twitter.com/currnya/status/1786357838492946803),
-	[984](https://bbs.punipuni.eu/test/read.cgi/vaporeon/1712647603/984)
-- [EasyNovelAssistant の音声読み上げ対応](https://twitter.com/Zuntan03/status/1785252082343440723)
-	- [@StelsRay](https://twitter.com/StelsRay/status/1785338281485553757)
-	[@555zamagi](https://twitter.com/555zamagi/status/1785259670141374741),
-	[879](https://mercury.bbspink.com/test/read.cgi/onatech/1702817339/879),
-	[@kurayamimousou](https://twitter.com/kurayamimousou/status/1786379824187220016)
-
 ### 記事
 
 - 『[【検閲なし】GPUで生成するローカルAIチャット環境と小説企画＋執筆用ゴールシークプロンプトで叡智小説生成最強に見える](https://note.com/kagami_kami/n/n3a321d926684)』[@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1785313774620246194)
@@ -63,6 +50,20 @@
 [0611](https://mercury.bbspink.com/test/read.cgi/onatech/1694810015/611),
 [0549](https://mercury.bbspink.com/test/read.cgi/onatech/1694810015/549)
 
+### お知らせへの反応
+- [読み上げ音声に画像を割り当てて、字幕付きの動画の簡単作成に対応](https://twitter.com/Zuntan03/status/1786694765997924371)
+	- [@yuki_shikihime](https://twitter.com/yuki_shikihime/status/1786718565384790201)
+- [EasyNovelAssistant と EasySdxlWebUi で、絵と文章と音声をローカル PC で同時生成](https://twitter.com/Zuntan03/status/1786165587573715394)
+	- [@StelsRay](https://twitter.com/StelsRay/status/1786289235324207593),
+	[@hysierra](https://twitter.com/hysierra/status/1786300104338731172),
+	[@currnya](https://twitter.com/currnya/status/1786357838492946803),
+	[984](https://bbs.punipuni.eu/test/read.cgi/vaporeon/1712647603/984)
+- [EasyNovelAssistant の音声読み上げ対応](https://twitter.com/Zuntan03/status/1785252082343440723)
+	- [@StelsRay](https://twitter.com/StelsRay/status/1785338281485553757)
+	[@555zamagi](https://twitter.com/555zamagi/status/1785259670141374741),
+	[879](https://mercury.bbspink.com/test/read.cgi/onatech/1702817339/879),
+	[@kurayamimousou](https://twitter.com/kurayamimousou/status/1786379824187220016)
+
 ## インストールと更新
 
 インストールや更新で困ったことが起きたら、[こちら](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%A8%E6%9B%B4%E6%96%B0) を参照してください。  
@@ -79,26 +80,17 @@
 
 **次のステップは [はじめての生成](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%E7%94%9F%E6%88%90) です。**
 
-
-## 最近の更新情報
-
-#### [動画の作成](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E5%8B%95%E7%94%BB%E3%81%AE%E4%BD%9C%E6%88%90) に対応しました。
-
-読み上げ音声に画像を割り当てて、字幕付きの動画の簡単作成に対応。以下作成手順。
-
-1. [読み上げたい音声](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%E7%94%9F%E6%88%90#%E8%AA%AD%E3%81%BF%E4%B8%8A%E3%81%92%E3%81%AE%E5%88%A9%E7%94%A8) と [音声に割り当てたい画像](https://github.com/Zuntan03/EasySdxlWebUi) を用意します。
-1. `ツール` の `動画の作成` で音声と動画のペアを再生順に合わせて選択します。
-	- `キャンセル` すると次に進みます。
-1. 動画の保存先を指定します。
-
-- 動画ファイルと同じ名前のフォルダに、再生成用の `.bat` ファイルと字幕用の `.srt` ファイルがあります。
-	- **字幕が動画の横幅に収まらない場合は `.srt` ファイルで字幕を改行し、 `.bat` ファイルで再生成してください。**
-	- `*.bat` ファイルを編集して [FFmpeg](https://ffmpeg.org/) の詳細なオプションを指定することもできます。
+## 最近の更新
 
 ### 2024/05/06
 
 - `コンテキストサイズ上限` 以上の `生成文の長さ` を指定した際に、`生成文の長さ` を自動的に短縮するようにしました。
 	- アップデート後に入力欄と関係のない文章が生成されていた方は、この対応で修正されます。
+	- `生成文の長さ` が 4096 以上の長文を生成する方法
+		- モデルを Vecteus(4K) からLightChatAssistant や Ninja に変更
+		- `コンテキストサイズ上限` を 6144 以上に設定
+		- `生成文の長さ` を 4096 以上に設定
+	- `コンテキストサイズ上限` を増やすと VRAM 消費も増えますので、動作しない場合はモデルの GPU レイヤー数（`L33` など）を引き下げてください。
 
 ### 2024/05/05
 
@@ -118,18 +110,6 @@
 	- 詰まる記述がありましたら、お知らせください。
 - 読み上げ間隔を設定できるようにしました。
 - Windows 10環境で証明書エラーが発生するらしく、curl の --ssl-no-revoke オプションを -k に変更しました。
-
-### 2024/05/03
-
-- LLM 入出力のコンテキストサイズの上限を `モデル` - `コンテキストサイズ上限` メニューで指定するようにしました。
-	- デフォルト値は `4K` で、VRAM 8GB 環境で `LightChatAssistant-2x7B-IQ4_XS` の `L30` か `L33` が動作します。
-	- 長い文章を取り扱いたい場合は、より大きなコンテキストサイズを指定します。  
-	ただし GPU レイヤー数に応じて消費 VRAM が増えます。
-- [mmnga/Vecteus-v1-gguf](https://huggingface.co/mmnga/Vecteus-v1-gguf), [mmnga/Ninja-v1-128k-gguf](https://huggingface.co/mmnga/Ninja-v1-128k-gguf), [mmnga/Ninja-v1-NSFW-128k-gguf](https://huggingface.co/mmnga/Ninja-v1-NSFW-128k-gguf) の IQ4_XS 版をダウンロードできるようにしました。
-- コンテキストウィンドウの仕様変更に備えて、`KoboldCpp/Run-*-L0.bat` を起動時に再生成するようにしました。
-	- 当初より「bat ファイルをコピーして、set GPU_LAYERS=0 あたりをお好みに変更してご利用ください。」と案内しておりましたが、失われて困る変更がありましたらコピーしてから更新してください。
-- ファイルの保存時に上書きするファイルがある場合は、`log/` にバックアップするようにしました。
-	- うっかり上書きしてしまったら `log/` を覗いてみてください。
 
 **[過去の更新履歴](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E6%9B%B4%E6%96%B0%E5%B1%A5%E6%AD%B4)**
 
