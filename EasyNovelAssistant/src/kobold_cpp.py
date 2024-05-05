@@ -145,8 +145,15 @@ popd
         llm_name = ctx["llm_name"]
         llm = ctx.llm[llm_name]
 
+        max_context_length = min(llm["context_size"], ctx["llm_context_size"])
+        if ctx["max_length"] >= max_context_length:
+            print(
+                f'生成文の長さ ({ctx["max_length"]}) がコンテキストサイズ上限 ({max_context_length}) 以上なため、{max_context_length // 2} に短縮します。'
+            )
+            ctx["max_length"] = max_context_length // 2
+
         args = {
-            "max_context_length": min(llm["context_size"], ctx["llm_context_size"]),
+            "max_context_length": max_context_length,
             "max_length": ctx["max_length"],
             "prompt": text,
             "quiet": False,

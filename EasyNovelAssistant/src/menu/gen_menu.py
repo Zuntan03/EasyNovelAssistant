@@ -44,7 +44,11 @@ class GenMenu:
         self.max_length_menu = tk.Menu(self.menu, tearoff=False)
         self.menu.add_cascade(label=f'生成文の長さ: {self.ctx["max_length"]}', menu=self.max_length_menu)
 
+        llm = self.ctx.llm[self.ctx["llm_name"]]
+        max_context_length = min(llm["context_size"], self.ctx["llm_context_size"])
         for max_length in self.ctx["max_lengths"]:
+            if max_length >= max_context_length:
+                break
             check_var = tk.BooleanVar(value=self.ctx["max_length"] == max_length)
             self.max_length_menu.add_checkbutton(
                 label=max_length, variable=check_var, command=lambda gl=max_length, _=check_var: set_max_length(gl)

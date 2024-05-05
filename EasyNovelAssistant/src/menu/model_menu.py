@@ -22,7 +22,11 @@ class ModelMenu:
         self.menu.delete(0, tk.END)
 
         def context_label(context_size):
-            return f"C{context_size // 1024}K ({context_size})"
+            llm_name = self.ctx["llm_name"]
+            model_ctx_size = self.ctx.llm[llm_name]["context_size"]
+            if context_size > model_ctx_size:
+                return f"C{model_ctx_size // 1024}K: {context_size} > {model_ctx_size}({llm_name})"
+            return f"C{context_size // 1024}K: {context_size}"
 
         self.llm_context_size_menu = tk.Menu(self.menu, tearoff=False)
         self.menu.add_cascade(

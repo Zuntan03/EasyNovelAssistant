@@ -27,8 +27,13 @@
 
 ### つぶやき
 
+[@maru_ai29](https://twitter.com/maru_ai29/status/1787059183621378073),
 [@bla_tanuki](https://twitter.com/bla_tanuki/status/1786969054336700924),
 [@bla_tanuki](https://twitter.com/bla_tanuki/status/1786968425430167829),
+[@bla_tanuki](https://twitter.com/bla_tanuki/status/1786982703692382277),
+[@muchkanensys](https://twitter.com/muchkanensys/status/1786991909409595529),
+[@shinshi78](https://twitter.com/shinshi78/status/1786991262387888451),
+[865](https://fate.5ch.net/test/read.cgi/liveuranus/1714702930/865),
 [186](https://fate.5ch.net/test/read.cgi/liveuranus/1714702930/186),
 [@kurayamimousou](https://twitter.com/kurayamimousou/status/1786377248033136794),
 [@boxheadroom](https://twitter.com/boxheadroom/status/1786031076617703640),
@@ -89,6 +94,11 @@
 - 動画ファイルと同じ名前のフォルダに、再生成用の `.bat` ファイルと字幕用の `.srt` ファイルがあります。
 	- **字幕が動画の横幅に収まらない場合は `.srt` ファイルで字幕を改行し、 `.bat` ファイルで再生成してください。**
 	- `*.bat` ファイルを編集して [FFmpeg](https://ffmpeg.org/) の詳細なオプションを指定することもできます。
+
+### 2024/05/06
+
+- `コンテキストサイズ上限` 以上の `生成文の長さ` を指定した際に、`生成文の長さ` を自動的に短縮するようにしました。
+	- アップデート後に入力欄と関係のない文章が生成されていた方は、この対応で修正されます。
 
 ### 2024/05/05
 
