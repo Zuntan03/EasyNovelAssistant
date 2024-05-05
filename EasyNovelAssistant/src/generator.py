@@ -44,7 +44,7 @@ class Generator:
                         self.enabled = False
                         self.ctx.form.update_title()
                 else:
-                    result = self._get_last_voice(self.generate_job.args["input_text"]) + result
+                    result = self._get_last_line(self.generate_job.args["input_text"]) + result
                     self.ctx.output_area.append_output(result)
                 self.generate_job = None
             elif self.generate_job.canceled():
@@ -59,7 +59,7 @@ class Generator:
                 result = self.check_job.result
                 if result is not None:
                     input_text = self.ctx.input_area.get_comment_removed_text()
-                    result = self._get_last_voice(input_text) + result
+                    result = self._get_last_line(input_text) + result
                     if result != self.gen_area_text:
                         if result.startswith(self.gen_area_text):
                             append_text = result[len(self.gen_area_text) :]
@@ -124,13 +124,18 @@ class Generator:
     def _check(self):
         return self.ctx.kobold_cpp.check()
 
-    def _get_last_voice(self, text):
-        if text is None:
+    def _get_last_line(self, text):
+        if text.endswith("\n"):
             return ""
-        last_line = text.split("\n")[-1]
-        if last_line.endswith("「"):
-            return last_line
-        return ""
+        return text.splitlines()[-1]
+
+    # def _get_last_voice(self, text):
+    #     if text is None:
+    #         return ""
+    #     last_line = text.split("\n")[-1]
+    #     if last_line.endswith("「"):
+    #         return last_line
+    #     return ""
 
     def abort(self):
         self.check_queue.push(self.ctx.kobold_cpp.abort)

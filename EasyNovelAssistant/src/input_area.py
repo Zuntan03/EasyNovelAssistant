@@ -43,7 +43,10 @@ class InputArea:
             if line.startswith("//"):
                 continue
             new_lines.append(line)
-        return "\n".join(new_lines)
+        result = "\n".join(new_lines)
+        if text.endswith("\n"):  # splitlines は末尾改行を無視するため
+            result += "\n"
+        return result
 
     def _speech(self, e):
         line_num = self.text_area.index(f"@{e.x},{e.y}").split(".")[0]

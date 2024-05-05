@@ -14,7 +14,7 @@ class ToolMenu:
         self.ctx = ctx
 
         self.menu = tk.Menu(form.win, tearoff=False)
-        self.form.menu_bar.add_cascade(label="(New!) ツール", menu=self.menu)
+        self.form.menu_bar.add_cascade(label="ツール", menu=self.menu)
         self.menu.configure(postcommand=self._on_menu_open)
 
     def _on_menu_open(self):
