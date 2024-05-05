@@ -17,6 +17,19 @@ class SpeechMenu:
     def on_menu_open(self):
         self.menu.delete(0, tk.END)
 
+        # 入力欄をすべて読み上げる
+        def speech_all():
+            text = self.ctx.input_area.get_comment_removed_text()
+            lines = text.splitlines()
+            for line in lines:
+                self.ctx.style_bert_vits2.generate(line, force=True)
+
+        self.menu.add_command(label="入力欄を読み上げ", command=speech_all)
+
+        self.menu.add_command(label="読み上げを中断 (F5)", command=self.ctx.style_bert_vits2.abort)
+
+        self.menu.add_separator()
+
         models = self.ctx.style_bert_vits2.models
         if models is None:
             models = self.ctx.style_bert_vits2.get_models()

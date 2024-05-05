@@ -67,11 +67,17 @@ class StyleBertVits2:
         self.gen_queue.update()
         self.play_queue.update()
 
-    def generate(self, text):
+    def abort(self):
+        self.gen_queue.cancel_all()
+        self.play_queue.cancel_all()
+
+    def generate(self, text, force=False):
         max_speech_queue = self.ctx["max_speech_queue"]
-        if (self.gen_queue.len() > max_speech_queue) or (self.play_queue.len() > max_speech_queue):
-            print(f"[Info] 混み合っているので読み上げをキャンセルしました。: {text}")
-            return False
+
+        if not force:
+            if (self.gen_queue.len() > max_speech_queue) or (self.play_queue.len() > max_speech_queue):
+                print(f"[Info] 混み合っているので読み上げをキャンセルしました。: {text}")
+                return False
         self.gen_queue.push(self._generate, text=text)
         return True
 
