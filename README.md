@@ -10,15 +10,18 @@
 ### 記事
 
 - 『[【検閲なし】GPUで生成するローカルAIチャット環境と小説企画＋執筆用ゴールシークプロンプトで叡智小説生成最強に見える](https://note.com/kagami_kami/n/n3a321d926684)』[@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1785313774620246194)
+	- [@Emanon_14](https://twitter.com/Emanon_14/status/1787491885801783753),
+	[@bla_tanuki](https://twitter.com/bla_tanuki/status/1786969054336700924),
+	[@bla_tanuki](https://twitter.com/bla_tanuki/status/1786982703692382277),
+
 - 作例『[[AI試運転]スパーリング・ウィズ・ツクモドウ](https://note.com/liruk/n/nfd0bb54903cb)』と [制作の感想](https://twitter.com/liruk/status/1785596479631204420)。
 
 ### つぶやき
 
+[@Emanon_14](https://twitter.com/Emanon_14/status/1787317994345070865),
 [@liruk](https://twitter.com/liruk/status/1787318402736115994),
 [@maru_ai29](https://twitter.com/maru_ai29/status/1787059183621378073),
-[@bla_tanuki](https://twitter.com/bla_tanuki/status/1786969054336700924),
 [@bla_tanuki](https://twitter.com/bla_tanuki/status/1786968425430167829),
-[@bla_tanuki](https://twitter.com/bla_tanuki/status/1786982703692382277),
 [@muchkanensys](https://twitter.com/muchkanensys/status/1786991909409595529),
 [@shinshi78](https://twitter.com/shinshi78/status/1786991262387888451),
 [865](https://fate.5ch.net/test/read.cgi/liveuranus/1714702930/865),
