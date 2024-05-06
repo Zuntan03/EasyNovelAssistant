@@ -14,6 +14,7 @@
 
 ### つぶやき
 
+[@liruk](https://twitter.com/liruk/status/1787318402736115994),
 [@maru_ai29](https://twitter.com/maru_ai29/status/1787059183621378073),
 [@bla_tanuki](https://twitter.com/bla_tanuki/status/1786969054336700924),
 [@bla_tanuki](https://twitter.com/bla_tanuki/status/1786968425430167829),
