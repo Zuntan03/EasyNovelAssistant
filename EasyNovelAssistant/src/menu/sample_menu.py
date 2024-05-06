@@ -17,6 +17,13 @@ class SampleMenu:
 
         descs = [
             {
+                "label": "ユーザー",
+                "mode": "set",
+                "change_mode": {},
+                "path": "user.json",
+                "splitter_names": [],
+            },
+            {
                 "label": "特集テーマ",
                 "mode": "open",
                 "change_mode": {
@@ -58,10 +65,12 @@ class SampleMenu:
         ]
 
         for desc in descs:
-            menu = tk.Menu(form.win, tearoff=False)
-            form.menu_bar.add_cascade(label=desc["label"], menu=menu)
+            json_path = os.path.join(Path.sample, desc["path"])
+            if os.path.exists(json_path):
+                menu = tk.Menu(form.win, tearoff=False)
+                form.menu_bar.add_cascade(label=desc["label"], menu=menu)
 
-            menu.configure(postcommand=lambda mn=menu, ds=desc: self.on_menu_open(mn, ds))
+                menu.configure(postcommand=lambda mn=menu, ds=desc: self.on_menu_open(mn, ds))
 
     def on_menu_open(self, menu, desc):
         menu.delete(0, tk.END)
@@ -74,9 +83,9 @@ class SampleMenu:
             with open(json_path, "r", encoding="utf-8-sig") as f:
                 dic = json.load(f)
 
-        if dic is None:
-            menu.add_command(label=f'{desc["label"]} をダウンロード', command=lambda p=desc["path"]: self._download(p))
-            return
+        # if dic is None:
+        #     menu.add_command(label=f'{desc["label"]} をダウンロード', command=lambda p=desc["path"]: self._download(p))
+        #     return
 
         change_mode = desc["change_mode"]
         for key in dic:
@@ -103,17 +112,17 @@ class SampleMenu:
             if name in desc["splitter_names"]:
                 menu.add_separator()
 
-    def _download(self, path):
-        url = self.URL_TEMPLATE.format(path)
-        try:
-            with urllib.request.urlopen(url) as res:
-                data = res.read()
-            with open(os.path.join(Path.sample, path), "wb") as f:
-                f.write(data)
-                return data
-        except Exception as e:
-            print(e)
-        return None
+    # def _download(self, path):
+    #     url = self.URL_TEMPLATE.format(path)
+    #     try:
+    #         with urllib.request.urlopen(url) as res:
+    #             data = res.read()
+    #         with open(os.path.join(Path.sample, path), "wb") as f:
+    #             f.write(data)
+    #             return data
+    #     except Exception as e:
+    #         print(e)
+    #     return None
 
     def on_menu_select(self, item, mode):
         if (mode == "set") or (mode == "insert"):
