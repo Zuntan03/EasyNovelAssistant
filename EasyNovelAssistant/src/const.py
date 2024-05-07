@@ -11,9 +11,4 @@ class Const:
             "spacing2": 4,
             "spacing3": 4,
             "wrap": tk.CHAR,
-            "fg": ctx["foreground_color"],
-            "bg": ctx["background_color"],
-            "selectforeground": ctx["select_foreground_color"],
-            "insertbackground": ctx["select_foreground_color"],
-            "selectbackground": ctx["select_background_color"],
         }

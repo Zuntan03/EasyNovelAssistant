@@ -86,6 +86,12 @@
 
 ## 最近の更新
 
+### 2024/05/07
+
+- `設定` メニューに `フォント`、`フォントサイズ`、`テーマカラーの反転` を追加しました。
+
+![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/font_setting.png)
+
 ### 2024/05/06
 
 - `コンテキストサイズ上限` 以上の `生成文の長さ` を指定した際に、`生成文の長さ` を自動的に短縮するようにしました。

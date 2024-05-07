@@ -104,6 +104,8 @@
 	"mov_crf": 26,
 	"mov_volume_adjust": false,
 	"mov_tempo_adjust": true,
+	"text_area_font": "TkDefaultFont",
+	"text_area_font_size": 11,
 	"foreground_color": "#CCCCCC",
 	"select_foreground_color": "#FFFFFF",
 	"background_color": "#222222",

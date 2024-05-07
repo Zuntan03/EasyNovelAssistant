@@ -10,12 +10,24 @@ class InputArea:
         self.text_area = scrolledtext.ScrolledText(parent, undo=True, maxundo=-1)
         self.text_area.configure(Const.TEXT_AREA_CONFIG)
         self.text_area.pack(fill=tk.BOTH, expand=True)
+        self.apply_text_setting()
         parent.add(self.text_area, width=ctx["input_area_width"], minsize=Const.AREA_MIN_SIZE, stretch="always")
 
         self.ctx_menu = tk.Menu(self.text_area, tearoff=False)
         self.text_area.bind("<Button-3>", self._on_ctx_menu)
 
         self.text_area.bind("<Button-2>", self._on_middle_click)
+
+    def apply_text_setting(self):
+        self.text_area.configure(font=(self.ctx["text_area_font"], self.ctx["text_area_font_size"]))
+        colors = {
+            "fg": self.ctx["foreground_color"],
+            "bg": self.ctx["background_color"],
+            "selectforeground": self.ctx["select_foreground_color"],
+            "insertbackground": self.ctx["select_foreground_color"],
+            "selectbackground": self.ctx["select_background_color"],
+        }
+        self.text_area.configure(colors)
 
     def set_text(self, text):
         self.text_area.delete("1.0", tk.END)
