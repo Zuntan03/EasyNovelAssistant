@@ -89,6 +89,15 @@
 ### 2024/05/07
 
 - `設定` メニューに `フォント`、`フォントサイズ`、`テーマカラーの反転` を追加しました。
+	- フォントの選択欄が上下にとても長くなっていますので、キーボードの上下キーで選択してください。
+	- `config.json` の以下の項目を編集すれば、細かく色を設定することもできます。
+
+```
+	"foreground_color": "#CCCCCC",
+	"select_foreground_color": "#FFFFFF",
+	"background_color": "#222222",
+	"select_background_color": "#555555",
+```
 
 ![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/font_setting.png)
 
