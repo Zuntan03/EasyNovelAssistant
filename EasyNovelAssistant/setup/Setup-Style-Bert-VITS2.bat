@@ -60,8 +60,13 @@ echo pip install -q torch torchvision torchaudio --index-url https://download.py
 pip install -q torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 if %errorlevel% neq 0 ( pause & popd & exit /b 1 )
 
-echo pip install -qq -r requirements.txt
-pip install -qq -r requirements.txt
+echo pip install -q -r requirements.txt
+pip install -q -r requirements.txt
+if %errorlevel% neq 0 ( pause & popd & exit /b 1 )
+
+@REM ModuleNotFoundError: No module named 'GPUtil'
+echo pip install -q GPUtil
+pip install -q GPUtil
 if %errorlevel% neq 0 ( pause & popd & exit /b 1 )
 
 echo python initialize.py
