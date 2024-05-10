@@ -91,6 +91,8 @@
 - [Ocuteus-v1](https://huggingface.co/Local-Novel-LLM-project/Ocuteus-v1-gguf) を KoboldCpp で試せる `KoboldCpp/Launch-Ocuteus-v1-Q8_0-C16K-L0.bat` を追加しました。
 	- GPU レイヤーを増やして高速化したい場合は、bat をコピーして `Launch-Ocuteus-v1-Q8_0-C16K-L33.bat` などにリネームし、`set GPU_LAYERS=0` を `set GPU_LAYERS=33` に書き換えます。
 
+![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/Ocuteus.png)
+
 ### 2024/05/07
 
 - `設定` メニューに `フォント`、`フォントサイズ`、`テーマカラーの反転` を追加しました。
