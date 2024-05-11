@@ -22,12 +22,10 @@ class EasyNovelAssistant:
         self.ctx.style_bert_vits2 = StyleBertVits2(self.ctx)
         self.ctx.movie_maker = MovieMaker(self.ctx)
         self.ctx.form = Form(self.ctx)
-
-        self.ctx.input_area = self.ctx.form.input_area
-        self.ctx.output_area = self.ctx.form.output_area
-        self.ctx.gen_area = self.ctx.form.gen_area
-
         self.ctx.generator = Generator(self.ctx)
+
+        # TODO: 起動時引数でのフォルダ・ファイル読み込み
+        self.ctx.form.input_area.open_tab(self.ctx["input_text"])  # 書き出しは Form の finalize
 
         self.ctx.form.win.after(self.SLEEP_TIME, self.mainloop)
 
@@ -37,7 +35,7 @@ class EasyNovelAssistant:
     def mainloop(self):
         self.ctx.generator.update()
         self.ctx.style_bert_vits2.update()
-        self.ctx.form.file_menu.update()
+        self.ctx.form.input_area.update()
         self.ctx.form.win.after(self.SLEEP_TIME, self.mainloop)
 
 

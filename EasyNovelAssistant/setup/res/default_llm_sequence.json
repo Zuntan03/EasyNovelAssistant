@@ -1,26 +1,41 @@
 ﻿{
-	"LightChatAssistant": {
+	"None": {
+		"model_names": [
+			"Vecteus"
+		],
+		"instruct": "{0}",
+		"stop": []
+	},
+	"Llama2Chat": {
+		"model_names": [
+			"LightChatAssistant",
+			"ArrowPro",
+			"japanese-starling"
+		],
 		"instruct": "[INST] <<SYS>>\n<</SYS>>\n\n{0} [/INST]",
 		"stop": [
 			"[INST]",
-			"[/INST]"
+			"[/INST]",
+			"</s><s>"
 		]
 	},
-	"SniffyOtter": {
+	"Llama2ChatSimple": {
+		"model_names": [
+			"SniffyOtter",
+			"Antler",
+			"Japanese-Chat-Umievo"
+		],
 		"instruct": "[INST] {0} [/INST]",
 		"stop": [
 			"[INST]",
 			"[/INST]"
 		]
 	},
-	"Antler-7B-Novel-Writing": {
-		"instruct": "[INST] {0} [/INST]",
-		"stop": [
-			"[INST]",
-			"[/INST]"
-		]
-	},
-	"Ninja": {
+	"Vicuna": {
+		"model_names": [
+			"Ninja",
+			"Japanese-TextGen-MoE-TEST"
+		],
 		"instruct": "USER: </s>\nUSER: {0}\nASSISTANT: ",
 		"stop": [
 			"USER:",
@@ -28,21 +43,20 @@
 			"</s>"
 		]
 	},
-	"umiyuki-Japanese-Chat-Umievo-itr001-7b": {
-		"instruct": "[INST] {0} [/INST]",
+	"Fugaku": {
+		"model_names": [
+			"Fugaku"
+		],
+		"instruct": "### 指示:\n{0}\n\n### 応答:\n",
 		"stop": [
-			"[INST]",
-			"[/INST]"
+			"### 指示:",
+			"### 応答:"
 		]
 	},
-	"japanese-starling": {
-		"instruct": "[INST] <<SYS>>\n<</SYS>>\n\n{0} [/INST]",
-		"stop": [
-			"[INST]",
-			"[/INST]"
-		]
-	},
-	"command-r": {
+	"CommandR": {
+		"model_names": [
+			"command-r"
+		],
 		"instruct": "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|><|END_OF_TURN_TOKEN|>\n<|START_OF_TURN_TOKEN|><|USER_TOKEN|>{0}<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>",
 		"stop": [
 			"<|END_OF_TURN_TOKEN|>"

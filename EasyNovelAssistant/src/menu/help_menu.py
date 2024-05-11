@@ -33,25 +33,18 @@ class HelpMenu:
 
         cmd = lambda: self._show_url("https://github.com/LostRuins/koboldcpp")
         reference_menu.add_command(label="LostRuins/KoboldCpp", command=cmd)
+        reference_menu.add_separator()
 
-        self._show_hf_url(reference_menu, "Sdff-Ltba/LightChatAssistant-TypeB-2x7B-GGUF")
-        self._show_hf_url(reference_menu, "mmnga/Vecteus-v1-gguf")
-        self._show_hf_url(reference_menu, "mmnga/Ninja-v1-NSFW-128k-gguf")
-        self._show_hf_url(reference_menu, "mmnga/Ninja-v1-128k-gguf")
-        self._show_hf_url(reference_menu, "Aratako/LightChatAssistant-4x7B-GGUF")
+        info_urls = []
+        for llm in self.ctx.llm.values():
+            if llm["info_url"] not in info_urls:
+                info_urls.append(llm["info_url"])
 
-        self._show_hf_url(reference_menu, "Aratako/SniffyOtter-7B-Novel-Writing-NSFW-GGUF")
-        self._show_hf_url(reference_menu, "Aratako/Antler-7B-Novel-Writing-GGUF")
-
-        self._show_hf_url(reference_menu, "Sdff-Ltba/LightChatAssistant-2x7B-GGUF")
-
-        self._show_hf_url(reference_menu, "TFMC/Japanese-Starling-ChatV-7B-GGUF")
-        self._show_hf_url(reference_menu, "umiyuki-Japanese-Chat-Umievo-itr001-7b-gguf")
-        self._show_hf_url(reference_menu, "Elizezen/SniffyOtter-7B-GGUF")
-
-        self._show_hf_url(reference_menu, "andrewcanis/c4ai-command-r-v01-GGUF")
-        self._show_hf_url(reference_menu, "dranger003/c4ai-command-r-plus-iMat.GGUF")
-        self._show_hf_url(reference_menu, "pmysl/c4ai-command-r-plus-GGUF")
+        for info_url in info_urls:
+            cmd = lambda url=info_url: self._show_url(url)
+            parts = info_url.split("/")
+            label = f"{parts[-2]}/{parts[-1]}"
+            reference_menu.add_command(label=label, command=cmd)
 
         reference_menu.add_separator()
         self._show_hf_url(reference_menu, "kaunista/kaunista-style-bert-vits2-models")

@@ -57,8 +57,6 @@ class Form:
 
         self.pane_h.pack(fill=tk.BOTH, expand=True)
 
-        self.input_area.set_text(ctx["input_text"])
-
     def run(self):
         self.win.lift()
         self.win.mainloop()
@@ -69,8 +67,9 @@ class Form:
             title += f" - {self.ctx.kobold_cpp.model_name}"
         if self.ctx.generator.enabled:
             title += " [生成中]"
-        if self.ctx.file_path is not None:
-            title += f" - {self.ctx.file_path}"
+        file_path = self.ctx.form.input_area.get_file_path()
+        if file_path is not None:
+            title += f" - {file_path}"
         self.win.title(title)
 
     def update_config(self):
@@ -80,7 +79,7 @@ class Form:
         ctx["win_x"] = self.win.winfo_x()
         ctx["win_y"] = self.win.winfo_y()
 
-        input_area_width = self.input_area.text_area.winfo_width()
+        input_area_width = self.input_area.notebook.winfo_width()
         if input_area_width != -1:
             ctx["input_area_width"] = input_area_width
 

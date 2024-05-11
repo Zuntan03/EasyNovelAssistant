@@ -1,6 +1,7 @@
 ﻿import json
 import os
 import subprocess
+import webbrowser
 from sys import platform
 
 import requests
@@ -26,6 +27,7 @@ popd
 """
 
     CURL_TEMPLATE = """if not exist {file_name} (
+    start "" {info_url}
     %CURL_CMD% -LO {url}
 )
 """
@@ -53,13 +55,16 @@ popd
             for url in llm["urls"]:
                 llm["file_names"].append(url.split("/")[-1])
             llm["file_name"] = llm["file_names"][0]
+            # urls[0]の "/resolve/main/" より前を取得
+            llm["info_url"] = llm["urls"][0].split("/resolve/main/")[0]
+            print(llm["info_url"])
 
             context_size = min(llm["context_size"], ctx["llm_context_size"])
             bat_file = os.path.join(Path.kobold_cpp, f'Run-{llm["name"]}-C{context_size // 1024}K-L0.bat')
 
             curl_cmd = ""
             for url in llm["urls"]:
-                curl_cmd += self.CURL_TEMPLATE.format(url=url, file_name=url.split("/")[-1])
+                curl_cmd += self.CURL_TEMPLATE.format(url=url, file_name=url.split("/")[-1], info_url=llm["info_url"])
             bat_text = self.BAT_TEMPLATE.format(
                 curl_cmd=curl_cmd,
                 option=ctx["koboldcpp_arg"],
@@ -82,20 +87,23 @@ popd
 
     def get_instruct_sequence(self):
         if self.model_name is not None:
-            for key in self.ctx.llm_sequence.keys():
-                if key in self.model_name:
-                    return self.ctx.llm_sequence[key]["instruct"]
+            for sequence in self.ctx.llm_sequence.values():
+                for model_name in sequence["model_names"]:
+                    if model_name in self.model_name:
+                        return sequence["instruct"]
         return None
 
     def get_stop_sequence(self):
         if self.model_name is not None:
-            for key in self.ctx.llm_sequence.keys():
-                if key in self.model_name:
-                    return self.ctx.llm_sequence[key]["stop"]
+            for sequence in self.ctx.llm_sequence.values():
+                for model_name in sequence["model_names"]:
+                    if model_name in self.model_name:
+                        return sequence["stop"]
         return []
 
     def download_model(self, llm_name):
         llm = self.ctx.llm[llm_name]
+        webbrowser.open(llm["info_url"])
         for url in llm["urls"]:
             curl_cmd = f"curl -k -LO {url}"
             if subprocess.run(curl_cmd, shell=True, cwd=Path.kobold_cpp).returncode != 0:

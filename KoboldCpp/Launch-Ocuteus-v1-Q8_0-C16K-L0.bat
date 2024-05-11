@@ -10,8 +10,8 @@ set GPU_LAYERS=0
 set CONTEXT_SIZE=16384
 
 if not exist Ocuteus-v1-q8_0.gguf (
-    start https://huggingface.co/Local-Novel-LLM-project/Ocuteus-v1-gguf
-    start https://huggingface.co/Local-Novel-LLM-project/Ocuteus-v1-gguf/blob/main/Modelfile-Ocuteus-v1
+    start "" https://huggingface.co/Local-Novel-LLM-project/Ocuteus-v1-gguf
+    start "" https://huggingface.co/Local-Novel-LLM-project/Ocuteus-v1-gguf/blob/main/Modelfile-Ocuteus-v1
 
     %CURL_CMD% -LO https://huggingface.co/Local-Novel-LLM-project/Ocuteus-v1-gguf/resolve/main/Ocuteus-v1-q8_0.gguf
 )

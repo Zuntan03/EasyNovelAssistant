@@ -7,17 +7,23 @@
 
 ## 利用者の声
 
-### 記事
+**記事**
 
 - 『[【検閲なし】GPUで生成するローカルAIチャット環境と小説企画＋執筆用ゴールシークプロンプトで叡智小説生成最強に見える](https://note.com/kagami_kami/n/n3a321d926684)』[@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1785313774620246194)
 	- [@Emanon_14](https://twitter.com/Emanon_14/status/1787491885801783753),
 	[@bla_tanuki](https://twitter.com/bla_tanuki/status/1786969054336700924),
 	[@bla_tanuki](https://twitter.com/bla_tanuki/status/1786982703692382277),
-
 - 作例『[[AI試運転]スパーリング・ウィズ・ツクモドウ](https://note.com/liruk/n/nfd0bb54903cb)』と [制作の感想](https://twitter.com/liruk/status/1785596479631204420)。
 
-### つぶやき
+**動画**
 
+[EasyNovelAssistantの利用検証](https://www.nicovideo.jp/watch/sm43774612),
+[負けヒロインの告白](https://www.nicovideo.jp/watch/sm43754628)
+
+**つぶやき**
+
+[@kirimajiro](https://twitter.com/kirimajiro/status/1788173520612344283),
+[@Ak9TLSB3fwWnMzn](https://twitter.com/Ak9TLSB3fwWnMzn/status/1787123194991931852),
 [@Emanon_14](https://twitter.com/Emanon_14/status/1787317994345070865),
 [@liruk](https://twitter.com/liruk/status/1787318402736115994),
 [@maru_ai29](https://twitter.com/maru_ai29/status/1787059183621378073),
@@ -40,7 +46,7 @@
 [@kgmkm_inma_ai](https://twitter.com/kgmkm_inma_ai/status/1785149941448663443),
 [@AonekoSS](https://twitter.com/AonekoSS/status/1784650868195024996),
 [@StelsRay](https://twitter.com/StelsRay/status/1785338281485553757),
-[@mikumiku_aloha](https://twitter.com/mikumiku_aloha/status/1785300629461799372), <!--  -->
+[@mikumiku_aloha](https://twitter.com/mikumiku_aloha/status/1785300629461799372),
 [@kagami_kami_m](https://twitter.com/kagami_kami_m/status/1784446620916146273),
 [@2ewsHQJgnvkGNPr](https://twitter.com/2ewsHQJgnvkGNPr/status/1784123670451130527),
 [@ainiji981](https://twitter.com/ainiji981/status/1784140730094805215),
@@ -86,6 +92,36 @@
 
 ## 最近の更新
 
+### 2024/05/11
+
+大規模な更新ですので、不具合がありましたらお知らせください。
+
+![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/tab.png)
+
+- プロンプト入力欄がタブ付きになり、複数のプロンプトの比較や調整がやりやすくなりました。  
+	![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/tabs.png)
+- 複数ファイルやフォルダを開けます。ドラッグ＆ドロップにも対応しています。
+	- 最近開いたフォルダや最近使ったファイルで作業状況を復元できます。
+		- ファイル名順で読み込みますので、プロンプト順のコントロールに活用ください。  
+		![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/recent.png)
+- タブに `イントロプロンプト` を指定すると、他のタブのプロンプトを生成時に付け足せます。
+	- 世界観、キャラ設定、あらすじなどをイントロとして、各章の執筆を別タブ・別ファイルで進められます。
+	- 入力欄の先頭に `// intro\n` があると `イントロプロンプト` として扱います。
+		- タブを右クリックして、`イントロプロンプト` で設定してください。  
+		![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/intro.png)
+- これらの章別執筆のサンプルを `sample/GoalSeek/` に用意しました（[@kagami_kami_m さんの記事](https://note.com/kagami_kami/n/n3a321d926684) を元にしています）。
+	- `GoalSeek` のフォルダをドラッグ＆ドロップして、フォルダごと読み込みます。
+	- 例えば `10-序章` タブを生成する際に、イントロプロンプトに指定した `01-執筆` が自動的に前に付け足されます。
+		- 前章を記憶として付け足したり、執筆済みの章を要約して任意に付け足したりもできます。
+- 最近の個性豊かな軽量モデル公開ラッシュに対応しました。
+	- [Japanese-TextGen-MoE-TEST-2x7B-NSFW](https://huggingface.co/dddump/Japanese-TextGen-MoE-TEST-2x7B-NSFW-gguf)
+	- [ArrowPro-7B-RobinHood](https://huggingface.co/mmnga/DataPilot-ArrowPro-7B-RobinHood-gguf)
+	- [ArrowPro-7B-RobinHood-toxic](https://huggingface.co/Aratako/ArrowPro-7B-RobinHood-toxic-GGUF)
+	- [ArrowPro-7B-KUJIRA](https://huggingface.co/mmnga/DataPilot-ArrowPro-7B-KUJIRA-gguf)
+	- [Fugaku-LLM-13B-instruct](https://huggingface.co/mmnga/Fugaku-LLM-13B-instruct-gguf)
+- `llm_sequence.json` のフォーマットを変更しました。
+	- 詳細は `EasyNovelAssistant/setup/res/default_llm_sequence.json` を参照ください。
+
 ### 2024/05/10
 
 - [Ocuteus-v1](https://huggingface.co/Local-Novel-LLM-project/Ocuteus-v1-gguf) を KoboldCpp で試せる `KoboldCpp/Launch-Ocuteus-v1-Q8_0-C16K-L0.bat` を追加しました。
@@ -118,25 +154,6 @@
 		- `生成文の長さ` を 4096 以上に設定
 	- `コンテキストサイズ上限` を増やすと VRAM 消費も増えますので、動作しない場合はモデルの GPU レイヤー数（`L33` など）を引き下げてください。
 - `sample/user.json` ファイルがあれば、他の `sample/*.json` と同じように `ユーザー` メニューを追加するようにしました。
-
-### 2024/05/05
-
-- `読み上げ` メニューに `入力欄を読み上げ` を追加しました。
-	- `F5` キーで読み上げも中断します。
-- 入力欄の **行頭** に `//` で、その行をコメントとして扱うようにしました。
-- [Anneli と Anneli-nsfw](https://huggingface.co/kaunista/kaunista-style-bert-vits2-models) をインストール時にダウンロードするようにしました。
-- 入力欄の最終行を生成欄や出力欄に付け足すようにしました。
-	- 入力欄の末尾に改行を入れれば、付け足しません。
-
-### 2024/05/04
-
-- [動画の作成](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E5%8B%95%E7%94%BB%E3%81%AE%E4%BD%9C%E6%88%90) に対応しました。
-	- 読み上げ音声に画像を割り当てて、字幕付きの動画を簡単に作成します。
-- 急な開発で混み合ったり古くなったりしたドキュメントを整理しました。
-	- 最初のインストールから音声読み上げまでがスムーズになったはずです。
-	- 詰まる記述がありましたら、お知らせください。
-- 読み上げ間隔を設定できるようにしました。
-- Windows 10環境で証明書エラーが発生するらしく、curl の --ssl-no-revoke オプションを -k に変更しました。
 
 **[過去の更新履歴](https://github.com/Zuntan03/EasyNovelAssistant/wiki/%E6%9B%B4%E6%96%B0%E5%B1%A5%E6%AD%B4)**
 

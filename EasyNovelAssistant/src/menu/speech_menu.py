@@ -19,7 +19,7 @@ class SpeechMenu:
 
         # 入力欄をすべて読み上げる
         def speech_all():
-            text = self.ctx.input_area.get_comment_removed_text()
+            text = self.ctx.form.input_area.get_comment_removed_text()
             lines = text.splitlines()
             for line in lines:
                 self.ctx.style_bert_vits2.generate(line, force=True)

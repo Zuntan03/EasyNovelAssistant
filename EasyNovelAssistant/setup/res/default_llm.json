@@ -1,4 +1,39 @@
 ﻿{
+	"(New!) Japanese-TextGen-MoE-TEST-2x7B-NSFW-IQ4_XS": {
+		"max_gpu_layer": 33,
+		"context_size": 4096,
+		"urls": [
+			"https://huggingface.co/dddump/Japanese-TextGen-MoE-TEST-2x7B-NSFW-gguf/resolve/main/Japanese-TextGen-MoE-TEST-2x7B-NSFW_iMat_IQ4_XS.gguf"
+		]
+	},
+	"(New!) ArrowPro-7B-RobinHood-IQ4_XS": {
+		"max_gpu_layer": 33,
+		"context_size": 4096,
+		"urls": [
+			"https://huggingface.co/mmnga/DataPilot-ArrowPro-7B-RobinHood-gguf/resolve/main/DataPilot-ArrowPro-7B-RobinHood-IQ4_XS.gguf"
+		]
+	},
+	"(New!) ArrowPro-7B-RobinHood-toxic-IQ4_XS": {
+		"max_gpu_layer": 33,
+		"context_size": 4096,
+		"urls": [
+			"https://huggingface.co/Aratako/ArrowPro-7B-RobinHood-toxic-GGUF/resolve/main/ArrowPro-7B-RobinHood-toxic_IQ4_XS.gguf"
+		]
+	},
+	"(New!) ArrowPro-7B-KUJIRA-IQ4_XS": {
+		"max_gpu_layer": 33,
+		"context_size": 4096,
+		"urls": [
+			"https://huggingface.co/mmnga/DataPilot-ArrowPro-7B-KUJIRA-gguf/resolve/main/DataPilot-ArrowPro-7B-KUJIRA-IQ4_XS.gguf"
+		]
+	},
+	"(New!) Fugaku-LLM-13B-instruct-IQ4_XS": {
+		"max_gpu_layer": 41,
+		"context_size": 4096,
+		"urls": [
+			"https://huggingface.co/mmnga/Fugaku-LLM-13B-instruct-gguf/resolve/main/Fugaku-LLM-13B-instruct-IQ4_XS.gguf"
+		]
+	},
 	"Vecteus-v1-IQ4_XS": {
 		"max_gpu_layer": 33,
 		"context_size": 4096,

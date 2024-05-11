@@ -11,9 +11,6 @@ class Context:
         self.llm_sequence = None
         self._load_config()
 
-        self.file_path = None
-        self.file_text = self.cfg["input_text"]
-
     def _load_config(self):
         assert os.path.exists(Path.default_config)
         with open(Path.default_config, "r", encoding="utf-8-sig") as f:
@@ -50,7 +47,7 @@ class Context:
         self.cfg[key] = value
 
     def finalize(self):
-        if not self.form.file_menu.ask_save():
+        if not self.form.file_menu.ask_save():  # TODO: すべて閉じる
             return
         self.form.update_config()
 

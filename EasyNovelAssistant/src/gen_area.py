@@ -56,7 +56,7 @@ class GenArea:
         else:
             line_num = self.text_area.index(f"@{e.x},{e.y}").split(".")[0]
             text = self.text_area.get(f"{line_num}.0", f"{line_num}.end") + "\n"
-        self.ctx.input_area.insert_text(text)
+        self.ctx.form.input_area.insert_text(text)
 
     def _on_middle_click(self, e):
         if self.ctx["middle_click_speech"]:

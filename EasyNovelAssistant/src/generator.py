@@ -1,5 +1,4 @@
-﻿import re
-import time
+﻿import time
 
 from job_queue import JobQueue
 
@@ -34,7 +33,7 @@ class Generator:
     def update(self):
         if self.enabled:
             if self.generate_job is None:
-                input_text = self.ctx.input_area.get_comment_removed_text()
+                input_text = self.ctx.form.input_area.get_prompt_text()
                 if input_text != "":
                     self.generate_job = self.gen_queue.push(self._generate, input_text=input_text)
             elif self.generate_job.successful():
@@ -45,7 +44,7 @@ class Generator:
                         self.ctx.form.update_title()
                 else:
                     result = self._get_last_line(self.generate_job.args["input_text"]) + result
-                    self.ctx.output_area.append_output(result)
+                    self.ctx.form.output_area.append_output(result)
                 self.generate_job = None
             elif self.generate_job.canceled():
                 self.generate_job = None
@@ -58,8 +57,8 @@ class Generator:
             elif self.check_job.successful():
                 result = self.check_job.result
                 if result is not None:
-                    input_text = self.ctx.input_area.get_comment_removed_text()
-                    result = self._get_last_line(input_text) + result
+                    if self.generate_job is not None:
+                        result = self._get_last_line(self.generate_job.args["input_text"]) + result
                     if result != self.gen_area_text:
                         if result.startswith(self.gen_area_text):
                             append_text = result[len(self.gen_area_text) :]
@@ -125,17 +124,11 @@ class Generator:
         return self.ctx.kobold_cpp.check()
 
     def _get_last_line(self, text):
+        if text == "":
+            return ""
         if text.endswith("\n"):
             return ""
         return text.splitlines()[-1]
-
-    # def _get_last_voice(self, text):
-    #     if text is None:
-    #         return ""
-    #     last_line = text.split("\n")[-1]
-    #     if last_line.endswith("「"):
-    #         return last_line
-    #     return ""
 
     def abort(self):
         self.check_queue.push(self.ctx.kobold_cpp.abort)

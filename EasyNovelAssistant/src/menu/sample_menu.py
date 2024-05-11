@@ -138,9 +138,9 @@ class SampleMenu:
             if ("{char_name}" in item) or ("{user_name}" in item):
                 item = item.format(char_name=self.ctx["char_name"], user_name=self.ctx["user_name"])
             if mode == "set":
-                self.ctx.input_area.set_text(item)
+                self.ctx.form.input_area.set_text(item)
             else:
-                self.ctx.input_area.insert_text(item)
+                self.ctx.form.input_area.insert_text(item)
         elif mode == "open":
             if item.startswith("http"):
                 url = quote(item, safe=":/?=")
