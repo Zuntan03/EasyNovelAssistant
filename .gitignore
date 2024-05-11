@@ -1,0 +1,10 @@
+*.json
+log/
+movie/
+sample/
+venv/
+/Update-EasyNovelAssistant.bat
+KoboldCpp/*
+~KoboldCpp/Launch-Ocuteus-v1-Q8_0-C16K-L0.bat
+EasyNovelAssistant/setup/lib/
+__pycache__/
