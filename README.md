@@ -22,6 +22,7 @@
 
 **つぶやき**
 
+[@StelsRay](https://twitter.com/StelsRay/status/1789525236557492374),
 [@kirimajiro](https://twitter.com/kirimajiro/status/1788173520612344283),
 [@Ak9TLSB3fwWnMzn](https://twitter.com/Ak9TLSB3fwWnMzn/status/1787123194991931852),
 [@Emanon_14](https://twitter.com/Emanon_14/status/1787317994345070865),
@@ -121,6 +122,7 @@
 	- [Fugaku-LLM-13B-instruct](https://huggingface.co/mmnga/Fugaku-LLM-13B-instruct-gguf)
 - `llm_sequence.json` のフォーマットを変更しました。
 	- 詳細は `EasyNovelAssistant/setup/res/default_llm_sequence.json` を参照ください。
+- 入力欄タブのコンテキストメニューに `タブを複製` を追加しました。
 
 ### 2024/05/10
 

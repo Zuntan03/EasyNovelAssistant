@@ -225,12 +225,20 @@ class InputArea:
         self.notebook.select(tab_index)
         current_tab = self.tabs[tab_index]
 
-        # チェック付きメニューでイントロ切り替え
         def switch_intro():
             current_tab._switch_intro()
+            current_tab._update_title()
 
         intro_var = tk.BooleanVar(value=current_tab._is_intro())
         self.ctx_menu.add_checkbutton(label="イントロプロンプト", variable=intro_var, command=switch_intro)
+
+        self.ctx_menu.add_separator()
+
+        def copy_tab():
+            # 末尾以外なら tabs と notebook の同期必要
+            self.open_tab(current_tab._get_text(), None)
+
+        self.ctx_menu.add_command(label="タブを複製", command=copy_tab)
 
         self.ctx_menu.add_separator()
 
