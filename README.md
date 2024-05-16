@@ -98,8 +98,7 @@
 - [Japanese-TextGen-MoE-TEST-2x7B-NSFW](https://huggingface.co/dddump/Japanese-TextGen-MoE-TEST-2x7B-NSFW-gguf) 作者 [dddump さん](https://huggingface.co/dddump) の新モデル 2種を追加しました。
 	- [Japanese-Chat-Evolve-TEST-NSFW](https://huggingface.co/dddump/Japanese-Chat-Evolve-TEST-7B-NSFW-gguf) は `コンテキストサイズ上限` を `8K` まで設定できます。
 	- [Japanese-TextGen-Kage](https://huggingface.co/dddump/Japanese-TextGen-Kage-v0.1-2x7B-gguf) は `コンテキストサイズ上限` を `32K` まで設定できます。
-		- Geforce RTX 3060 12GB 環境では  `コンテキストサイズ上限` が `16K` だと `GPU レイヤー` を `L33` でフルロードできます。  
-		4K の入力文に対して 12K の文章を生成
+		- Geforce RTX 3060 12GB 環境では  `コンテキストサイズ上限` が `16K` だと `GPU レイヤー` を `L33` でフルロードできます。
 
 ### 2024/05/11
 
