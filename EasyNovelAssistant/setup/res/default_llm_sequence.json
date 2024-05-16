@@ -31,10 +31,22 @@
 			"[/INST]"
 		]
 	},
-	"Vicuna": {
+	"VicunaSystem": {
 		"model_names": [
-			"Ninja",
-			"Japanese-TextGen-MoE-TEST"
+			"Japanese-TextGen-MoE-TEST",
+			"Japanese-Chat-Evolve-TEST",
+			"Japanese-TextGen-Kage"
+		],
+		"instruct": "SYSTEM: \nUSER: {0}\nASSISTANT: ",
+		"stop": [
+			"USER:",
+			"ASSISTANT:",
+			"</s>"
+		]
+	},
+	"VicunaUserS": {
+		"model_names": [
+			"Ninja"
 		],
 		"instruct": "USER: </s>\nUSER: {0}\nASSISTANT: ",
 		"stop": [

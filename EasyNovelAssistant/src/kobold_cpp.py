@@ -57,7 +57,6 @@ popd
             llm["file_name"] = llm["file_names"][0]
             # urls[0]の "/resolve/main/" より前を取得
             llm["info_url"] = llm["urls"][0].split("/resolve/main/")[0]
-            print(llm["info_url"])
 
             context_size = min(llm["context_size"], ctx["llm_context_size"])
             bat_file = os.path.join(Path.kobold_cpp, f'Run-{llm["name"]}-C{context_size // 1024}K-L0.bat')
