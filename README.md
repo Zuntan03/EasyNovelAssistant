@@ -93,6 +93,10 @@
 
 ## 最近の更新
 
+### 2024/05/17
+
+- [Japanese-TextGen-MoE-TEST-2x7B-NSFW](https://huggingface.co/dddump/Japanese-TextGen-MoE-TEST-2x7B-NSFW-gguf) の [ファイル名変更](https://huggingface.co/dddump/Japanese-TextGen-MoE-TEST-2x7B-NSFW-gguf/commit/f39f2353116283a863d86d7406375c6904007364#d2h-964057) に対応しました。
+
 ### 2024/05/16
 
 - [Japanese-TextGen-MoE-TEST-2x7B-NSFW](https://huggingface.co/dddump/Japanese-TextGen-MoE-TEST-2x7B-NSFW-gguf) 作者 [dddump さん](https://huggingface.co/dddump) の新モデル 2種を追加しました。
