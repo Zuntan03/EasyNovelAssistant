@@ -93,6 +93,12 @@
 
 ## 最近の更新
 
+### 2024/05/19
+
+- `生成` メニューの `生成の開始/終了 (Shift+F5)` のトグル誤操作の対策として、`生成を開始 (F3)` と `生成を終了 (F4)` を追加しました。
+- [Japanese-TextGen-MoE-TEST-2x7B-NSFW](https://huggingface.co/dddump/Japanese-TextGen-MoE-TEST-2x7B-NSFW-gguf) と [Japanese-Chat-Evolve-TEST-NSFW](https://huggingface.co/dddump/Japanese-Chat-Evolve-TEST-7B-NSFW-gguf) の Ch200 差し替え版に対応しました。
+	- [Japanese-Chat-Evolve-TEST-NSFW](https://huggingface.co/dddump/Japanese-Chat-Evolve-TEST-7B-NSFW-gguf) の `コンテキストサイズ上限` が `8K` から `4K` に下がっていますので、ご注意ください。
+
 ### 2024/05/17
 
 - [Japanese-TextGen-MoE-TEST-2x7B-NSFW](https://huggingface.co/dddump/Japanese-TextGen-MoE-TEST-2x7B-NSFW-gguf) の [ファイル名変更](https://huggingface.co/dddump/Japanese-TextGen-MoE-TEST-2x7B-NSFW-gguf/commit/f39f2353116283a863d86d7406375c6904007364#d2h-964057) に対応しました。

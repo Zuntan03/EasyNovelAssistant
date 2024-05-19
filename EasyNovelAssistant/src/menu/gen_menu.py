@@ -10,6 +10,8 @@ class GenMenu:
         self.form.menu_bar.add_cascade(label="生成", menu=self.menu)
         self.menu.configure(postcommand=self.on_menu_open)
 
+        self.form.win.bind("<F3>", lambda e: self._enable())
+        self.form.win.bind("<F4>", lambda e: self._disable())
         self.form.win.bind("<Shift-F5>", lambda e: self._set_enabled(not self.ctx.generator.enabled))
         self.form.win.bind("<F5>", lambda e: self._abort())
 
@@ -20,12 +22,24 @@ class GenMenu:
         if not enabled:
             self.ctx.generator.abort()
 
+    def _enable(self):
+        if not self.ctx.generator.enabled:
+            self._set_enabled(True)
+
+    def _disable(self):
+        if self.ctx.generator.enabled:
+            self._set_enabled(False)
+
     def _abort(self):
         self.ctx.generator.abort()
         self.ctx.style_bert_vits2.abort()
 
     def on_menu_open(self):
         self.menu.delete(0, tk.END)
+
+        self.menu.add_command(label="生成を開始 (F3)", command=self._enable)
+
+        self.menu.add_command(label="生成を終了 (F4)", command=self._disable)
 
         def set_enabled(*args):
             self._set_enabled(self.enabled_var.get())

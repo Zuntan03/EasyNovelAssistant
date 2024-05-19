@@ -1,7 +1,7 @@
 ﻿{
 	"(New!) Japanese-Chat-Evolve-TEST-NSFW-IQ4_XS": {
 		"max_gpu_layer": 33,
-		"context_size": 8192,
+		"context_size": 4096,
 		"urls": [
 			"https://huggingface.co/dddump/Japanese-Chat-Evolve-TEST-7B-NSFW-gguf/resolve/main/Japanese-Chat-Evolve-TEST-7B-NSFW_iMat_Ch200_IQ4_XS.gguf"
 		]

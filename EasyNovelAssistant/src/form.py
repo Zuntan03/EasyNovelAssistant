@@ -71,7 +71,7 @@ class Form:
         if file_path is not None:
             title += f" - {file_path}"
         if (not self.ctx.generator.enabled) and (file_path is None):
-            title += " - [生成] メニューの [生成の開始 (Shift+F5)] で生成を開始します。"
+            title += " - [生成] メニューの [生成を開始 (F3)] で生成を開始します。"
         self.win.title(title)
 
     def update_config(self):
