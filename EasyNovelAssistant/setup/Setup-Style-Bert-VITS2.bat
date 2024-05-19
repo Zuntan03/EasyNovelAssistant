@@ -61,9 +61,10 @@ pip install -q torch torchvision torchaudio --index-url https://download.pytorch
 if %errorlevel% neq 0 ( pause & popd & exit /b 1 )
 
 @REM https://fate.5ch.net/test/read.cgi/liveuranus/1711873736/545
-echo pip install -q gradio==4.23.0
-pip install -q gradio==4.23.0
-if %errorlevel% neq 0 ( pause & popd & exit /b 1 )
+@REM Fix https://github.com/litagin02/Style-Bert-VITS2/commit/053a6bf78505e427489e341805442db20400117a
+@REM echo pip install -q gradio==4.23.0
+@REM pip install -q gradio==4.23.0
+@REM if %errorlevel% neq 0 ( pause & popd & exit /b 1 )
 
 echo pip install -q -r requirements.txt
 pip install -q -r requirements.txt
