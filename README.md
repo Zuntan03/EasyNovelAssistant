@@ -22,6 +22,9 @@
 
 **つぶやき**
 
+[@AIiswonder](https://x.com/AIiswonder/status/1791854351457325319),
+[@umiyuki_ai](https://x.com/umiyuki_ai/status/1791360673575997553),
+[@dew_dew](https://x.com/dew_dew/status/1790402531459555696),
 [@StelsRay](https://twitter.com/StelsRay/status/1789525236557492374),
 [@kirimajiro](https://twitter.com/kirimajiro/status/1788173520612344283),
 [@Ak9TLSB3fwWnMzn](https://twitter.com/Ak9TLSB3fwWnMzn/status/1787123194991931852),
@@ -95,7 +98,8 @@
 
 ### 2024/05/19
 
-- `生成` メニューの `生成の開始/終了 (Shift+F5)` のトグル誤操作の対策として、`生成を開始 (F3)` と `生成を終了 (F4)` を追加しました。
+- `生成` メニューの `生成の開始/終了 (Shift+F5)` のトグル誤操作の対策として、`生成を開始 (F3)` と `生成を終了 (F4)` を追加しました。  
+![](https://raw.githubusercontent.com/wiki/Zuntan03/EasyNovelAssistant/img/ChangeLog/gen_start_stop.png)
 - [Japanese-TextGen-MoE-TEST-2x7B-NSFW](https://huggingface.co/dddump/Japanese-TextGen-MoE-TEST-2x7B-NSFW-gguf) と [Japanese-Chat-Evolve-TEST-NSFW](https://huggingface.co/dddump/Japanese-Chat-Evolve-TEST-7B-NSFW-gguf) の Ch200 差し替え版に対応しました。
 	- [Japanese-Chat-Evolve-TEST-NSFW](https://huggingface.co/dddump/Japanese-Chat-Evolve-TEST-7B-NSFW-gguf) の `コンテキストサイズ上限` が `8K` から `4K` に下がっていますので、ご注意ください。
 
