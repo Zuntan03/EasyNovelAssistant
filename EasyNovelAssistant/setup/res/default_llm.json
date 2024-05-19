@@ -3,7 +3,7 @@
 		"max_gpu_layer": 33,
 		"context_size": 8192,
 		"urls": [
-			"https://huggingface.co/dddump/Japanese-Chat-Evolve-TEST-7B-NSFW-gguf/resolve/main/Japanese-Chat-Evolve-TEST-7B-NSFW_iMat_Ch10_IQ4_XS.gguf"
+			"https://huggingface.co/dddump/Japanese-Chat-Evolve-TEST-7B-NSFW-gguf/resolve/main/Japanese-Chat-Evolve-TEST-7B-NSFW_iMat_Ch200_IQ4_XS.gguf"
 		]
 	},
 	"(New!) Japanese-TextGen-Kage-IQ4_XS": {
@@ -17,7 +17,7 @@
 		"max_gpu_layer": 33,
 		"context_size": 4096,
 		"urls": [
-			"https://huggingface.co/dddump/Japanese-TextGen-MoE-TEST-2x7B-NSFW-gguf/resolve/main/Japanese-TextGen-MoE-TEST-2x7B-NSFW_iMat_Ch10_IQ4_XS.gguf"
+			"https://huggingface.co/dddump/Japanese-TextGen-MoE-TEST-2x7B-NSFW-gguf/resolve/main/Japanese-TextGen-MoE-TEST-2x7B-NSFW_iMat_Ch200_IQ4_XS.gguf"
 		]
 	},
 	"ArrowPro-7B-RobinHood-IQ4_XS": {
