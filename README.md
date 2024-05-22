@@ -96,6 +96,10 @@
 
 ## 最近の更新
 
+### 2024/05/22
+
+- [Japanese-TextGen-Kage](https://huggingface.co/dddump/Japanese-TextGen-Kage-v0.1-2x7B-gguf) の更新に対応しました。
+
 ### 2024/05/19
 
 - `生成` メニューの `生成の開始/終了 (Shift+F5)` のトグル誤操作の対策として、`生成を開始 (F3)` と `生成を終了 (F4)` を追加しました。  

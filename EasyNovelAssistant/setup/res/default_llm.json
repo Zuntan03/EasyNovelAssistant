@@ -10,7 +10,7 @@
 		"max_gpu_layer": 33,
 		"context_size": 32768,
 		"urls": [
-			"https://huggingface.co/dddump/Japanese-TextGen-Kage-v0.1-2x7B-gguf/resolve/main/Japanese-TextGen-Kage-v0.1-2x7B_iMat_Ch10_IQ4_XS.gguf"
+			"https://huggingface.co/dddump/Japanese-TextGen-Kage-v0.1-2x7B-gguf/resolve/main/Japanese-TextGen-Kage-v0.1-2x7B_iMat_Ch200_IQ4_XS.gguf"
 		]
 	},
 	"Japanese-TextGen-MoE-TEST-2x7B-NSFW-IQ4_XS": {
