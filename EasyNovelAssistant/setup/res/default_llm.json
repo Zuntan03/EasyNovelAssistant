@@ -1,12 +1,19 @@
 ﻿{
-	"(New!) Japanese-Chat-Evolve-TEST-NSFW-IQ4_XS": {
+	"(New!) Ninja-v1-RP-expressive-IQ4_XS": {
+		"max_gpu_layer": 33,
+		"context_size": 4096,
+		"urls": [
+			"https://huggingface.co/Aratako/Ninja-v1-RP-expressive-GGUF/resolve/main/Ninja-v1-RP-expressive_IQ4_XS.gguf"
+		]
+	},
+	"Japanese-Chat-Evolve-TEST-NSFW-IQ4_XS": {
 		"max_gpu_layer": 33,
 		"context_size": 4096,
 		"urls": [
 			"https://huggingface.co/dddump/Japanese-Chat-Evolve-TEST-7B-NSFW-gguf/resolve/main/Japanese-Chat-Evolve-TEST-7B-NSFW_iMat_Ch200_IQ4_XS.gguf"
 		]
 	},
-	"(New!) Japanese-TextGen-Kage-IQ4_XS": {
+	"Japanese-TextGen-Kage-IQ4_XS": {
 		"max_gpu_layer": 33,
 		"context_size": 32768,
 		"urls": [

@@ -48,7 +48,7 @@
 		"model_names": [
 			"Ninja"
 		],
-		"instruct": "USER: </s>\nUSER: {0}\nASSISTANT: ",
+		"instruct": "</s>\nUSER: {0}\nASSISTANT: ",
 		"stop": [
 			"USER:",
 			"ASSISTANT:",

@@ -96,6 +96,12 @@
 
 ## 最近の更新
 
+### 2024/05/23
+
+- [Aratako さんの自信作な新モデル](https://twitter.com/Aratako_LM/status/1792940043813920862) 『[Ninja-v1-RP-expressive](https://huggingface.co/Aratako/Ninja-v1-RP-expressive)』を追加しました。
+	- ロールプレイ用モデルですが、他の用途でも使えそうな感触です。
+	- ロールプレイ（チャット）をしたい場合は [プロンプトフォーマット](https://huggingface.co/Aratako/Ninja-v1-RP-expressive#%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88) を確認して、`KoboldCpp/koboldcpp.exe` を [直接ご利用ください](https://github.com/Zuntan03/EasyNovelAssistant/wiki/Tips#koboldcpp)。
+
 ### 2024/05/22
 
 - [Japanese-TextGen-Kage](https://huggingface.co/dddump/Japanese-TextGen-Kage-v0.1-2x7B-gguf) の更新に対応しました。
