@@ -82,19 +82,21 @@ if exist %PORTABLE_GIT_DIR% (
 	cd > NUL
 
 	if exist .git\ (
-		echo git pull
-		git pull
+		echo Fetching and resetting repository to match origin
+		git fetch origin
+		git reset --hard origin/main
 	) else (
-		echo git clone %CLONE_URL% %APP_NAME_TEMP%
+		echo Cloning repository from %CLONE_URL% into %APP_NAME_TEMP%
 		git clone %CLONE_URL% %APP_NAME_TEMP%
 	)
 	if !errorlevel! neq 0 ( pause & popd & exit /b 1 )
 ) else (
 	if exist .git\ (
-		echo git pull
-		git pull
+		echo Fetching and resetting repository to match origin
+		git fetch origin
+		git reset --hard origin/main
 	) else (
-		echo git clone %CLONE_URL% %APP_NAME_TEMP%
+		echo Cloning repository from %CLONE_URL% into %APP_NAME_TEMP%
 		git clone %CLONE_URL% %APP_NAME_TEMP%
 	)
 	if !errorlevel! neq 0 ( pause & popd & exit /b 1 )
