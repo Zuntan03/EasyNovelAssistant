@@ -1,5 +1,12 @@
 ﻿{
-	"(New!) Ninja-v1-RP-expressive-IQ4_XS": {
+	"(New!) Ninja-v1-RP-expressive-v2-IQ4_XS": {
+		"max_gpu_layer": 33,
+		"context_size": 4096,
+		"urls": [
+			"https://huggingface.co/Aratako/Ninja-v1-RP-expressive-v2-GGUF/resolve/main/Ninja-v1-RP-expressive-v2_IQ4_XS.gguf"
+		]
+	},
+	"Ninja-v1-RP-expressive-IQ4_XS": {
 		"max_gpu_layer": 33,
 		"context_size": 4096,
 		"urls": [
