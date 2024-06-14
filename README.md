@@ -96,6 +96,11 @@
 
 ## 最近の更新
 
+### 2024/06/14
+
+- KoboldCpp を更新する `Update-KoboldCpp.bat` と、CUDA 12版の KoboldCpp に更新する `Update-KoboldCpp_CUDA12.bat` を追加しました。
+	- CUDA 12版は最近の NVIDIA GPU でより高速に動作します。
+
 ### 2024/05/29
 
 - 『[Ninja-v1-RP-expressive-v2](https://huggingface.co/Aratako/Ninja-v1-RP-expressive-v2)』を追加しました。
