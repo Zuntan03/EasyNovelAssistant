@@ -96,6 +96,10 @@
 
 ## 最近の更新
 
+### 2024/06/16
+
+- 『[Ninja-V2-7B](https://huggingface.co/Local-Novel-LLM-project/Ninja-V2-7B)』を追加しました。
+
 ### 2024/06/14
 
 - KoboldCpp を更新する `Update-KoboldCpp.bat` と、CUDA 12版の KoboldCpp に更新する `Update-KoboldCpp_CUDA12.bat` を追加しました。

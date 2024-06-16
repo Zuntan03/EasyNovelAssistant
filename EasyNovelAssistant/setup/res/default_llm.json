@@ -1,5 +1,12 @@
 ﻿{
-	"(New!) Ninja-v1-RP-expressive-v2-IQ4_XS": {
+	"(New!) Ninja-V2-7B-Q8_0": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Local-Novel-LLM-project/Ninja-V2-7B/resolve/main/Ninja-V2-7B-Q8_0.gguf"
+		]
+	},
+	"Ninja-v1-RP-expressive-v2-IQ4_XS": {
 		"max_gpu_layer": 33,
 		"context_size": 4096,
 		"urls": [
