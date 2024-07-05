@@ -98,7 +98,7 @@
 
 ### 2024/07/05
 
-- 『[Kagemusya-7B-v1](https://huggingface.co/Local-Novel-LLM-project/kagemusya-7B-v1)』を追加しました。
+- 『[Kagemusya-7B-v1](https://huggingface.co/Local-Novel-LLM-project/kagemusya-7B-v1)』『[Shadows-MoE](https://huggingface.co/Local-Novel-LLM-project/Shadows-MoE)』『[Ninja-V3-7B](https://huggingface.co/Local-Novel-LLM-project/Ninja-V3)』を追加しました。
 
 ### 2024/06/16
 

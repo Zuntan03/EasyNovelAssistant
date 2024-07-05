@@ -47,7 +47,8 @@
 	},
 	"VicunaUserS": {
 		"model_names": [
-			"Ninja"
+			"Ninja",
+			"Shadows"
 		],
 		"instruct": "</s>\nUSER: {0}\nASSISTANT: ",
 		"stop": [

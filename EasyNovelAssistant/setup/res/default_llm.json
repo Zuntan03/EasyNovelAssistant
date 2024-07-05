@@ -6,6 +6,20 @@
 			"https://huggingface.co/Local-Novel-LLM-project/Kagemusya-7B-v1-GGUF/resolve/main/kagemusya-7b-v1Q8_0.gguf"
 		]
 	},
+	"(New!) Shadows-MoE-Q6": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Local-Novel-LLM-project/Shadows-MoE-GGUF/resolve/main/Shadows-MoE-Q6.gguf"
+		]
+	},
+	"(New!) Ninja-V3-Q4_K_M": {
+		"max_gpu_layer": 33,
+		"context_size": 32768,
+		"urls": [
+			"https://huggingface.co/Local-Novel-LLM-project/Ninja-V3-GGUF/resolve/main/Ninja-V3-Q4_K_M.gguf"
+		]
+	},
 	"Ninja-V2-7B-Q8_0": {
 		"max_gpu_layer": 33,
 		"context_size": 32768,
