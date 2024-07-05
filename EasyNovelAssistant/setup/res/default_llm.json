@@ -1,5 +1,12 @@
 ﻿{
-	"(New!) Ninja-V2-7B-Q8_0": {
+	"(New!) Kagemusya-7B-v1-Q8_0": {
+		"max_gpu_layer": 33,
+		"context_size": 4096,
+		"urls": [
+			"https://huggingface.co/Local-Novel-LLM-project/Kagemusya-7B-v1-GGUF/resolve/main/kagemusya-7b-v1Q8_0.gguf"
+		]
+	},
+	"Ninja-V2-7B-Q8_0": {
 		"max_gpu_layer": 33,
 		"context_size": 32768,
 		"urls": [

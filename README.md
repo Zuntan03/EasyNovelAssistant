@@ -96,6 +96,10 @@
 
 ## 最近の更新
 
+### 2024/07/05
+
+- 『[Kagemusya-7B-v1](https://huggingface.co/Local-Novel-LLM-project/kagemusya-7B-v1)』を追加しました。
+
 ### 2024/06/16
 
 - 『[Ninja-V2-7B](https://huggingface.co/Local-Novel-LLM-project/Ninja-V2-7B)』を追加しました。

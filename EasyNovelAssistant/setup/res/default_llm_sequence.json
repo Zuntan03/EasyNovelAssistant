@@ -1,7 +1,8 @@
 ﻿{
 	"None": {
 		"model_names": [
-			"Vecteus"
+			"Vecteus",
+			"Kagemusya"
 		],
 		"instruct": "{0}",
 		"stop": []
