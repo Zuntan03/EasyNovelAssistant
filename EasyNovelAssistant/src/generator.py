@@ -108,14 +108,14 @@ class Generator:
             name = text.split("「", 1)[0]
             if self.ctx["char_name"] in name:
                 if self.ctx["auto_speech_char"]:
-                    self.ctx.style_bert_vits2.generate(text)
+                    self.ctx.speech.generate(text)
                     return
             elif self.ctx["user_name"] in name:
                 if self.ctx["auto_speech_user"]:
-                    self.ctx.style_bert_vits2.generate(text)
+                    self.ctx.speech.generate(text)
                     return
         if self.ctx["auto_speech_other"]:
-            self.ctx.style_bert_vits2.generate(text)
+            self.ctx.speech.generate(text)
 
     def _generate(self, input_text):
         return self.ctx.kobold_cpp.generate(input_text)

@@ -83,10 +83,10 @@ class InputTab:
     def _on_ctx_menu(self, e):
         self.ctx_menu.delete(0, tk.END)
 
-        if self.ctx.style_bert_vits2.models is None:
-            self.ctx.style_bert_vits2.get_models()
+        if self.ctx.speech.models is None:
+            self.ctx.speech.get_models()
 
-        if self.ctx.style_bert_vits2.models is not None:
+        if self.ctx.speech.models is not None:
             self.ctx_menu.add_command(label="読み上げる", command=lambda: self._speech(e))
             self.ctx_menu.add_separator()
 
@@ -119,7 +119,7 @@ class InputTab:
     def _speech(self, e):
         line_num = self.text_area.index(f"@{e.x},{e.y}").split(".")[0]
         text = self.text_area.get(f"{line_num}.0", f"{line_num}.end") + "\n"
-        self.ctx.style_bert_vits2.generate(text)
+        self.ctx.speech.generate(text)
 
     def _insert_instruct_tag(self):
         sequence = self.ctx.kobold_cpp.get_instruct_sequence()

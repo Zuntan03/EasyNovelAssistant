@@ -32,6 +32,12 @@ class StyleBertVits2:
     def launch_server(self):
         self._run_bat(Path.style_bert_vits2_run, "Style-Bert-VITS2 読み上げサーバー")
 
+    def is_installed(self):
+        return os.path.exists(Path.style_bert_vits2)
+
+    def is_installing(self):
+        return self.is_installed() and (not os.path.exists(Path.style_bert_vits2_config))
+
     def _run_bat(self, command, title):
         arg = "" if self.ctx["style_bert_vits2_gpu"] else " --cpu"
         if platform == "win32":

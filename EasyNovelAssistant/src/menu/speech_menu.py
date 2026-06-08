@@ -1,7 +1,6 @@
-﻿import os
-import tkinter as tk
+﻿import tkinter as tk
 
-from path import Path
+from speech_manager import IRODORI_TTS, SPEECH_ENGINE_LABELS, normalize_speech_engine
 
 
 class SpeechMenu:
@@ -17,41 +16,36 @@ class SpeechMenu:
     def on_menu_open(self):
         self.menu.delete(0, tk.END)
 
-        # 入力欄をすべて読み上げる
         def speech_all():
             text = self.ctx.form.input_area.get_comment_removed_text()
             lines = text.splitlines()
             for line in lines:
-                self.ctx.style_bert_vits2.generate(line, force=True)
+                self.ctx.speech.generate(line, force=True)
 
         self.menu.add_command(label="入力欄を読み上げ", command=speech_all)
+        self.menu.add_command(label="読み上げを中断 (F5)", command=self.ctx.speech.abort)
 
-        self.menu.add_command(label="読み上げを中断 (F5)", command=self.ctx.style_bert_vits2.abort)
+        self.menu.add_separator()
+        self._add_engine_menu()
 
         self.menu.add_separator()
 
-        models = self.ctx.style_bert_vits2.models
+        models = self.ctx.speech.models
         if models is None:
-            models = self.ctx.style_bert_vits2.get_models()
+            models = self.ctx.speech.get_models()
 
         if models is None:
-            if not os.path.exists(Path.style_bert_vits2):
-                self.menu.add_command(
-                    label="Style-Bert-VITS2 をインストール", command=self.ctx.style_bert_vits2.install
-                )
-            elif not os.path.exists(Path.style_bert_vits2_config):
-                self.menu.add_command(label="Style-Bert-VITS2 のインストール中")
+            engine_label = self.ctx.speech.active_label()
+            if not self.ctx.speech.is_installed():
+                self.menu.add_command(label=f"{engine_label} をインストール", command=self.ctx.speech.install)
+            elif self.ctx.speech.is_installing():
+                self.menu.add_command(label=f"{engine_label} のインストール中")
             else:
                 self.menu.add_command(
-                    label="読み上げサーバーを立ち上げる", command=self.ctx.style_bert_vits2.launch_server
+                    label=f"{engine_label} 読み上げサーバーを立ち上げる",
+                    command=self.ctx.speech.launch_server,
                 )
-
-            def set_style_bert_vits2_gpu(*args):
-                self.ctx["style_bert_vits2_gpu"] = self.gpu_var.get()
-
-            self.gpu_var = tk.BooleanVar(value=self.ctx["style_bert_vits2_gpu"])
-            self.gpu_var.trace_add("write", set_style_bert_vits2_gpu)
-            self.menu.add_checkbutton(label="GPU を使用する", variable=self.gpu_var)
+            self._add_gpu_toggle()
             return
 
         def set_middle_click(*args):
@@ -94,7 +88,9 @@ class SpeechMenu:
         for volume in volumes:
             check_var = tk.BooleanVar(value=self.ctx["speech_volume"] == volume)
             self.volume_menu.add_checkbutton(
-                label=f"{volume}%", variable=check_var, command=lambda v=volume, _=check_var: set_speech_volume(v)
+                label=f"{volume}%",
+                variable=check_var,
+                command=lambda v=volume, _=check_var: set_speech_volume(v),
             )
 
         self.speed_menu = tk.Menu(self.menu, tearoff=False)
@@ -107,7 +103,9 @@ class SpeechMenu:
         for speed in speeds:
             check_var = tk.BooleanVar(value=self.ctx["speech_speed"] == speed)
             self.speed_menu.add_checkbutton(
-                label=f"{speed}倍", variable=check_var, command=lambda s=speed, _=check_var: set_speech_speed(s)
+                label=f"{speed}倍",
+                variable=check_var,
+                command=lambda s=speed, _=check_var: set_speech_speed(s),
             )
 
         self.interval_menu = tk.Menu(self.menu, tearoff=False)
@@ -127,42 +125,56 @@ class SpeechMenu:
 
         self.menu.add_separator()
 
-        def set_char_voice(voice_name):
-            self.ctx["char_voice"] = voice_name
+        char_voice_key, user_voice_key, other_voice_key = self.ctx.speech.voice_keys()
+        self._add_voice_menu(f'{self.ctx["char_name"]} の声', char_voice_key, models)
+        self._add_voice_menu(f'{self.ctx["user_name"]} の声', user_voice_key, models)
+        self._add_voice_menu("その他の声", other_voice_key, models)
 
-        self.char_voice_menu = tk.Menu(self.menu, tearoff=False)
+    def _add_engine_menu(self):
+        current_engine = normalize_speech_engine(self.ctx["speech_engine"])
+        self.ctx["speech_engine"] = current_engine
+
+        def set_speech_engine(*args):
+            self.ctx["speech_engine"] = self.engine_var.get()
+
+        self.engine_var = tk.StringVar(value=current_engine)
+        self.engine_var.trace_add("write", set_speech_engine)
+        self.engine_menu = tk.Menu(self.menu, tearoff=False)
         self.menu.add_cascade(
-            label=f'{self.ctx["char_name"]} の声: {self.ctx["char_voice"]}', menu=self.char_voice_menu
+            label=f"読み上げエンジン: {SPEECH_ENGINE_LABELS[current_engine]}",
+            menu=self.engine_menu,
         )
 
+        for engine, engine_label in SPEECH_ENGINE_LABELS.items():
+            self.engine_menu.add_radiobutton(label=engine_label, variable=self.engine_var, value=engine)
+
+    def _add_gpu_toggle(self):
+        engine = self.ctx.speech.active_engine()
+        if engine == IRODORI_TTS:
+            key = "irodori_tts_gpu"
+            label = "Irodori-TTS で GPU を使用する"
+        else:
+            key = "style_bert_vits2_gpu"
+            label = "Style-Bert-VITS2 で GPU を使用する"
+
+        def set_gpu(*args):
+            self.ctx[key] = self.gpu_var.get()
+
+        self.gpu_var = tk.BooleanVar(value=self.ctx[key])
+        self.gpu_var.trace_add("write", set_gpu)
+        self.menu.add_checkbutton(label=label, variable=self.gpu_var)
+
+    def _add_voice_menu(self, label, key, models):
+        def set_voice(voice_name):
+            self.ctx[key] = voice_name
+
+        voice_menu = tk.Menu(self.menu, tearoff=False)
+        self.menu.add_cascade(label=f"{label}: {self.ctx[key]}", menu=voice_menu)
+
         for voice_name in models:
-            check_var = tk.BooleanVar(value=self.ctx["char_voice"] == voice_name)
-            self.char_voice_menu.add_checkbutton(
-                label=voice_name, variable=check_var, command=lambda vn=voice_name, _=check_var: set_char_voice(vn)
-            )
-
-        def set_user_voice(voice_name):
-            self.ctx["user_voice"] = voice_name
-
-        self.user_voice_menu = tk.Menu(self.menu, tearoff=False)
-        self.menu.add_cascade(
-            label=f'{self.ctx["user_name"]} の声: {self.ctx["user_voice"]}', menu=self.user_voice_menu
-        )
-
-        for voice_name in models:
-            check_var = tk.BooleanVar(value=self.ctx["user_voice"] == voice_name)
-            self.user_voice_menu.add_checkbutton(
-                label=voice_name, variable=check_var, command=lambda vn=voice_name, _=check_var: set_user_voice(vn)
-            )
-
-        def set_other_voice(voice_name):
-            self.ctx["other_voice"] = voice_name
-
-        self.other_voice_menu = tk.Menu(self.menu, tearoff=False)
-        self.menu.add_cascade(label=f'その他の声: {self.ctx["other_voice"]}', menu=self.other_voice_menu)
-
-        for voice_name in models:
-            check_var = tk.BooleanVar(value=self.ctx["other_voice"] == voice_name)
-            self.other_voice_menu.add_checkbutton(
-                label=voice_name, variable=check_var, command=lambda vn=voice_name, _=check_var: set_other_voice(vn)
+            check_var = tk.BooleanVar(value=self.ctx[key] == voice_name)
+            voice_menu.add_checkbutton(
+                label=voice_name,
+                variable=check_var,
+                command=lambda vn=voice_name, _=check_var: set_voice(vn),
             )

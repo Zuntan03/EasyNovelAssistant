@@ -29,6 +29,11 @@ class Path:
     style_bert_vits2_app = os.path.join(style_bert_vits2, "App.bat")
     style_bert_vits2_editor = os.path.join(style_bert_vits2, "Editor.bat")
 
+    irodori_tts_server = os.path.join(cwd, "Irodori-TTS-Server")
+    irodori_tts_server_pyproject = os.path.join(irodori_tts_server, "pyproject.toml")
+    irodori_tts_server_setup = os.path.join(setup, "Setup-Irodori-TTS-Server.bat")
+    irodori_tts_server_run = os.path.join(setup, "Run-Irodori-TTS-Server.bat")
+
     sample = os.path.join(cwd, "sample")
 
     YYYYMMDD = time.strftime("%Y%m%d", time.localtime())
