@@ -75,5 +75,44 @@
 		"stop": [
 			"<|END_OF_TURN_TOKEN|>"
 		]
+	},
+	"GemmaChat": {
+		"model_names": [
+			"gemma",
+			"supergemma"
+		],
+		"instruct": "<start_of_turn>user\n{0}<end_of_turn>\n<start_of_turn>model\n",
+		"stop": [
+			"<end_of_turn>"
+		],
+		"auto_instruct": true
+	},
+	"QwenChatML": {
+		"model_names": [
+			"qwen",
+			"qwen3",
+			"qwen35",
+			"qwen3.5",
+			"huihui",
+			"elt-lm"
+		],
+		"instruct": "<|im_start|>system\nあなたは日本語で自然な小説文を続けるアシスタントです。本文だけを書き、思考過程、英語、箇条書き、タグ、メタ説明を出さないでください。<|im_end|>\n<|im_start|>user\n{0}<|im_end|>\n<|im_start|>assistant\n",
+		"stop": [
+			"<|im_end|>",
+			"<|endoftext|>",
+			"<|end_of_text|>",
+			"<|end|>",
+			"<|im_start|>user",
+			"<|im_start|>system"
+		],
+		"auto_instruct": true,
+		"generate_args": {
+			"temperature": 0.55,
+			"top_p": 0.9,
+			"top_k": 40,
+			"rep_pen": 1.08,
+			"min_p": 0.02,
+			"max_length": 768
+		}
 	}
 }
